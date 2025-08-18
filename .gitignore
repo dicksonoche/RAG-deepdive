@@ -1,3 +1,6 @@
 .env
 rag.venv
 .DS_Store
+logs
+__pycache__
+chroma

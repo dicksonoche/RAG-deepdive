@@ -1,3 +1,14 @@
+"""CLI demo for a local RAG pipeline using LlamaIndex and Groq.
+
+This script demonstrates how to:
+1) Build vector embeddings from a directory of documents
+2) Persist them to disk
+3) Load the index and run a query with a specified model
+
+Environment:
+- Requires `GROQ_API_KEY` in environment variables or `.env`
+- Uses `./docs` as input data directory and `./embeddings` as the persist directory
+"""
 import os, groq, time
 from llama_index.llms.groq import Groq
 from llama_index.core import SimpleDirectoryReader, VectorStoreIndex, StorageContext, Settings, load_index_from_storage
@@ -29,6 +40,17 @@ EMBEDDING_DIR = "./embeddings"
 ENCODING_MODEL = "cl100k_base"
 
 def generate(model, system_prompt, query, temperature=0.1):
+    """Call Groq chat completion API with a system+user message.
+
+    Args:
+        model (str): Model identifier from `models`.
+        system_prompt (str): Instructional system prompt.
+        query (str): User query text.
+        temperature (float, optional): Sampling temperature. Defaults to 0.1.
+
+    Returns:
+        str: Model response content.
+    """
 
     response = llm_client.chat.completions.create(
         model=model,
@@ -49,6 +71,7 @@ def generate(model, system_prompt, query, temperature=0.1):
     return response.choices[0].message.content
 
 def generate_embedding(dir):
+    """Load documents from a directory and persist a `VectorStoreIndex` to disk."""
     print("Uploading files...")
     start_time = time.time()
 
@@ -67,10 +90,22 @@ def generate_embedding(dir):
     print(f"The extracted content has {sum(num_tokens)} tokens")
 
 def retrieve_embedding():
+    """Load a previously persisted index from disk and return it."""
     storage_context = StorageContext.from_defaults(persist_dir=EMBEDDING_DIR)
     return load_index_from_storage(storage_context=storage_context)
 
 def qa_engine(model, index: VectorStoreIndex, query, temperature=0.1):
+    """Run a RAG-style query against a `VectorStoreIndex` with a Groq LLM.
+
+    Args:
+        model (str): Model identifier to use.
+        index (VectorStoreIndex): Loaded index to query.
+        query (str): Natural language query.
+        temperature (float, optional): Sampling temperature. Defaults to 0.1.
+
+    Returns:
+        Any: LlamaIndex response object with text and source nodes.
+    """
 
     llm_rag_client = Groq(model, GROQ_API_KEY, temperature=temperature)
     query_engine = index.as_query_engine(llm_rag_client, similarity_top_k=5)

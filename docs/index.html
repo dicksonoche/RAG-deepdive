@@ -1,0 +1,2532 @@
+<!DOCTYPE html>
+<!-- saved from url=(0027)https://aisummerofcode.org/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="emotion-insertion-point" content="">
+    
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <title>AI Summer of Code | Incubating AI Talents</title>
+    <meta name="author" content="themesflat.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="./index_files/style.css">
+    <link rel="stylesheet" type="text/css" href="./index_files/responsive.css">
+
+    <link rel="shortcut icon" href="https://aisummerofcode.org/assets/images/logo/aisoc-icon-2.png">
+    <link rel="apple-touch-icon-precomposed" href="https://aisummerofcode.org/assets/images/logo/aisoc-icon-2.png">
+    <script src="./index_files/jquery.min.js"></script>
+
+<style>.showHint {display: block !important;}</style><style id="ardb6673beebstyle">
+				.ardb6673beebhidden{ position:absolute !important; opacity:0 !important; pointer-events:none !important}
+			</style><style>
+      .mindstudio-context-menu {
+        position: fixed;
+        display: flex;
+        width: 160px;
+        padding: 8px;
+        flex-direction: column;
+        align-items: flex-start;
+        border-radius: 8px;
+        border: 1px solid rgba(18, 18, 19, 0.10);
+        background: rgba(18, 18, 19, 0.85);
+        box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.15), 0px 0px 4px 0px rgba(0, 0, 0, 0.04);
+        backdrop-filter: blur(3px);
+        z-index: 10000;
+        display: none;
+      }
+
+      .mindstudio-context-menu-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 8px;
+        width: 100%;
+        box-sizing: border-box;
+        color: #F6F6F7;
+        cursor: pointer;
+        border-radius: 4px;
+        font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%;
+        transition: background-color 0.2s;
+      }
+
+      .mindstudio-context-menu-item:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .mindstudio-context-menu-item svg {
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+      }
+
+      .mindstudio-context-menu-divider {
+        height: 1px;
+        background-color: rgba(255, 255, 255, 0.1);
+        margin: 4px 0;
+        width: 100%;
+      }
+    </style></head>
+
+<body class="body header-fixed is_dark" data-new-gr-c-s-check-loaded="14.1248.0" data-gr-ext-installed="">
+
+<!-- <div class="preload preload-container">
+<div class="preload-logo"></div>
+</div> -->
+
+<header id="header_main" class="header_1 js-header is-fixed is-small">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mobile-button"><span></span></div>
+                <div id="site-header-inner" class="flex">
+                    <div id="site-logo" class="clearfix">
+                        <div id="site-logo-inner">
+                            <a href="https://aisummerofcode.org/index.html" rel="home" class="main-logo">
+                                <img id="logo_header" src="./index_files/aisoc-logo.png" alt="aisoc-logo" data-retina="assets/images/logo/logo_dark@2x.png">
+                                <img id="logo_icon" src="./index_files/aisoc-icon.png" alt="aisoc-logo" data-retina-mobile-src="assets/images/logo/icon@2x.png">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div id="site-menu" style="margin-right:auto">
+                        <nav id="main-nav" class="main-nav">
+                            <ul id="menu-primary-menu" class="menu">
+                                <li class="menu-item current-item">
+                                    <a href="https://aisummerofcode.org/">Home</a>
+                                </li>
+                                <li class="menu-item menu-item-has-children">
+                                    <a>Editions</a>
+                                    <ul class="sub-menu" style="display: block;">
+                                        <li class="menu-item"><a href="https://github.com/ai-summer-of-code/aisoc-season-1" target="_blank">Season 1</a></li>
+                                        <li class="menu-item"><a href="https://aisummerofcode.org/" target="_blank">Season 2</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item menu-item-has-children">
+                                    <a>Events</a>
+                                    <ul class="sub-menu" style="display: block;">
+                                        <li class="menu-item"><a href="https://aisummerofcode.org/events/open.html" target="_blank">AISOC Open</a></li>
+                                        <!-- <li class="menu-item"><a href="" target="_blank">AI Synopsis</a></li> -->
+                                    </ul>
+                                </li>
+                                <li class="menu-item menu-item-has-children ">
+                                    <a>Community</a>
+                                    <ul class="sub-menu" style="display: block;">
+                                        <li class="menu-item "><a href="https://aisummerofcode.org/blog" target="_blank">Blog</a></li>
+                                        <li class="menu-item"><a href="https://aisummerofcode.substack.com/" target="_blank">Newsletter</a></li>
+                                        <!-- <li class="menu-item"><a href="" target="_blank">Membership</a></li> -->
+                                    </ul>
+                                </li>
+                                <li class="menu-item ">
+                                    <a href="mailto:hello@aisummerofcode.org">Contact</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    
+                    <!-- <form class="form-search">
+                        <input type="text" placeholder="Search here">
+                        <button><i class="far fa-search"></i></button>
+                    </form> -->
+
+                    <!-- <div class="button-connect-wallet" style="margin-right: 0px;">
+                        <a href="connect-wallet.html" class="sc-button wallet style-2">
+                            <img src="assets/images/icon/connect-wallet.svg" alt="icon">
+                            <span>Register Now</span>
+                        </a>
+                    </div> -->
+
+                    <div class="countdown style-2a" style="background: transparent; text-align: center; margin-left: 0px; margin-right: 0px; padding: 0px">
+                        <a href="https://aisummerofcode.org/" data-toggle="modal" data-target="#popup_apply_now" class="js-countdown" data-countdown="2025-07-26T09:59:59" data-labels=" Days , Hours , Mins , Secs" style="font-size: 20px"><div aria-hidden="true" class="countdown__timer"><span class="countdown__item"><span class="countdown__value countdown__value--0 js-countdown__value--0">0</span><span class="countdown__label">Days</span></span><span class="countdown__item"><span class="countdown__value countdown__value--1 js-countdown__value--1">00</span><span class="countdown__label">Hours</span></span><span class="countdown__item"><span class="countdown__value countdown__value--2 js-countdown__value--2">00</span><span class="countdown__label">Mins</span></span><span class="countdown__item"><span class="countdown__value countdown__value--3 js-countdown__value--3">00</span><span class="countdown__label">Secs</span></span></div></a>
+                    </div>
+
+                    <div class="mode_switcher">
+                        <h6><span>Dark Mode</span> <strong>Activate</strong></h6>
+                        <a href="https://aisummerofcode.org/" class="light d-flex align-items-center" style="margin-left: 3px;">
+                            <img src="./index_files/sun.png" alt="">
+                        </a>
+                        <a href="https://aisummerofcode.org/" class="dark d-flex align-items-center is_active">
+                            <img id="moon_dark" src="./index_files/moon.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header><div style="height: 108px;"></div>
+
+<section class="fl-page-title" id="headline">
+    <div class="overlay"></div>
+        <div class="container" style="padding:0px 12px">
+
+            <div class="best-seller-inner" style="background: var(--bg-header); padding: 50px 15px">
+                <div class="page-title-heading col-lg-9 text-center" style="margin: auto">
+                    <h3 class="mt-4" style="font-size:45px">The world's largest classroom for incubating AI talents</h3>
+                </div>
+                <div class="slider-inner flex home-1 mt-5" style="padding: 15px">
+                    <div class="row">
+                        <div class="slider-content text-center" style="padding-top: 15px;">
+                            <p class="sub-heading" style="color: var(--color-1); padding: 0px 5%">AI Summer of Code (AISOC) is the annual convergence of global experts in AI with enthusiastic learners from all over the world seeking to upskill and excel in the science and engineering of AI systems. </p>
+                            <h3 class="sub-heading text-center" style="color: var(--color-1); font-size: 22px; padding: 0px;"><b>Get ready for AISOC Season 2</b><p class="text-center" style="font-size: 18px;">July 26 - November 22, 2025</p></h3>
+
+                            <div class="countdown style-2b" style="margin: auto;text-align: center; border-radius: 15px;">
+                                <span class="js-countdown" data-countdown="2025-07-26T09:59:59" data-labels=" Days  , Hours , Mins , Secs"><div aria-hidden="true" class="countdown__timer"><span class="countdown__item"><span class="countdown__value countdown__value--0 js-countdown__value--0">0</span><span class="countdown__label">Days</span></span><span class="countdown__item"><span class="countdown__value countdown__value--1 js-countdown__value--1">00</span><span class="countdown__label">Hours</span></span><span class="countdown__item"><span class="countdown__value countdown__value--2 js-countdown__value--2">00</span><span class="countdown__label">Mins</span></span><span class="countdown__item"><span class="countdown__value countdown__value--3 js-countdown__value--3">00</span><span class="countdown__label">Secs</span></span></div></span>
+                                <div class="button-slider">
+                                    <a href="https://aisummerofcode.org/" data-toggle="modal" data-target="#popup_apply_now" class="sc-button btn-bordered-white style letter mt-4" style="padding: 18px 96px; margin: auto"><span style="font-size:16px">Register</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-img col-xl-6 col-lg-12 col-md-12" style="margin: auto">
+                            <div class="img-home-1" style="margin: auto"><img src="./index_files/teamTrainingHero.png" alt="Image"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+</section>
+
+<section class="tf-section item-details-page" id="about">
+    <div class="container">
+        <!-- <div class="sc-heading col-lg-10" style="margin: auto"></div> -->
+        <div class="row">
+            <!-- <div class="col-xl-6 col-lg-12 col-md-12 mt-3"> -->
+            <div class="col-xl-6 col-lg-10" style="margin: auto">
+                <div class="content-item mt-5" style="padding-left: 0%; padding-right: 20px;">
+                    <h3 class="mg-bt-42" style="font-size:45px; line-height: 1.2; margin-bottom: 20px;"> About AISOC</h3>
+                    <p>AISOC was launched in 2024 to fill the growing gap in AI education and democratize access to world-class AI skills. With the rise and prominence of large foundation models and generative AI, and how these technologies are reshaping the world of software, it is now more important than ever to raise talents that are equipped to build the next generation of AI systems and GenAI-powered applications. <b style="color: var(--color-1);">And we are taking on this mission!</b></p>
+                    <p>Through intense, hands-on technical training in the foundations, engineering and applications of modern AI systems, AISOC stars develop rigorous understanding and mastery of the technical skills needed to build next-gen intelligent applications and push the boundaries of the AI landscape.</p>
+                    <a href="https://aisummerofcode.org/" target="_blank" class="sc-button wallet style-2"><i class="fab fa-dribbble" style="color: #fff;"></i><span style="color: #fff; font-size: 15px;">Learn more</span></a>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-12 col-md-12" style="margin: auto">
+                <div class="item-media" style="padding-top: 0px">
+                    <div class="media mg-bt-0">
+                        <img src="./index_files/Data-Asset-02-transparent.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- <section class="tf-section item-details-page"> -->
+<section class="tf-section creators-page" id="highlights" style="background: rgba(99, 69, 237, 0.07)">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-12 col-md-12">
+                <div class="popup">
+                    <div class="modal-content" style="text-align: left; line-height: 1.3;">
+                        <div class="modal-body space-y-20 pd-40">
+                            <div class="content-item">
+                                <h3 class="mg-bt-42" style="text-align: left; font-size:40px">Season 1 Highlights</h3>
+                            </div>
+                            <ul>
+                                <p><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i> Over 300 registered participants from more than 10 countries</p>
+                                <hr style="height:1px;width:100%;border-width:0;color:lightgray;background-color:lightgray">
+                                <p><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i> Representation from a wide range of industries, professional backgrounds and experience levels in tech (Beginner to Senior+)</p>
+                                <hr style="height:1px;width:100%;border-width:0;color:lightgray;background-color:lightgray">
+                                <p><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i> A global expert lineup of a dozen senior professionals and leaders in data science and AI across the globe</p>
+                                <hr style="height:1px;width:100%;border-width:0;color:lightgray;background-color:lightgray">
+                                <p><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i> 40+ live sessions, including technical deep-dives, hands-on tutorials, workshops, expert talks, spanning 100+ hours!</p>
+                                <hr style="height:1px;width:100%;border-width:0;color:lightgray;background-color:lightgray">
+                                <p><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i> Hands-on capstone project after 4 weeks of intense learning!</p>
+                                <hr style="height:1px;width:100%;border-width:0;color:lightgray;background-color:lightgray">
+                            </ul>
+                            <div class="button-slider mt-5 mg-bt-42" style="max-width: 330px; padding-bottom: 10px;">
+                                <a href="https://github.com/ai-summer-of-code/aisoc-season-1" target="_blank" class="sc-button wallet style-2"><i class="fab fa-github" style="color: #fff;"></i><span style="font-size: 16px; color: #fff">See More</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-10" style="margin: auto">
+                <div class="content-item text-center" style="padding: 20px;">
+                    <h3 style="font-size:40px; line-height: 1.3; margin-bottom: 20px;">Season 2 promises even better</h3>
+                    <p style="font-size: 17px;">AISOC 2.0 features 4 career-focused pathways, a global expert faculty, deep dives into the latest advances in ML, LLMs and AI engineering, and real-world AI projects to help you hone your skills.<br></p>
+                    <h4 style="padding: 20px; line-height: 1.3;">An unforgettable classroom experience across 4 months!</h4>
+
+                    <hr style="height:1px;width:100%;border-width:0;color:lightgray;background-color:lightgray">
+                    <p class="desc mt-5" style="margin-bottom: 0px;"><b style="color: var(--color-1); font-size: 30px">7 WEEKS</b><br><span style="font-size: 15px"> Hands-on Learning </span></p>
+                    <p class="desc" style="color: var(--color-1); margin-bottom: 5px;"><span style="font-size: 20px"> + </span></p>
+                    <p class="desc" style="margin-bottom: 30px;"><b style="color: var(--color-1); font-size: 30px">2 MONTHS</b><br><span style="font-size: 15px">Post-Learning &amp; Dedicated Project Support</span></p>
+                    <hr style="height:1px;width:100%;border-width:0;color:lightgray;background-color:lightgray">
+                    
+                    <h5 style="color: var(--color-1)"><b>AISOC 2.0 begins in</b></h5>
+                    <div class="countdown style-2 mt-3 text-center" style="margin: auto;">
+                        <span class="js-countdown" data-countdown="2025-07-26T09:59:59" data-labels=" Days  , Hour , Mins , Secs"><div aria-hidden="true" class="countdown__timer"><span class="countdown__item"><span class="countdown__value countdown__value--0 js-countdown__value--0">0</span><span class="countdown__label">Days</span></span><span class="countdown__item"><span class="countdown__value countdown__value--1 js-countdown__value--1">00</span><span class="countdown__label">Hour</span></span><span class="countdown__item"><span class="countdown__value countdown__value--2 js-countdown__value--2">00</span><span class="countdown__label">Mins</span></span><span class="countdown__item"><span class="countdown__value countdown__value--3 js-countdown__value--3">00</span><span class="countdown__label">Secs</span></span></div></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="tf-section item-details-page" id="pathways" style="background: rgba(99, 69, 237, 0.07)">
+    <div class="container">
+        <div class="content-item col-lg-10" style="margin: auto;">
+            <h3 class="text-center" style="font-size:36px; line-height: 1.2; margin-bottom: 40px;">Choose from 4 specialist pathways across machine learning and AI engineering<p></p>
+        </h3></div>
+
+        <div class="row">
+            
+            <div class="col-xl-6 col-lg-10">    
+                <div class="infor-bid">
+                    <div style="margin: 10px;">
+                        <h5>TRACK I: APPLIED AI</h5><br>
+                        <div class="price">LEVEL - BEGINNER</div><br><br>
+                        <p style="font-size: 16px; line-height: 1.5;">
+                            Learn how to build LLM chatbots, RAG-powered applications, and agentic systems for real-world use cases. 
+                            You will design APIs that interact with frontier models and external tools to provide retrieval, reasoning and conversational capabilities.
+                            Become a confident AI application developer using powerful AI tools and technologies.
+                        </p><br><br>
+                        <a href="https://aisummerofcode.org/" data-toggle="modal" data-target="#track_1" class="sc-button style-2"><span style="color: #fff;">See More</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-10">
+                <div class="infor-bid">
+                    <div style="margin: 10px;">
+                        <h5>TRACK II: MACHINE LEARNING</h5><br>
+                        <div class="price">LEVEL - BEGINNER / INTERMEDIATE</div><br><br>
+                        <p style="font-size: 16px; line-height: 1.5;">Learn the "craftsmanship" of machine learning, including principles and practical techniques of 
+                            preparing data, designing training experiments, calibrating models, and choosing the right metrics for evaluation. 
+                            Master the underlying algorithms for a wide range of ML tasks, and ML engineering techniques for building production-ready models.
+                        </p><br><br>
+                        <a href="https://aisummerofcode.org/" data-toggle="modal" data-target="#track_2" class="sc-button style-2"><span style="color: #fff;">See More</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-10">
+                <div class="infor-bid">
+                    <div style="margin: 10px;">
+                        <h5>TRACK III: LLM ENGINEERING</h5><br>
+                        <div class="price">LEVEL - INTERMEDIATE</div><br><br>
+                        <p style="font-size: 16px; line-height: 1.5;">
+                            Dive into the inner workings of foundation models, including LLMs and reasoning models, 
+                            from underlying math and architectures to training and finetuning techniques to deployment. 
+                            You will pretrain and finetune large models on GPUs, serve them on compute infra, 
+                            and optimize them using distributed inference and autoscaling techniques.
+                        </p><br><br>
+                        <a href="https://aisummerofcode.org/" data-toggle="modal" data-target="#track_3" class="sc-button style-2"><span style="color: #fff;">See More</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-10">
+                <div class="infor-bid">
+                    <div style="margin: 10px;">
+                        <h5>TRACK IV: PRODUCTION AI</h5><br>
+                        <div class="price">LEVEL - INTERMEDIATE</div><br><br>
+                        <p style="font-size: 16px; line-height: 1.5;">
+                            Become a specialist in the deployment and management of AI applications at scale.
+                            You will learn how to take AI models, RAG applications and agentic systems into production. 
+                            Master the engineering best practices for designing, deploying and running scalable AI systems that serve real users in production.
+                        </p><br><br>
+                        <a href="https://aisummerofcode.org/" data-toggle="modal" data-target="#track_4" class="sc-button style-2"><span style="color: #fff;">See More</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="desc col-xl-6 col-lg-12 col-md-12" id="target-audience" style="text-align: left">
+                <h3 class="mt-5 text-center" style="font-size: 38px; line-height: 1.2; margin-bottom: 30px;"> Who should attend?</h3>
+
+                <div id="dropdown-item-5" class="dropdown" style="margin-bottom: 20px;">
+                    <a href="https://aisummerofcode.org/" class="btn-selector nolink" style="padding: 28px;">
+                        <h5>APPLIED AI</h5>
+                    </a>
+                    <ul style="padding: 28px; display: none;">
+                        <p style="font-size: 16px; line-height: 1.5;">Beginners to LLMs and generative AI systems who want to gain mastery in the development of LLM-powered applications, chatbots, RAG pipelines and agentic systems. 
+                            Target audience includes, but is not limited to, software developers, data professionals, researchers, ML engineers, technical product managers, etc, at any levels.
+                        </p><br>
+                    </ul>
+                </div>
+
+                <div id="dropdown-item-6" class="dropdown" style="margin-bottom: 20px;">
+                    <a href="https://aisummerofcode.org/" class="btn-selector nolink" style="padding: 28px;">
+                        <h5>MACHINE LEARNING</h5>
+                    </a>
+                    <ul style="padding: 28px; display: none;">
+                        <p style="font-size: 16px; line-height: 1.5;">Data analysts/scientists, researchers, developers, or beginners seeking to 
+                            understand what it takes to build high-performing machine learning models that generalize well in the reeal world. 
+                            ML engineering focus targetted at practicing data scientists and ML engineers seeking to master the engineering of scalable ML systems.
+                        </p><br>
+                    </ul>
+                </div>
+
+                <div id="dropdown-item-7" class="dropdown" style="margin-bottom: 20px;">
+                    <a href="https://aisummerofcode.org/" class="btn-selector nolink" style="padding: 28px;">
+                        <h5>LLM ENGINEERING</h5>
+                    </a>
+                    <ul style="padding: 16px; display: none;">
+                        <!-- <p style="font-size: 15px; line-height: 1.5;">Anyone with at least fundamental knowledge building machine learning models or prototyping simple LLM-based applications such as RAG, QA systems and agents, seeking to advance their skills in the training and optimization of large language models for deployment into real-world applications. Mathematically inclined folks with computational experience using Python, MATLAB or similar programming languages but no prior experience working with ML or LLMs are also welcome to participate in this track. -->
+                        <p style="font-size: 16px; line-height: 1.5;">AI engineers, researchers, or data scientists seeking to understand the underlying principles of building and serving large language models. 
+                            Suitable for folks with some ML background or prior experience prototyping LLM applications such as RAG, QA systems and agents. 
+                            Mathematically inclined folks with computational experience are also welcome to apply.
+                        </p><br>
+                    </ul>
+                </div>
+
+                <div id="dropdown-item-8" class="dropdown" style="margin-bottom: 20px;">
+                    <a href="https://aisummerofcode.org/" class="btn-selector nolink" style="padding: 28px;">
+                        <h5>PRODUCTION AI</h5>
+                    </a>
+                    <ul style="padding: 16px; display: none;">
+                        <p style="font-size: 16px; line-height: 1.5;">Software developers or ML/AI/data engineers seeking to build 
+                            production-grade AI systems or integrate LLMs into software applications or production data/ML pipelines. 
+                            Prior experience building traditional software, data pipelines or traditional ML systems is a plus.
+                            Familiarity prototyping LLM applications or working with OSS models and LLM APIs is also a plus.
+                        </p><br>
+                    </ul>
+                </div>
+            </div>
+                
+            <!-- <div class="col-xl-6 col-lg-10" style="margin: auto"> -->
+            <div class="desc col-xl-6 col-lg-12 col-md-12" id="prerequisites" style="text-align: left">
+                <h3 class="mt-5 text-center" style="font-size: 38px; line-height: 1.2; margin-bottom: 30px;"> Prerequisites</h3>
+
+                <div id="dropdown-item-1" class="dropdown" style="margin-bottom: 20px;">
+                    <a href="https://aisummerofcode.org/" class="btn-selector nolink" style="padding: 28px;">
+                        <h5>APPLIED AI</h5>
+                    </a>
+                    <ul style="padding: 28px; display: none;">
+                        <p style="font-size: 16px; line-height: 1.5;">
+                            Working knowledge of a programming language such as Python, either in the context of analytics, data science or software development. 
+                            Familiarity with APIs, cloud, and web frameworks is a plus, but not strictly required.
+                        </p><br>
+                    </ul>
+                </div>
+
+                <div id="dropdown-item-2" class="dropdown" style="margin-bottom: 20px;">
+                    <a href="https://aisummerofcode.org/" class="btn-selector nolink" style="padding: 28px;">
+                        <h5>MACHINE LEARNING</h5>
+                    </a>
+                    <ul style="padding: 28px; display: none;">
+                        <p style="font-size: 16px; line-height: 1.5;">
+                            Working knowledge of a programming language such as Python, either in the context of analytics, data science or software development. 
+                            Prior experience in numerical and exploratory data analysis using tools like Numpy, Pandas, SQL and Matplotlib is a plus. 
+                            For the ML engineering focus, prior experience in scikit-learn or other machine learning frameworks is expected.
+                            <!-- Familiarity with APIs, cloud, and web frameworks is a plus, but not strictly required. -->
+                        </p><br>
+                    </ul>
+                </div>
+
+                <div id="dropdown-item-3" class="dropdown" style="margin-bottom: 20px;">
+                    <a href="https://aisummerofcode.org/" class="btn-selector nolink" style="padding: 28px;">
+                        <h5>LLM ENGINEERING</h5>
+                    </a>
+                    <ul style="padding: 16px; display: none;">
+                        <p style="font-size: 16px; line-height: 1.5;">Working knowledge of Python or similar languages in the context of machine learning or software development. 
+                            At least basic familiarity with prompt engineering and LLM APIs such as OpenAI API for prototyping. 
+                            Familiarity with GPUs, CUDA, HuggingFace, deep learning frameworks such as PyTorch, or prior experience in traditional ML is a plus but not mandatory.
+                        </p><br>
+                    </ul>
+                </div>
+
+                <div id="dropdown-item-4" class="dropdown" style="margin-bottom: 20px;">
+                    <a href="https://aisummerofcode.org/" class="btn-selector nolink" style="padding: 28px;">
+                        <h5>PRODUCTION AI</h5>
+                    </a>
+                    <ul style="padding: 16px; display: none;">
+                        <p style="font-size: 16px; line-height: 1.5;">Working knowledge of Python or similar languages in the context of software development or machine learning. 
+                            At least basic familiarity with prompt engineering and LLM APIs for prototyping. 
+                            Prior experience with shell scripting, Docker and cloud platforms is a plus. 
+                            Familiarity with HuggingFace, GPUs and CUDA and is also welcome but not strictly required.
+                        </p><br>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="countdown style-2 mt-5 text-center" style="margin: auto;">
+            <span class="js-countdown" data-countdown="2025-07-26T09:59:59" data-labels=" Days  , Hour , Mins , Secs"><div aria-hidden="true" class="countdown__timer"><span class="countdown__item"><span class="countdown__value countdown__value--0 js-countdown__value--0">0</span><span class="countdown__label">Days</span></span><span class="countdown__item"><span class="countdown__value countdown__value--1 js-countdown__value--1">00</span><span class="countdown__label">Hour</span></span><span class="countdown__item"><span class="countdown__value countdown__value--2 js-countdown__value--2">00</span><span class="countdown__label">Mins</span></span><span class="countdown__item"><span class="countdown__value countdown__value--3 js-countdown__value--3">00</span><span class="countdown__label">Secs</span></span></div></span>
+        </div>
+        <div class="button-slider text-center mt-3" style="max-width: 330px; margin:auto">
+            <a href="https://aisummerofcode.org/" data-toggle="modal" data-target="#popup_apply_now" class="sc-button btn-bordered-white style letter" style="padding: 20px 66px;"><span style="font-size: 17px">Sign up now</span></a>
+            <a href="https://drive.google.com/file/d/134bp0NGYrh2-i9QxFnYx6Ac9uVol6Ldf/view?usp=drive_link" target="_blank" class="sc-button widget-social style-2 mt-3" style="padding: 22px 36px;"><i class="fad fa-download" style="color: #fff;"></i><span style="font-size: 16.5px; color: #fff; padding-left: 10px">Download curriculum</span></a>
+            <!-- <a href="" data-toggle="modal" data-target="#popup_apply_now" class="sc-button btn-bordered-white style letter" style="padding: 20px 45px;"><span style= "font-size: 17px">Download curriculum</span></a> -->
+        </div>
+    </div>
+</section>
+
+<!-- <section class="tf-best-seller"> -->
+<section class="tf-section creators-page" id="faculty" style="background: rgba(99, 69, 237, 0.07)">
+    <div class="best-seller-inner">
+
+        <div class="row">
+            <div class="col-md-12">                
+                <div class="content-item mt-5 col-lg-12 content-left">
+                    <h3 class="desc" style="color: var(--color-1)">Learn from a global expert lineup</h3><br>
+                    <p style="font-size: 18px;">20 world-class engineers, pioneers, and AI leaders to give you only the best!</p>
+                </div>
+                <div class="swiper-container latest-coll style-2 swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events">
+                    <div class="swiper-wrapper" id="swiper-wrapper-8ec60c3a698c0e510" aria-live="polite" style="transform: translate3d(0px, 0px, 0px);">
+                        <div class="swiper-slide tf-col-item swiper-slide-active" role="group" aria-label="1 / 20" style="margin-right: 30px;">
+                            <div class="slider-item">
+                                <div class="sc-product-item style-3 bg-color-dark">
+                                    <div class="product-img text-center mg-bt-0">
+                                        <img src="./index_files/serg-masis.jpg" style="border-radius: 100px;" alt="Image">
+                                        <!-- <a href="" class="sc-button style" style="background: transparent; width: 1%;  height: 1%;"><i class="fab fa-linkedin-in" style="color: #fff; background: #6345ED; font-size: 16px; padding: 4px; border-radius: 5px;"></i></a> -->
+                                        <!-- <label href="https://zion.com" style="cursor: pointer; background: transparent; width: 100%; right: 0; text-align: center;"><i class="fab fa-linkedin-in" style="color: #fff; background: #6345ED; font-size: 17px; padding: 5px; border-radius: 5px; text-align: center;"></i></label> -->
+                                        <a href="https://www.linkedin.com/in/smasis" target="_blank"><i class="fab fa-linkedin-in" style="bottom: 0; transform: translateY(-50%); color: #fff; background: linear-gradient(130.35deg, #6345ED 17.35%, #DC39FC 78.23%); font-size: 17px; padding: 4px; border-radius: 5px;"></i></a>
+                                    </div>
+                                    <!-- <div class="product-content">
+                                        <h5 class="title"><a>"Data Literacy and the Business of Data Science"</a> </h5>
+                                    </div> -->
+                                    <div class="card-content text-center">
+                                        <h6><a>Serg Masis</a> </h6>
+                                        <div class="details">Principal AI Scientist<br>Syngenta</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide tf-col-item swiper-slide-next" role="group" aria-label="2 / 20" style="margin-right: 30px;">
+                            <div class="slider-item">
+                                <div class="sc-product-item style-3 bg-color-dark">
+                                    <div class="product-img text-center mg-bt-0">
+                                        <img src="./index_files/elena.jpg" style="border-radius: 100px;" alt="Image">
+                                        <a href="https://www.linkedin.com/in/elenasamuylova" target="_blank"><i class="fab fa-linkedin-in" style="bottom: 0; transform: translateY(-50%); color: #fff; background: linear-gradient(130.35deg, #DC39FC 17.35%, #6345ED 78.23%); font-size: 17px; padding: 4px; border-radius: 5px;"></i></a>
+                                    </div>
+                                    <!-- <div class="product-content">
+                                        <h5 class="title"><a>"Data Literacy and the Business of Data Science"</a> </h5>
+                                    </div> -->
+                                    <div class="card-content text-center">
+                                        <h6><a>Elena Samuylova</a> </h6>
+                                        <div class="details">CEO &amp; Co-founder<br>Evidently AI</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide tf-col-item" role="group" aria-label="3 / 20" style="margin-right: 30px;">
+                            <div class="slider-item">
+                                <div class="sc-product-item style-3 bg-color-dark">
+                                    <div class="product-img text-center mg-bt-0">
+                                        <img src="./index_files/opeyemi-fabiyi.jpg" style="border-radius: 100px;" alt="Image">
+                                        <a href="https://www.linkedin.com/in/opeyemifabiyi" target="_blank"><i class="fab fa-linkedin-in" style="bottom: 0; transform: translateY(-50%); color: #fff; background: linear-gradient(130.35deg, #DC39FC 17.35%, #6345ED 78.23%); font-size: 17px; padding: 4px; border-radius: 5px;"></i></a>
+                                    </div>
+                                    <div class="card-content text-center">
+                                        <h6><a>Opeyemi Fabiyi</a> </h6>
+                                        <div class="details">Analytics Manager<br>Data Culture</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide tf-col-item" role="group" aria-label="4 / 20" style="margin-right: 30px;">
+                            <div class="slider-item">
+                                <div class="sc-product-item style-3 bg-color-dark">
+                                    <div class="product-img text-center mg-bt-0">
+                                        <img src="./index_files/zion.jpg" style="border-radius: 100px;" alt="Image">
+                                        <a href="https://www.linkedin.com/in/zion-pibowei" target="_blank"><i class="fab fa-linkedin-in" style="bottom: 0; transform: translateY(-50%); color: #fff; background: linear-gradient(130.35deg, #DC39FC 17.35%, #6345ED 78.23%); font-size: 17px; padding: 4px; border-radius: 5px;"></i></a>
+                                    </div>
+                                    <div class="card-content text-center">
+                                        <h6><a>Zion Pibowei</a> </h6>
+                                        <div class="details">Head, Data Science and AI<br>Periculum</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide tf-col-item" role="group" aria-label="5 / 20" style="margin-right: 30px;">
+                            <div class="slider-item">
+                                <div class="sc-product-item style-3 bg-color-dark">
+                                    <div class="product-img text-center mg-bt-0">
+                                        <img src="./index_files/emeli.jpg" style="border-radius: 100px;" alt="Image">
+                                        <a href="https://www.linkedin.com/in/emelidral" target="_blank"><i class="fab fa-linkedin-in" style="bottom: 0; transform: translateY(-50%); color: #fff; background: linear-gradient(130.35deg, #DC39FC 17.35%, #6345ED 78.23%); font-size: 17px; padding: 4px; border-radius: 5px;"></i></a>
+                                    </div>
+                                    <div class="card-content text-center">
+                                        <h6><a>Emeli Dral</a> </h6>
+                                        <div class="details">Co-founder &amp; CTO<br>Evidently AI</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide tf-col-item" role="group" aria-label="6 / 20" style="margin-right: 30px;">
+                            <div class="slider-item">
+                                <div class="sc-product-item style-3 bg-color-dark">
+                                    <div class="product-img text-center mg-bt-0">
+                                        <img src="./index_files/ridwan-amure.jpg" style="border-radius: 100px;" alt="Image">
+                                        <a href="https://www.linkedin.com/in/ridwan-amure" target="_blank"><i class="fab fa-linkedin-in" style="bottom: 0; transform: translateY(-50%); color: #fff; background: linear-gradient(130.35deg, #DC39FC 17.35%, #6345ED 78.23%); font-size: 17px; padding: 4px; border-radius: 5px;"></i></a>
+                                    </div>
+                                    <div class="card-content text-center">
+                                        <h6><a>Ridwan Amure</a> </h6>
+                                        <div class="details">ML Researcher, COSMOS Research Center, UALR</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide tf-col-item" role="group" aria-label="7 / 20" style="margin-right: 30px;">
+                            <div class="slider-item">
+                                <div class="sc-product-item style-3 bg-color-dark">
+                                    <div class="product-img text-center mg-bt-0">
+                                        <img src="./index_files/adebayo.jpg" style="border-radius: 100px;" alt="Image">
+                                        <a href="https://www.linkedin.com/in/adebayo-oshingbesan" target="_blank"><i class="fab fa-linkedin-in" style="bottom: 0; transform: translateY(-50%); color: #fff; background: linear-gradient(130.35deg, #DC39FC 17.35%, #6345ED 78.23%); font-size: 17px; padding: 4px; border-radius: 5px;"></i></a>
+                                    </div>
+                                    <div class="card-content text-center">
+                                        <h6><a>Adebayo Oshingbesan</a> </h6>
+                                        <div class="details">ML Engineer &amp; AI Solutions Architect, DHB-AI</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide tf-col-item" role="group" aria-label="8 / 20" style="margin-right: 30px;">
+                            <div class="slider-item">
+                                <div class="sc-product-item style-3 bg-color-dark">
+                                    <div class="product-img text-center mg-bt-0">
+                                        <img src="./index_files/kacper.jpg" style="border-radius: 100px;" alt="Image">
+                                        <a href="https://www.linkedin.com/in/kacperlukawski" target="_blank"><i class="fab fa-linkedin-in" style="bottom: 0; transform: translateY(-50%); color: #fff; background: linear-gradient(130.35deg, #DC39FC 17.35%, #6345ED 78.23%); font-size: 17px; padding: 4px; border-radius: 5px;"></i></a>
+                                    </div>
+                                    <div class="card-content text-center">
+                                        <h6><a>Kacper Lukawski</a> </h6>
+                                        <div class="details">Senior Developer Advocate<br>Qdrant</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide tf-col-item" role="group" aria-label="9 / 20" style="margin-right: 30px;">
+                            <div class="slider-item">
+                                <div class="sc-product-item style-3 bg-color-dark">
+                                    <div class="product-img text-center mg-bt-0">
+                                        <img src="./index_files/nancy-amandi.jpg" style="border-radius: 100px;" alt="Image">
+                                        <a href="https://www.linkedin.com/in/nancy-amandi" target="_blank"><i class="fab fa-linkedin-in" style="bottom: 0; transform: translateY(-50%); color: #fff; background: linear-gradient(130.35deg, #DC39FC 17.35%, #6345ED 78.23%); font-size: 17px; padding: 4px; border-radius: 5px;"></i></a>
+                                    </div>
+                                    <div class="card-content text-center">
+                                        <h6><a>Nancy Amandi</a> </h6>
+                                        <div class="details">Data Engineer<br>Moniepoint</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide tf-col-item" role="group" aria-label="10 / 20" style="margin-right: 30px;">
+                            <div class="slider-item">
+                                <div class="sc-product-item style-3 bg-color-dark">
+                                    <div class="product-img text-center mg-bt-0">
+                                        <img src="./index_files/chidozie.jpg" style="border-radius: 100px;" alt="Image">
+                                        <a href="https://www.linkedin.com/in/chidozie-managwu" target="_blank"><i class="fab fa-linkedin-in" style="bottom: 0; transform: translateY(-50%); color: #fff; background: linear-gradient(130.35deg, #DC39FC 17.35%, #6345ED 78.23%); font-size: 17px; padding: 4px; border-radius: 5px;"></i></a>
+                                    </div>
+                                    <div class="card-content text-center">
+                                        <h6><a>Chidozie Managwu</a> </h6>
+                                        <div class="details">Senior ML Engineer<br>Texas A&amp;M University</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide tf-col-item" role="group" aria-label="11 / 20" style="margin-right: 30px;">
+                            <div class="slider-item">
+                                <div class="sc-product-item style-3 bg-color-dark">
+                                    <div class="product-img text-center mg-bt-0">
+                                        <img src="./index_files/gagandeep.jpeg" style="border-radius: 100px;" alt="Image">
+                                        <a href="https://www.linkedin.com/in/gagandeep" target="_blank"><i class="fab fa-linkedin-in" style="bottom: 0; transform: translateY(-50%); color: #fff; background: linear-gradient(130.35deg, #DC39FC 17.35%, #6345ED 78.23%); font-size: 17px; padding: 4px; border-radius: 5px;"></i></a>
+                                    </div>
+                                    <div class="card-content text-center">
+                                        <h6><a>Gagandeep Singh</a> </h6>
+                                        <div class="details">Senior ML Engineer<br>Chime</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide tf-col-item" role="group" aria-label="12 / 20" style="margin-right: 30px;">
+                            <div class="slider-item">
+                                <div class="sc-product-item style-3 bg-color-dark">
+                                    <div class="product-img text-center mg-bt-0">
+                                        <img src="./index_files/caleb-chinga.jpg" style="border-radius: 100px;" alt="Image">
+                                        <a href="https://www.linkedin.com/in/calebchinga" target="_blank"><i class="fab fa-linkedin-in" style="bottom: 0; transform: translateY(-50%); color: #fff; background: linear-gradient(130.35deg, #DC39FC 17.35%, #6345ED 78.23%); font-size: 17px; padding: 4px; border-radius: 5px;"></i></a>
+                                    </div>
+                                    <div class="card-content text-center">
+                                        <h6><a>Caleb Chinga</a> </h6>
+                                        <div class="details">Head, Digital Engineering<br>AXA Mansard</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide tf-col-item" role="group" aria-label="13 / 20" style="margin-right: 30px;">
+                            <div class="slider-item">
+                                <div class="sc-product-item style-3 bg-color-dark">
+                                    <div class="product-img text-center mg-bt-0">
+                                        <img src="./index_files/jeffrey.jpg" style="border-radius: 100px;" alt="Image">
+                                        <a href="https://www.linkedin.com/in/jeffreyotoibhi" target="_blank"><i class="fab fa-linkedin-in" style="bottom: 0; transform: translateY(-50%); color: #fff; background: linear-gradient(130.35deg, #DC39FC 17.35%, #6345ED 78.23%); font-size: 17px; padding: 4px; border-radius: 5px;"></i></a>
+                                    </div>
+                                    <div class="card-content text-center">
+                                        <h6><a>Jeffrey Otoibhi</a> </h6>
+                                        <div class="details">Lead Researcher<br>SabiYarn</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide tf-col-item" role="group" aria-label="14 / 20" style="margin-right: 30px;">
+                            <div class="slider-item">
+                                <div class="sc-product-item style-3 bg-color-dark">
+                                    <div class="product-img text-center mg-bt-0">
+                                        <img src="./index_files/quadri-oshoare.jpg" style="border-radius: 100px;" alt="Image">
+                                        <a href="https://www.linkedin.com/in/abdulquadri-ayodeji" target="_blank"><i class="fab fa-linkedin-in" style="bottom: 0; transform: translateY(-50%); color: #fff; background: linear-gradient(130.35deg, #DC39FC 17.35%, #6345ED 78.23%); font-size: 17px; padding: 4px; border-radius: 5px;"></i></a>
+                                    </div>
+                                    <div class="card-content text-center">
+                                        <h6><a>Abdulquadri Oshoare</a> </h6>
+                                        <div class="details">Senior Data Engineer<br>Credit Direct</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide tf-col-item" role="group" aria-label="15 / 20" style="margin-right: 30px;">
+                            <div class="slider-item">
+                                <div class="sc-product-item style-3 bg-color-dark">
+                                    <div class="product-img text-center mg-bt-0">
+                                        <img src="./index_files/sam-ayo.png" style="border-radius: 100px;" alt="Image">
+                                        <a href="https://www.linkedin.com/in/sam-ayo" target="_blank"><i class="fab fa-linkedin-in" style="bottom: 0; transform: translateY(-50%); color: #fff; background: linear-gradient(130.35deg, #DC39FC 17.35%, #6345ED 78.23%); font-size: 17px; padding: 4px; border-radius: 5px;"></i></a>
+                                    </div>
+                                    <div class="card-content text-center">
+                                        <h6><a>Samuel Ayo</a> </h6>
+                                        <div class="details">Senior Software &amp;<br>AI Engineer</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide tf-col-item" role="group" aria-label="16 / 20" style="margin-right: 30px;">
+                            <div class="slider-item">
+                                <div class="sc-product-item style-3 bg-color-dark">
+                                    <div class="product-img text-center mg-bt-0">
+                                        <img src="./index_files/aishit.png" style="border-radius: 100px;" alt="Image">
+                                        <a href="https://www.linkedin.com/in/aishit-dharwal" target="_blank"><i class="fab fa-linkedin-in" style="bottom: 0; transform: translateY(-50%); color: #fff; background: linear-gradient(130.35deg, #DC39FC 17.35%, #6345ED 78.23%); font-size: 17px; padding: 4px; border-radius: 5px;"></i></a>
+                                    </div>
+                                    <div class="card-content text-center">
+                                        <h6><a>Aishit Dharwal</a> </h6>
+                                        <div class="details">Head of AI<br>Skooc</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide tf-col-item" role="group" aria-label="17 / 20" style="margin-right: 30px;">
+                            <div class="slider-item">
+                                <div class="sc-product-item style-3 bg-color-dark">
+                                    <div class="product-img text-center mg-bt-0">
+                                        <img src="./index_files/daniel-akhabue.jpg" style="border-radius: 100px;" alt="Image">
+                                        <a href="https://www.linkedin.com/in/daniel-akhabue" target="_blank"><i class="fab fa-linkedin-in" style="bottom: 0; transform: translateY(-50%); color: #fff; background: linear-gradient(130.35deg, #DC39FC 17.35%, #6345ED 78.23%); font-size: 17px; padding: 4px; border-radius: 5px;"></i></a>
+                                    </div>
+                                    <div class="card-content text-center">
+                                        <h6><a>Daniel Akhabue</a> </h6>
+                                        <div class="details">Machine Learning Engineer<br>Qucoon</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide tf-col-item" role="group" aria-label="18 / 20" style="margin-right: 30px;">
+                            <div class="slider-item">
+                                <div class="sc-product-item style-3 bg-color-dark">
+                                    <div class="product-img text-center mg-bt-0">
+                                        <img src="./index_files/emeka.jpg" style="border-radius: 100px;" alt="Image">
+                                        <a href="https://www.linkedin.com/in/donmonc" target="_blank"><i class="fab fa-linkedin-in" style="bottom: 0; transform: translateY(-50%); color: #fff; background: linear-gradient(130.35deg, #DC39FC 17.35%, #6345ED 78.23%); font-size: 17px; padding: 4px; border-radius: 5px;"></i></a>
+                                    </div>
+                                    <div class="card-content text-center">
+                                        <h6><a>Nnaemeka Obiefuna</a> </h6>
+                                        <div class="details">Data Scientist &amp; Researcher<br>Univelcity</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide tf-col-item" role="group" aria-label="19 / 20" style="margin-right: 30px;">
+                            <div class="slider-item">
+                                <div class="sc-product-item style-3 bg-color-dark">
+                                    <div class="product-img text-center mg-bt-0">
+                                        <img src="./index_files/david-okpare.jpg" style="border-radius: 100px;" alt="Image">
+                                        <a href="https://www.linkedin.com/in/david-okpare" target="_blank"><i class="fab fa-linkedin-in" style="bottom: 0; transform: translateY(-50%); color: #fff; background: linear-gradient(130.35deg, #DC39FC 17.35%, #6345ED 78.23%); font-size: 17px; padding: 4px; border-radius: 5px;"></i></a>
+                                    </div>
+                                    <div class="card-content text-center">
+                                        <h6><a>David Okpare</a> </h6>
+                                        <div class="details">AI Software Engineer &amp; OSS Contibutor</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide tf-col-item" role="group" aria-label="20 / 20" style="margin-right: 30px;">
+                            <div class="slider-item">
+                                <div class="sc-product-item style-3 bg-color-dark">
+                                    <div class="product-img text-center mg-bt-0">
+                                        <img src="./index_files/temitayo.jpg" style="border-radius: 100px;" alt="Image">
+                                        <a href="https://www.linkedin.com/in/temitayo-adejuyigbe" target="_blank"><i class="fab fa-linkedin-in" style="bottom: 0; transform: translateY(-50%); color: #fff; background: linear-gradient(130.35deg, #DC39FC 17.35%, #6345ED 78.23%); font-size: 17px; padding: 4px; border-radius: 5px;"></i></a>
+                                    </div>
+                                    <div class="card-content text-center">
+                                        <h6><a>Temitayo Adejuyigbe</a> </h6>
+                                        <div class="details">Senior ML Engineer<br>Periculum</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 4"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 5"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 6"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 7"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 8"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 9"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 10"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 11"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 12"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 13"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 14"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 15"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 16"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 17"></span></div>
+                    <div class="swiper-button-next btn-slide-next" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-8ec60c3a698c0e510" aria-disabled="false"></div>
+                    <div class="swiper-button-prev btn-slide-prev swiper-button-disabled" tabindex="-1" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-8ec60c3a698c0e510" aria-disabled="true"></div>
+                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- <section class="tf-section login-page register-page"> -->
+<section class="tf-section creators-page" style="background: rgba(99, 69, 237, 0.07)">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-create-item-content">
+                    <div class="form-background">
+                        <img src="./index_files/img-more.jpg" alt="">
+                    </div>
+                    <div class="form-create-item col-xl-8" style="padding: 30px;">
+                        <div class="sc-heading">
+                            <div class="content-item" style="margin: 40px 20px; padding-right: 20px;">
+                                <h3 class="mg-bt-42" style="font-size:32px; padding-top: 20px;"> Build mastery through hands-on projects</h3>
+                                <p style="font-size: 17px; line-height: 1.5;">Get your hands dirty in real-world projects using real-world infrastructure to apply the skills you have learned. 
+                                    You will get to build a practical use case addresing a real-world problem relevant to a specific niche or industry. 
+                                    Your solution will be end-to-end, deployed for end users to interact with based on your chosen use case.</p>
+                                <!-- <a href="" target="_blank" class="sc-button" style="background: #6345ED; padding: 17px 38px; margin: auto;"><i class="fab fa-dribbble" style="color: #fff;"></i><span style= "color: #fff; font-size: 15px;; padding-left: 7px">Learn more</span></a> -->
+                                <br><br><a href="https://github.com/aisummerofcode/aisoc-season-1/blob/main/projects.md" target="_blank" class="sc-button widget-social" style="padding: 17px 25px;"><i class="fab fa-github" style="color: #fff;"></i><span style="padding-left: 7px; font-size: 16px; color: #fff">See Example</span></a>
+                            </div>
+                            <div class="content-item" style="margin: 40px 20px; padding-right: 20px;">
+                                <br><hr style="height:1px;width:100%;border-width:0;color:lightgray;background-color:lightgray">
+                                <h3 class="mg-bt-42" style="font-size:32px; padding-top: 20px;"> Develop skills in a wide-range of tooling and infrastructure</h3>
+                                <div class="logo-grid-2">
+                                    <img src="./index_files/scikit-learn.png">
+                                    <!-- <img src="assets/images/tooling/LightningAI-grid.png"> -->
+                                    <img src="./index_files/langchain-seeklogo.png">
+                                    <img src="./index_files/fastapi-logo.png">
+                                    <img src="./index_files/unsloth-logo.png">
+                                    <img src="./index_files/chroma-logo.svg">
+                                    <img src="./index_files/openai-logo.png">
+                                    <img src="./index_files/mongodb-spring-green.png">
+                                    <img src="./index_files/lightning-logo.svg">
+                                    <img src="./index_files/mindsdb-logo.png">
+                                    <img src="./index_files/dbt.png">
+                                    <img src="./index_files/groq-logo.png">
+                                    <img src="./index_files/huggingface.png">
+                                    <img src="./index_files/evidently-ai-logo.jpg">
+                                    <img src="./index_files/rayserve.png">
+                                    <!-- <img src="assets/images/tooling/streamlit-logo.png"> -->
+                                    <img src="./index_files/wandb-logo.svg">
+                                    <img src="./index_files/google-cloud.png">
+                                </div>
+                            </div>
+                            <div class="content-item" style="margin: 40px 20px; padding-right: 20px;">
+                                <br><hr style="height:1px;width:100%;border-width:0;color:lightgray;background-color:lightgray">
+                                <h3 class="mg-bt-42" style="font-size:32px; padding-top: 40px;"> Demo Day - your chance to shine!</h3>
+                                <p style="font-size: 17px; line-height: 1.5;">Get a chance to demo your project at the closing physical ceremony in front of a large audience including business executives, hiring managers and recruiters. 
+                                    This is an opportunity to showcase your technical mastery and attract new opportunities for your career.<br></p>
+                                <!-- <a href="" target="_blank" class="sc-button" style="background: #6345ED; padding: 17px 38px; margin: auto;"><i class="fab fa-dribbble" style="color: #fff;"></i><span style= "color: #fff; font-size: 15px;; padding-left: 7px">Learn more</span></a> -->
+                                <!-- <a href="https://github.com/aisummerofcode/aisoc-season-1/blob/main/projects.md" target="_blank" class="sc-button widget-social" style="padding: 17px 25px;"><i class="fab fa-github" style="color: #fff;"></i><span style= "padding-left: 7px; font-size: 16px; color: #fff">See Example</span></a> -->
+                            </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- <section class="tf-section creators-page" style="background: rgba(99, 69, 237, 0.07)"> -->
+<section class="tf-section item-details-page" id="plans" style="background: var(--bg-body-2)">
+    <div class="container">
+
+        <div>
+            <h3 style="font-size:38px; line-height: 1.2; margin-bottom: 30px; text-align: center;">Enjoy flexible enrollment plans<p></p>
+        </h3></div>
+        <div class="row"> 
+            <div class="col-xl-6 col-lg-10">
+                <div class="infor-bid">
+                    <div style="margin: 10px;">
+                        <h5>Free Attendance</h5><br>
+                        <div class="price">FEE - $0</div><br><br>
+                        <p style="font-size: 16px; line-height: 1.5;">Attend AISOC free of charge. Enjoy full access to the program codebase but limited access to session recordings. There will be no dedicated project support for the additional 2 months, particpation in Demo Day, or certififcate of particpation at the end of the program.
+                        </p><br><br>
+                        <!-- <a  href="https://github.com/ai-summer-of-code/aisoc-season-1" target="_blank" class="sc-button"><i class="fab fa-github" style="color: #fff;"></i><span style= "padding-left: 7px; color: #fff">See 1st Edition</span></a><br> -->
+                    </div>
+                </div>
+
+                <div class="infor-bid">
+                    <div style="margin: 10px;">
+                        <h5>Dedicated Attendance</h5><br>
+                        <div class="price">FEE - $100</div><br><br>
+                        <p style="font-size: 16px; line-height: 1.5;">Enjoy full access to AISOC program and resources, including interactions with faculty, dedicated learning and project support, lifetime access to session recordings and codebase, opportunity to present your project to a large audience of organizations and recruiters on Demo Day, and certificate of participation at the program end.
+                        </p><br><br>
+                        <a href="https://aisummerofcode.org/" data-toggle="modal" data-target="#perks" class="sc-button style-2"><span style="color: #fff;">See all perks</span></a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xl-5 col-lg-12 col-md-12" style="margin:0px auto">
+                <div class="text-center">
+                    <div class="card-media">
+                        <img style="border-radius: 10px" src="./index_files/khaby-really.gif" alt="">
+                    </div>
+
+                    <div class="countdown style-2 text-center" style="margin: auto;">
+                        <span class="js-countdown" data-countdown="2025-07-26T09:59:59" data-labels=" Days  , Hour , Mins , Secs"><div aria-hidden="true" class="countdown__timer"><span class="countdown__item"><span class="countdown__value countdown__value--0 js-countdown__value--0">0</span><span class="countdown__label">Days</span></span><span class="countdown__item"><span class="countdown__value countdown__value--1 js-countdown__value--1">00</span><span class="countdown__label">Hour</span></span><span class="countdown__item"><span class="countdown__value countdown__value--2 js-countdown__value--2">00</span><span class="countdown__label">Mins</span></span><span class="countdown__item"><span class="countdown__value countdown__value--3 js-countdown__value--3">00</span><span class="countdown__label">Secs</span></span></div></span>
+                    </div>
+                    
+                    <div class="button-slider mt-3">
+                        <a href="https://aisummerofcode.org/" data-toggle="modal" data-target="#popup_apply_now" class="sc-button btn-bordered-white style letter" style="padding: 20px 45px;"><span style="font-size: 17px">Sign up now</span></a>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    
+</section>
+
+<section class="tf-section" id="corporate" style="background:rgba(99, 69, 237, 0.07)">
+    <div class="container">
+        <div style="text-align: center; margin: auto" class="sc-heading col-lg-9">
+            <h3 style="line-height: 1.3;">AISOC is trusted by organizations</h3>
+            <!-- <p class="desc mg-bt-42" style="font-size: 22px"><b>You will understand what data science is, what it is not, and what to expect on the job to avoid common pitfalls due to prior misconceptions.</b></p> -->
+        </div>
+        <div class="sc-heading">            
+            <div class="row">
+                <div class="desc col-xl-6 col-lg-12 col-md-12 mt-3">
+                    <p class="desc">We are home to tech teams from financial institutions, consulting firms and technology companies seeking to upskill in AI engineering. 
+                        <b style="color: var(--color-1);">Enjoy corporate discounts when you register your team for AISOC.</b></p>
+
+                    <div class="logo-grid">
+                        <img src="./index_files/qucoon-logo.svg" alt="organization-1">
+                        <img src="./index_files/periculum-logo.png" alt="organization-2">
+                        <img src="./index_files/dsn-logo.png" alt="organization-3">
+                        <img src="./index_files/mtn-logo.jpg" alt="organization-4">
+                        <img src="./index_files/arm-logo.png" alt="organization-5">
+                        <!-- Add more logos as needed -->
+                    </div>                    
+                </div>
+
+                <div class="col-xl-6 mt-3">
+                    <!-- <h5 style="padding: 30px; line-height: 1.4;">Enjoy corporate discounts when you register your team for AISOC</h5> -->
+                    <div class="item-media">
+                        <div class="media">
+                            <img style="border-radius: 15px;" src="./index_files/gatsby2.gif" alt="">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+                <div class="button-slider mt-3" style="max-width: 330px; margin:auto; padding-bottom: 5px;">
+                    <a href="https://drive.google.com/file/d/1gkh4KtFip_Dy1kyZH0XDLE5GWJMxlLdQ/view?usp=drive_link" target="_blank" class="sc-button widget-social style-2" style="padding: 19px 48px;"><i class="fad fa-lightbulb-dollar" style="color: #fff;"></i><span style="font-size: 17px; color: #fff; padding-left: 7px">Learn more</span></a>
+                </div>
+                <div class="button-slider" style="max-width: 330px; margin:auto">
+                    <a href="mailto:hello@aisummerofcode.org" class="sc-button btn-bordered-white" style="background: var(--primary-color5); padding: 18px 48px;"><i class="fad fa-voicemail" style="color: var(--primary-color3);"></i><span style="font-size: 17px; padding-left: 5px;">Contact us</span></a>
+                </div>
+        </div>
+    </div>
+</section>
+
+<section class="tf-section creators-page" id="testimonials" style="background: rgba(99, 69, 237, 0.07)">
+    <div class="best-seller-inner">
+        <div class="row">
+            <div class="col-md-12">              
+                <div class="content-item mt-5 col-lg-12 content-left">
+                    <h3 class="desc" style="font-size: 36px; color: var(--color-1)">Hear highlights from Season 1 stars</h3><br>
+                </div>
+                <div class="swiper-container live-auc swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events">
+                    <div class="swiper-wrapper" id="swiper-wrapper-360065eb99a10d71" aria-live="polite" style="transform: translate3d(0px, 0px, 0px);">
+                        <div class="swiper-slide swiper-slide-active" role="group" aria-label="1 / 5" style="width: 223px; margin-right: 30px;">
+                            <div class="slider-item">
+                                <div class="sc-product-item style-2">
+                                    <div class="product-img" style="background: var(--bg-body-2); border-radius: 20px;">
+                                        <div class="media" style="padding: 25px;">
+                                            <p style="text-align: left; font-size: 14px; line-height: 1.5;">
+                                                <i class="fad fa-quote-left" style="color: var(--color-1); font-size: 25px;"></i>
+                                                <span class="short-text">
+                                                    The experience from AISOC directly contributed to landing my first full-time international role as a Senior AI Engineer. 
+                                                    I joined AISOC at a time when I was seriously considering leaving Data Science for Mobile Development, but everything changed during the program. 
+                                                    The depth of expertise from the speakers and clarity with which they taught reignited my passion for Al and helped me...
+                                                </span>
+                                                <a href="https://aisummerofcode.org/#" data-toggle="modal" data-target="#readmore-item-1" style="color: var(--color-1); display: inline-block;">Read more</a>
+                                                <br><br>
+                                            </p>
+                                        </div>
+                                        <!-- <a href="" data-toggle="modal" data-target="#popup_apply_now"
+                                            class="sc-button style letter"><span>Register</span></a> -->
+                                        <label>TESTIMONIAL</label>
+                                    </div>
+                                    <div class="product-content">
+                                        <div class="product-author flex">
+                                            <div class="avatar">
+                                                <img src="./index_files/akolade.jpg" alt="Image">
+                                            </div>
+                                            <div class="infor">
+                                                <div class="author-name"><a href="https://aisummerofcode.org/">Akolade Hamzat</a></div>
+                                                <span>ML/AI Engineer</span>
+                                            </div>
+                                        </div>
+                                        <div class="product-price flex">
+                                            <div class="title">Swipe <i class="fad fa-long-arrow-alt-right"></i></div>
+                                            <!-- <div class="title">Swipe Left</div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide swiper-slide-next" role="group" aria-label="2 / 5" style="width: 223px; margin-right: 30px;">
+                            <div class="slider-item">
+                                <div class="sc-product-item style-2">
+                                    <div class="product-img" style="background: var(--bg-body-2); border-radius: 20px;">
+                                        <div class="media" style="padding: 25px;">
+                                            <p class="desc" style="font-size: 14px; line-height: 1.5; text-align: left;"><i class="fad fa-quote-left" style="color: var(--color-1); font-size: 25px;"></i> I had joined many programs in the past, 
+                                                but not one with so much practical guidance like AISOC. After the program, I landed an AI Engineering internship,
+                                                acquired gigs and made lots of money with the knowledge from AISOC. 
+                                                Most of the questions I encountered in interviews were problems that were addressed during the program. 
+                                                AISOC was truly an eye opener. I highly recommend.<br><br></p>
+                                        </div>
+                                        <a href="https://aisummerofcode.org/" data-toggle="modal" data-target="#popup_apply_now" class="sc-button style letter"><span>Register</span></a>
+                                        <label>TESTIMONIAL</label>
+                                    </div>
+                                    <div class="product-content">
+                                        <div class="product-author flex">
+                                            <div class="avatar">
+                                                <img src="./index_files/kingsley-ibekwe.jpg" alt="Image">
+                                            </div>
+                                            <div class="infor">
+                                                <div class="author-name"><a href="https://aisummerofcode.org/">Kingsley Ibekwe</a></div>
+                                                <span>AI Engineer</span>
+                                            </div>
+                                        </div>
+                                        <div class="product-price flex">
+                                            <div class="title">Swipe <i class="fad fa-long-arrow-alt-right"></i></div>
+                                            <!-- <div class="title">Swipe Left</div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" role="group" aria-label="3 / 5" style="width: 223px; margin-right: 30px;">
+                            <div class="slider-item">
+                                <div class="sc-product-item style-2">
+                                    <div class="product-img" style="background: var(--bg-body-2); border-radius: 20px;">
+                                        <div class="media" style="padding: 25px;">
+                                            <p class="desc" style="font-size: 14px; line-height: 1.5; text-align: left;"><i class="fad fa-quote-left" style="color: var(--color-1); font-size: 25px;"></i> 
+                                                Before the program, I was trying to balance my 9-5 with personal developement, 
+                                                but it was so difficut. However, when i saw the AISOC program lineup and curriculum, 
+                                                I knew I needed to dedicate to it, and this has accelereted my knowledge and skill.
+                                                I shot at a competition using the knowledge from this program 
+                                                and came second place by a 0.5 difference from the winner.
+                                                <br><br>
+                                            </p>
+                                        </div>
+                                        <a href="https://aisummerofcode.org/" data-toggle="modal" data-target="#popup_apply_now" class="sc-button style letter"><span>Register</span></a>
+                                        <label>TESTIMONIAL</label>
+                                    </div>
+                                    <div class="product-content">
+                                        <div class="product-author flex">
+                                            <div class="avatar">
+                                                <img src="./index_files/benedict.jpg" alt="Image">
+                                            </div>
+                                            <div class="infor">
+                                                <div class="author-name"><a href="https://aisummerofcode.org/">Benedict Ejelonu</a></div>
+                                                <span>AI Researcher</span>
+                                            </div>
+                                        </div>
+                                        <div class="product-price flex">
+                                            <!-- <div class="title">Swipe Left</div> -->
+                                            <div class="title">Swipe <i class="fad fa-long-arrow-alt-right"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" role="group" aria-label="4 / 5" style="width: 223px; margin-right: 30px;">
+                            <div class="slider-item">
+                                <div class="sc-product-item style-2">
+                                    <div class="product-img" style="background: var(--bg-body-2); border-radius: 20px;">
+                                        <div class="media" style="padding: 25px;">
+                                            <p class="desc" style="font-size: 14px; line-height: 1.5; text-align: left;"><i class="fad fa-quote-left" style="color: var(--color-1); font-size: 25px;"></i> 
+                                                Honestly, thank you guys so much for the immense value delivered throughout the course.
+                                                It is so exciting to see that you guys under-promised and over delivered. 
+                                                I got so much value out of it. It's an immense benefit to my journey.
+                                                I always wanted to go into AI, but have been limited by various factors, 
+                                                but this AISOC was a very fantastic one for me and I'm glad i committed to it.
+                                                <br><br>
+                                                <br>
+                                            </p>
+                                        </div>
+                                        <a href="https://aisummerofcode.org/" data-toggle="modal" data-target="#popup_apply_now" class="sc-button style letter"><span>Register</span></a>
+                                        <label>TESTIMONIAL</label>
+                                    </div>
+                                    <div class="product-content">
+                                        <div class="product-author flex">
+                                            <div class="avatar">
+                                                <img src="./index_files/kelvin-c.jpg" alt="Image">
+                                            </div>
+                                            <div class="infor">
+                                                <div class="author-name"><a href="https://aisummerofcode.org/">Kelvin C.</a></div>
+                                                <span>Software Engineer</span>
+                                            </div>
+                                        </div>
+                                        <div class="product-price flex">
+                                            <div class="title">Swipe <i class="fad fa-long-arrow-alt-right"></i></div>
+                                            <!-- <div class="title">Swipe Left</div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" role="group" aria-label="5 / 5" style="width: 223px; margin-right: 30px;">
+                            <div class="slider-item">
+                                <div class="sc-product-item style-2">
+                                    <div class="product-img" style="background: var(--bg-body-2); border-radius: 20px;">
+                                        <div class="media" style="padding: 25px;">
+                                            <p class="desc" style="font-size: 14px; line-height: 1.5; text-align: left;"><i class="fad fa-quote-left" style="color: var(--color-1); font-size: 25px;"></i> 
+                                                AISOC Season 1 was very robust (theoretical &amp; practical). It blew my expectations.
+                                                There's lot of noise out there now at the moment, but AISOC is the perfect place to begin.
+                                                I'll encourage any one joining the program to follow concepts carefully and actually understand why you are doing what.
+                                                Thanks to the AISOC team for putting this program together!
+                                                <br><br>
+                                                <br>
+                                            </p>
+                                        </div>
+                                        <a href="https://aisummerofcode.org/" data-toggle="modal" data-target="#popup_apply_now" class="sc-button style letter"><span>Register</span></a>
+                                        <label>TESTIMONIAL</label>
+                                    </div>
+                                    <div class="product-content">
+                                        <div class="product-author flex">
+                                            <div class="avatar">
+                                                <img src="./index_files/chris-ozoemena.jpg" alt="Image">
+                                            </div>
+                                            <div class="infor">
+                                                <div class="author-name"><a href="https://aisummerofcode.org/">Chris Ozoemena</a></div>
+                                                <span>Data Scientist</span>
+                                            </div>
+                                        </div>
+                                        <div class="product-price flex">
+                                            <div class="title">Swipe <i class="fad fa-long-arrow-alt-right"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span></div>
+                    <div class="swiper-button-next btn-slide-next" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-360065eb99a10d71" aria-disabled="false"></div>
+                    <div class="swiper-button-prev btn-slide-prev swiper-button-disabled" tabindex="-1" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-360065eb99a10d71" aria-disabled="true"></div>
+                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- <section class="tf-section" style="background: var(--bg-body-2)"> -->
+<section class="hot-collections-page tf-section" id="organizers" style="background: rgba(99, 69, 237, 0.07)">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- <div class=""> -->
+                    <!-- <div class="sc-heading style-2 content-left">
+                        <div class="inner"> -->
+                            <h3 style="font-size: 38px; line-height: 1.3; margin: 0px;">Organizing Team</h3>
+                            <!-- <p class="desc">Most popular gaming digital nft market place </p> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
+                <!-- </div> -->
+                <div class="swiper-container latest-coll style-2 swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events">
+                    <div class="swiper-wrapper" id="swiper-wrapper-4f79ec3549130ed9" aria-live="polite" style="transform: translate3d(0px, 0px, 0px);">
+                        <div class="swiper-slide tf-col-item swiper-slide-active" style="background: var(--bg-header); margin-right: 30px;" role="group" aria-label="1 / 9">
+                            <div class="slider-item">
+                                <div class="sc-author-card">
+                                    <div class="card-media">
+                                        <img src="./index_files/collection-7.jpg" alt="">
+                                    </div>
+                                    <div class="card-avatar">
+                                        <img src="./index_files/zion.jpg" alt="">
+                                    </div>
+                                    <div class="card-content">
+                                        <h5><a href="https://aisummerofcode.org/">Zion Pibowei</a> </h5>
+                                        <div class="details">Head, Data Science and AI<br>Periculum</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide tf-col-item swiper-slide-next" style="background: var(--bg-header); margin-right: 30px;" role="group" aria-label="2 / 9">
+                            <div class="slider-item">
+                                <div class="sc-author-card">
+                                    <div class="card-media">
+                                        <img src="./index_files/collection-6.jpg" alt="">
+                                    </div>
+                                    <div class="card-avatar">
+                                        <img src="./index_files/sam-ayo.png" alt="">
+                                    </div>
+                                    <div class="card-content">
+                                        <h5><a href="https://aisummerofcode.org/">Samuel Kehinde Ayo</a> </h5>
+                                        <div class="details">Senior Software &amp; <br>AI Engineer<br></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide tf-col-item" style="background: var(--bg-header); margin-right: 30px;" role="group" aria-label="3 / 9">
+                            <div class="slider-item">
+                                <div class="sc-author-card mg-bt-0">
+                                    <div class="card-media">
+                                        <img src="./index_files/collection-9.jpg" alt="">
+                                    </div>
+                                    <div class="card-avatar">
+                                        <img src="./index_files/bukky.jpg" alt="">
+                                    </div>
+                                    <div class="card-content">
+                                        <h5><a href="https://aisummerofcode.org/">Bukunola Olorunda</a> </h5>
+                                        <div class="details">UI/UX Designer <br>RocketDevs</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide tf-col-item" style="background: var(--bg-header); margin-right: 30px;" role="group" aria-label="4 / 9">
+                            <div class="slider-item">
+                                <div class="sc-author-card">
+                                    <div class="card-media">
+                                        <img src="./index_files/collection-13.jpg" alt="">
+                                    </div>
+                                    <div class="card-avatar">
+                                        <img src="./index_files/sam-iheagwam.jpg" alt="">
+                                    </div>
+                                    <div class="card-content">
+                                        <h5><a href="https://aisummerofcode.org/">Samuel Iheagwam</a> </h5>
+                                        <div class="details">Senior DBA <br> Qore Technologies</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide tf-col-item" style="background: var(--bg-header); margin-right: 30px;" role="group" aria-label="5 / 9">
+                            <div class="slider-item">
+                                <div class="sc-author-card">
+                                    <div class="card-media">
+                                        <img src="./index_files/collection-11.jpg" alt="">
+                                    </div>
+                                    <div class="card-avatar">
+                                        <img src="./index_files/chidozie(1).jpg" alt="">
+                                    </div>
+                                    <div class="card-content">
+                                        <h5><a href="https://aisummerofcode.org/">Chidozie Managwu</a> </h5>
+                                        <div class="details">Senior ML Engineer <br>Texas A&amp;M University</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide tf-col-item" style="background: var(--bg-header); margin-right: 30px;" role="group" aria-label="6 / 9">
+                            <div class="slider-item">
+                                <div class="sc-author-card mg-bt-0">
+                                    <div class="card-media">
+                                        <img src="./index_files/collection-2.jpg" alt="">
+                                    </div>
+                                    <div class="card-avatar">
+                                        <img src="./index_files/precious-osakwe.jpg" alt="">
+                                    </div>
+                                    <div class="card-content">
+                                        <h5><a href="https://aisummerofcode.org/">Precious Osakwe</a> </h5>
+                                        <div class="details">Chief Operations Officer <br>Afriktech Travels</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide tf-col-item" style="background: var(--bg-header); margin-right: 30px;" role="group" aria-label="7 / 9">
+                            <div class="slider-item">
+                                <div class="sc-author-card mg-bt-0">
+                                    <div class="card-media">
+                                        <img src="./index_files/collection-8.jpg" alt="">
+                                    </div>
+                                    <div class="card-avatar">
+                                        <img src="./index_files/emeka(1).jpg" alt="">
+                                    </div>
+                                    <div class="card-content">
+                                        <h5><a href="https://aisummerofcode.org/">Nnaemeka Obiefuna</a> </h5>
+                                        <div class="details">Data Scientist <br>Univelcity</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide tf-col-item" style="background: var(--bg-header); margin-right: 30px;" role="group" aria-label="8 / 9">
+                            <div class="slider-item">
+                                <div class="sc-author-card mg-bt-0">
+                                    <div class="card-media">
+                                        <img src="./index_files/collection-6.jpg" alt="">
+                                    </div>
+                                    <div class="card-avatar">
+                                        <img src="./index_files/victoria.jpg" alt="">
+                                    </div>
+                                    <div class="card-content">
+                                        <h5><a href="https://aisummerofcode.org/">Victoria  Abidoye</a> </h5>
+                                        <div class="details">Marketing Specialist | Cofounder <br>Digital Brainiacs</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide tf-col-item" style="background: var(--bg-header); margin-right: 30px;" role="group" aria-label="9 / 9">
+                            <div class="slider-item">
+                                <div class="sc-author-card mg-bt-0">
+                                    <div class="card-media">
+                                        <img src="./index_files/collection-7.jpg" alt="">
+                                    </div>
+                                    <div class="card-avatar">
+                                        <img src="./index_files/daniel-akhabue(1).jpg" alt="">
+                                    </div>
+                                    <div class="card-content">
+                                        <h5><a href="https://aisummerofcode.org/">Daniel Akhabue</a> </h5>
+                                        <div class="details">Machine Learning Engineer <br>Qucoon</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 4"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 5"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 6"></span></div>
+                    <div class="swiper-button-next btn-slide-next" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-4f79ec3549130ed9" aria-disabled="false"></div>
+                    <div class="swiper-button-prev btn-slide-prev swiper-button-disabled" tabindex="-1" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-4f79ec3549130ed9" aria-disabled="true"></div>
+                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="new-letter creators-page" style="background:rgba(99, 69, 237, 0.07)">
+    <div class="container">
+        <div class="new-letter-inner flex">
+            <div class="new-letter-content">
+                <h3 class="heading">Final call...</h3>
+                <p class="sub-heading" style="font-size: 19px">Late registration extended for a limited time. Don't be left out!</p>
+                <div class="button-slider mt-3">
+                    <a href="https://aisummerofcode.org/" data-toggle="modal" data-target="#popup_apply_now" style="color: #14161B; padding:18px 75px; margin:auto" class="sc-button btn-bordered-white style letter"><span>Register now</span></a>
+                </div>
+            </div>
+            <div class="new-letter-content" style="padding-top: 0px; margin: auto;">
+                <div class="item-media"> 
+                    <div class="countdown style-2b" style="background: transparent; padding: 1px; margin: auto">
+                        <span class="js-countdown" data-countdown="2025-07-26T09:59:59" data-labels=" Days  , Hour , Mins , Secs"><div aria-hidden="true" class="countdown__timer"><span class="countdown__item"><span class="countdown__value countdown__value--0 js-countdown__value--0">0</span><span class="countdown__label">Days</span></span><span class="countdown__item"><span class="countdown__value countdown__value--1 js-countdown__value--1">00</span><span class="countdown__label">Hour</span></span><span class="countdown__item"><span class="countdown__value countdown__value--2 js-countdown__value--2">00</span><span class="countdown__label">Mins</span></span><span class="countdown__item"><span class="countdown__value countdown__value--3 js-countdown__value--3">00</span><span class="countdown__label">Secs</span></span></div></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- <section class="new-letter" style="background:rgba(99, 69, 237, 0.07)">
+    <div class="container">
+        <div class="new-letter-inner flex">
+            <div class="new-letter-content">
+                <h3 class="heading">Registration is now closed</h3>
+                <p class="sub-heading">Subsribe to our Biweekly Digest covering AI developments and community insights</p>
+                <div class="form-subcribe">
+                    <form id="subscribe-form" action="https://aisummerofcode.substack.com/subscribe" method="GET" target="_blank" accept-charset="utf-8"
+                        class="form-submit">
+                        <input name="email" class="email" type="email" placeholder="Enter Email Address" required="">
+                        <input type="hidden" name="utm_source" value="newsletter-widget">   
+                        <button name="submit" type="submit" id="submit" class="sc-button style letter style-2">
+                            <span>Subscribe</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="new-letter-img" style="margin: auto;">
+                <img style="border-radius: 25px;" src="assets/images/background/aisoc-digest.png" alt="Image">
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<section class="bottom">
+    <div class="container" style="padding-top:220px">
+        <div class="bottom-inner">
+            Copyright © 2025 AISOC | AI Summer of Code
+            <div class="widget-social col-lg-2 col-md-6 col-sm-6 col-6 mt-3" style="margin: auto">
+                <ul>
+                    <li><a href="https://linkedin.com/company/aisummerofcode" class="active"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href="https://instagram.com/aisummerofcode"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://twitter.com/aisummerofcode"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://youtube.com/@aisummerofcode"><i class="fab fa-youtube"></i></a></li>
+                    <!-- <li><a href="https://bit.ly/ds-mastery-chat"><i class="fab fa-discord"></i></a></li> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<a id="scroll-top" class="show"></a>
+
+<div class="modal fade popup item-details-page" id="popup_apply_now" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+            <div class="modal-body space-y-20 text-center mt-5">
+                <h3>AISOC Season 2</h3>
+                <p class="mt-3">You are about to register for Season 2 of AI Summer of Code. Select your desired plan below and register.</p>
+
+                <div id="dropdown-item-9" class="dropdown" style="margin-bottom: 20px; text-align: left;">
+                    <a href="https://aisummerofcode.org/" class="btn-selector nolink" style="padding: 28px;">
+                        <span>Free Plan - $0</span>
+                    </a>
+                    <ul style="display: none;">
+                        <div class="infor-bid">
+                            <div style="margin: 10px;">
+                                <p style="font-size: 15px; line-height: 1.5;">
+                                    Attend AISOC for free, with limited access to live sessions and recordings. 
+                                    No project support, particpation in Demo Day, or certificate at the end of the program.
+                                    <br><br>
+                                    <b style="color: var(--color-1)">Registration for the Free Plan is now officially closed.</b> Please check the Dedicated Plan to continue your registration.
+                                </p><br>
+                                <a href="https://forms.gle/tSMMmXTimZ3AFXLk8" target="_blank" class="sc-button style-2"><i class="fad fa-link" style="color: #fff;"></i><span style="padding-left: 7px; color: #fff">Register</span></a><br>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+
+                <div id="dropdown-item-10" class="dropdown" style="margin-bottom: 20px; text-align: left;">
+                    <a href="https://aisummerofcode.org/" class="btn-selector nolink" style="padding: 28px;">
+                        <span>Dedicated Plan - $100</span>
+                    </a>
+                    <ul style="display: none;">
+                        <div class="infor-bid">
+                            <div style="margin: 10px;">
+                                <p style="font-size: 15px; line-height: 1.5;">
+                                    Enjoy full access to AISOC resources, faculty, mentors, and dedicated project support. 
+                                    You will get an opportunity to present your project to a large audience on Demo Day, 
+                                    and a certificate of participation at the program end.
+                                    <br><br>
+                                    <!-- Payment in 2 installments is available for registrations within Nigeria. -->
+                                    <b style="color: var(--color-1)">Late registration window extended for a limited time with a penalty fee.</b>
+                                    <!-- <b style="color: var(--color-1)">Registration for the Dedicated Plan is now officially closed.</b> See you next year!. -->
+                                </p><br>
+                                <!-- <a href="" data-toggle="modal" data-target="#popup_1" class="sc-button"><i class="fab fa-github" style="color: #fff;"></i><span style= "padding-left: 7px; color: #fff">See 1st Edition</span></a><br> -->
+                                <!-- <a href="https://app.budpay.com/pay/aisoc2025" class="sc-button style letter"></i><span style= "padding-left: 17px; color: #fff">Register within Nigeria</span></a><br> -->
+                                <!-- <a href="https://flutterwave.com/pay/aisoc2025" class="sc-button style letter"></i><span style= "padding-left: 17px; color: #fff">Register outside Nigeria</span></a><br> -->
+                                
+                                <a href="https://aisummerofcode.org/" data-toggle="modal" data-target="#apply_regions" data-dismiss="modal" aria-label="Close" class="sc-button style-2"><i class="fad fa-link" style="color: #fff;"></i><span style="padding-left: 7px; color: #fff">Register</span></a><br>
+                                
+                                <!-- <a href="" data-toggle="modal" data-target="#apply_options_local" data-dismiss="modal" aria-label="Close" class="sc-button widget-social" style="background-image: linear-gradient(to right, #6345ED 18.12%, #DC39FC 81.74%); padding: 17px 38px;"><i class="fad fa-link" style="color: #fff;"></i><span style= "color: #fff; padding-left: 5px">Register within Nigeria</span></a>
+                                <a href="" data-toggle="modal" data-target="#apply_options_intl" data-dismiss="modal" aria-label="Close" class="sc-button btn-bordered-white mt-3" style="background: var(--primary-color5); padding: 17px 34px;"><i class="fad fa-link" style="color: var(--primary-color3);"></i><span style= "padding-left: 5px;">Register outside Nigeria</span></a> -->
+
+                                <!-- <a href="https://app.budpay.com/pay/aisoc2025" target="_blank" class="sc-button widget-social" style="background-image: linear-gradient(to right, #6345ED 18.12%, #DC39FC 81.74%); padding: 17px 38px;"><i class="fad fa-link" style="color: #fff;"></i><span style= "color: #fff; padding-left: 5px">Register within Nigeria</span></a>
+                                <a href="https://flutterwave.com/pay/aisoc2025" target="_blank" class="sc-button btn-bordered-white mt-3" style="background: var(--primary-color5); padding: 17px 34px;"><i class="fad fa-link" style="color: var(--primary-color3);"></i><span style= "color: var(--color-4); padding-left: 5px;">Register outside Nigeria</span></a> -->
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+                
+                <div id="dropdown-item-11" class="dropdown" style="margin-bottom: 20px; text-align: left;">
+                    <a href="https://aisummerofcode.org/" class="btn-selector nolink" style="padding: 28px;">
+                        <span>Corporate Plan</span>
+                    </a>
+                    <ul style="display: none;">
+                        <div class="infor-bid">
+                            <div style="margin: 10px;">
+                                <p style="font-size: 15px; line-height: 1.5;">Enjoy corporate discounts on the Dedicated Plan when you enroll your team. Contact us below with information about your organization and the size of the team you want to enroll, and we'll get back to you with a compelling discount.
+                                </p><br>
+                                <a href="mailto:hello@aisummerofcode.org" class="sc-button"><i class="fad fa-voicemail" style="color: #fff;"></i><span style="padding-left: 7px; color: #fff">Contact us</span></a><br>
+                            </div>
+                        </div>
+                    </ul>
+                </div>                        
+                
+                <!-- <h5 class="desc mt-5" style="color: var(--color-1)"><b>Late registration extended with a penalty fee</b><p class="text-center mt-3" >Final deadline: Aug 31, 2025</p></h5> -->
+                <div class="item-media text-center mt-3">
+                    <div class="countdown style-2b" style="margin: auto">
+                        <span class="js-countdown" data-countdown="2025-08-08T23:59:59" data-labels=" Days  , Hour , Mins , Secs"><div aria-hidden="true" class="countdown__timer"><span class="countdown__item"><span class="countdown__value countdown__value--0 js-countdown__value--0">0</span><span class="countdown__label">Days</span></span><span class="countdown__item"><span class="countdown__value countdown__value--1 js-countdown__value--1">00</span><span class="countdown__label">Hour</span></span><span class="countdown__item"><span class="countdown__value countdown__value--2 js-countdown__value--2">00</span><span class="countdown__label">Mins</span></span><span class="countdown__item"><span class="countdown__value countdown__value--3 js-countdown__value--3">00</span><span class="countdown__label">Secs</span></span></div></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade popup item-details-page" id="apply_regions" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+            <div class="modal-body space-y-20 text-center mt-5">
+                <h3 style="font-size: 36px;">Dedicated Plan</h3>
+                <p class="mt-3">Select your region</p>
+                <a href="https://aisummerofcode.org/" data-toggle="modal" data-target="#apply_options_local" data-dismiss="modal" aria-label="Close" class="sc-button widget-social style-2 mt-3" style="padding: 17px 36px;"><i class="fad fa-link" style="color: #fff;"></i><span style="color: #fff; padding-left: 5px">Register within Nigeria</span></a>
+                <!-- <br><a href="" data-toggle="modal" data-target="#apply_options_uk" data-dismiss="modal" aria-label="Close" class="sc-button widget-social mt-3" style="background: #6345ED; padding: 17px 38px;"><i class="fad fa-link" style="color: #fff;"></i><span style= "color: #fff; padding-left: 5px">Register within the UK</span></a> -->
+                <!-- <br><a href="" data-toggle="modal" data-target="#apply_options_india" data-dismiss="modal" aria-label="Close" class="sc-button widget-social mt-3" style="background: #6345ED; padding: 17px 43px;"><i class="fad fa-link" style="color: #fff;"></i><span style= "color: #fff; padding-left: 9px">Register within India</span></a> -->
+                <br><a href="https://aisummerofcode.org/" data-toggle="modal" data-target="#apply_options_intl" data-dismiss="modal" aria-label="Close" class="sc-button btn-bordered-white mt-3 mg-bt-42" style="padding: 17px 33px;"><i class="fad fa-link" style="color: var(--primary-color3);"></i><span style="padding-left: 5px;">Register anywhere else</span></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade popup item-details-page" id="apply_options_local" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+            <div class="modal-body space-y-20 text-center mt-5">
+                <h3 style="font-size: 36px;">Dedicated Plan</h3>
+                <p class="mt-3">Select a payment option</p>
+                <a href="https://app.budpay.com/pay/aisoc2025" target="_blank" class="sc-button widget-social style-2 mt-3" style="padding: 17px 42px;"><i class="fad fa-link" style="color: #fff;"></i><span style="color: #fff; padding-left: 5px">Enroll single track</span></a>
+                <br><a href="https://app.budpay.com/pay/aisocdoubletracks" target="_blank" class="sc-button widget-social mt-3" style="background: #6345ED; padding: 17px 38px;"><i class="fad fa-link" style="color: #fff;"></i><span style="color: #fff; padding-left: 5px">Enroll double tracks</span></a>
+                <br><a href="https://flutterwave.com/pay/aisoc-instalment-plan-2" target="_blank" class="sc-button btn-bordered-white mt-3 mg-bt-42" style="padding: 17px 33px;"><i class="fad fa-link" style="color: var(--primary-color3);"></i><span style="padding-left: 5px;">Pay in 2 installments</span></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade popup item-details-page" id="apply_options_uk" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+            <div class="modal-body space-y-20 text-center mt-5">
+                <h3 style="font-size: 36px;">Dedicated Plan</h3>
+                <p class="mt-3">Select a payment option</p>
+                <a href="https://selar.com/aisoc2025?currency=GBP" target="_blank" class="sc-button widget-social style-2 mt-3" style="padding: 17px 42px;"><i class="fad fa-link" style="color: #fff;"></i><span style="color: #fff; padding-left: 5px">Enroll single track</span></a>
+                <br><a href="https://selar.com/aisocdoubletracks?currency=GBP" target="_blank" class="sc-button widget-social mt-3 mg-bt-42" style="background: #6345ED; padding: 17px 38px;"><i class="fad fa-link" style="color: #fff;"></i><span style="color: #fff; padding-left: 5px">Enroll double tracks</span></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="modal fade popup item-details-page" id="apply_options_india" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-body space-y-20 text-center mt-5">
+                <h3 style="font-size: 36px;">Dedicated Plan</h3>
+                <p class="mt-3">Select a payment option</p>
+                <a href="https://flutterwave.com/pay/aisocindia2025" target="_blank" class="sc-button widget-social style-2 mt-3" style="padding: 17px 42px;"><i class="fad fa-link" style="color: #fff;"></i><span style= "color: #fff; padding-left: 5px">Enroll single track</span></a>
+                <br><a href="https://flutterwave.com/pay/aisocindiadoubletracks" target="_blank" class="sc-button widget-social mt-3 mg-bt-42" style="background: #6345ED; padding: 17px 38px;"><i class="fad fa-link" style="color: #fff;"></i><span style= "color: #fff; padding-left: 5px">Enroll double tracks</span></a>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="modal fade popup item-details-page" id="apply_options_intl" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+            <div class="modal-body space-y-20 text-center mt-5">
+                <h3 style="font-size: 36px;">Dedicated Plan</h3>
+                <p class="mt-3">Select a payment option</p>
+                <a href="https://selar.com/aisoc2025?currency=USD" target="_blank" class="sc-button widget-social style-2 mt-3" style="padding: 17px 42px;"><i class="fad fa-link" style="color: #fff;"></i><span style="color: #fff; padding-left: 5px">Enroll single track</span></a>
+                <br><a href="https://selar.com/aisocdoubletracks?currency=USD" target="_blank" class="sc-button widget-social mt-3 mg-bt-42" style="background: #6345ED; padding: 17px 38px;"><i class="fad fa-link" style="color: #fff;"></i><span style="color: #fff; padding-left: 5px">Enroll double tracks</span></a>
+                <!-- <br><a href="https://flutterwave.com/pay/aisoc-instalment-plan" target="_blank" class="sc-button btn-bordered-white mt-3 mg-bt-42" style="background: var(--primary-color5); padding: 17px 33px;"><i class="fad fa-link" style="color: var(--primary-color3);"></i><span style= "padding-left: 5px;">Pay in 2 installments</span></a> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade popup" id="track_1" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+            <div class="modal-body space-y-20" style="padding: 25px;">
+                <!-- <p style="font-size: 32px; line-height: 1.3; text-align: center;"><b>Topics in Track I</b></p> -->
+                <h3 style="font-size: 30px; line-height: 1.3;">At a Glance</h3>
+                <p class="text-center" style="font-size: 18px"><b>Topics in Track I</b></p>
+
+                <ul style="font-size: 15px; max-height: 60vh; overflow: auto;">
+                    <li><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Getting Started with Large Language Models</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Build Your First LLM App - Raw and Stupid</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Techniques for Making LLMs Useful</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Model &amp; Infrastructure Ecosystem for AI</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Understanding Embeddings &amp; Vector DBs</li>
+                    <!-- <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Understanding Tokenization & Self Attention</li> -->
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Retrieval-Augmented Generation Deep Dive</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Build a Streamlit Frontend for Your LLM App</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Implementing Memory in Chat Engines</li>
+                    <!-- <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  RAG with Internet Search Capabilities</li> -->
+                    <!-- <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Tool Use & Structured Outputs</li> -->
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  AI Engineering: Designing LLM Applications</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Data Engineering for LLM Applications</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Evaluating &amp; Optimizing LLM Applications</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Building LLM Agents (search, code, etc)</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Model Context Protocol &amp; Multi-Agent Systems</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Conversational Analytics: RAG Over Databases</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  AI Engineering: High-Performance Applications</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  AI Engineering: PoC Deployments with Vercel</li>
+                </ul>
+                <a href="https://aisummerofcode.org/" class="btn btn-primary mt-5" data-toggle="modal" data-target="#popup_apply_now" data-dismiss="modal" aria-label="Close">Get started now</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade popup item-details-page" id="track_2" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+            <div class="modal-body space-y-20 text-center mt-3">
+                <!-- <h3 style="font-size: 32px; line-height: 1.3;">Topics in Track II</h3> -->
+                <h3 style="font-size: 30px; line-height: 1.3;">At a Glance</h3>
+                <p class="text-center" style="font-size: 18px"><b>Topics in Track II</b></p>
+
+                <div id="dropdown-item-13" class="dropdown" style="margin-bottom: 20px; text-align: left;">
+                    <a href="https://aisummerofcode.org/" class="mt-4 btn-selector nolink" style="padding: 15px 22px 10px 22px;">
+                        <h6>ML FOUNDATIONS</h6>
+                        <p class="mg-bt-0" style="font-size: 15px;">Beginner</p>
+                    </a>
+                    <ul style="font-size: 15px; padding-left: 22px; max-height: 50vh; overflow: auto; display: none;">
+                        <span><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Getting Started with ML</span>
+                        <span><br><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Preparing Data for Machine Learning</span>
+                        <span><br><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  ML Workflow with Python &amp; Scikit-Learn</span>
+                        <span><br><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Statistical Methods in Machine Learning</span>
+                        <span><br><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Mathematical Methods in Machine Learning</span>
+                        <span><br><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Introduction to Empirical Risk Minimization</span>
+                        <span><br><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Regression and Classification Deep Dive</span>
+                        <span><br><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Machine Learning Experiment Design</span>
+                        <span><br><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Calibrating Models with Conformal Prediction</span>
+                        <span><br><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Unsupervised Learning Deep Dive</span>
+                        <span><br><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Neural Networks and Deep Learning</span>
+                        <span><br><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Feature Engineering &amp; Selection</span>
+                        <span><br><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Model Evaluation, Finetuning &amp; Selection</span>
+                        <span><br><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  ML Engineering: Designing ML Systems</span>
+                        <span><br><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Practical Challenges in Machine Learning</span>
+                        <br><br><br>
+                    </ul>
+                </div>
+
+                <div id="dropdown-item-14" class="dropdown" style="text-align: left;">
+                    <a href="https://aisummerofcode.org/" class="btn-selector nolink" style="padding: 15px 22px 10px 22px;">
+                        <h6>ML ENGINEERING</h6>
+                        <p class="mg-bt-0" style="font-size: 15px;">Intermediate</p>
+                    </a>
+                    <ul style="font-size: 15px; padding-left: 22px; max-height: 50vh; overflow: auto; display: none;">
+                        <span><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Tooling &amp; Infrastructure Ecosystem for ML</span>
+                        <span><br><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Statistical Methods in Machine Learning</span>
+                        <span><br><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Mathematical Methods in Machine Learning</span>
+                        <span><br><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Machine Learning Experiment Design</span>
+                        <span><br><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Calibrating Models with Conformal Prediction</span>
+                        <span><br><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  AutoML &amp; Neural Architecture Search</span>
+                        <span><br><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Model Evaluation, Finetuning &amp; Selection</span>
+                        <span><br><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  ML Engineering: Designing ML Systems</span>
+                        <span><br><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  ML Engineering: Data Management for ML</span>
+                        <span><br><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  ML Engineering: High-Performance Modelling</span>
+                        <span><br><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  MLOps: Reproducibility &amp; ML Infrastructure</span>
+                        <span><br><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  MLOps: Orchestration &amp; Deployment</span>
+                        <span><br><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  AI Governance: Model Interpretability</span>
+                        <span><br><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  AI Governance: Data &amp; Model Observability </span>
+                        <br><br><br>
+                    </ul>
+                </div>
+                <a href="https://aisummerofcode.org/" class="btn btn-primary mt-5" data-toggle="modal" data-target="#popup_apply_now" data-dismiss="modal" aria-label="Close">Get started now</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- <div class="modal fade popup" id="track_2" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-body space-y-20 pd-40">
+                <h3 style="font-size: 32px; line-height: 1.3;">At a Glance...</h3>
+                <p class="text-center" style="font-size: 18px"><b>Topics in Track II</b></p>
+
+                <ul style="font-size: 16px">
+                    <li><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Getting Started with ML</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Statistical Methods of ML</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Mathematical Methods of ML</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Regression and Classification Deep Dive</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Machine Learning Experiment Design</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Feature Engineering & Selection</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Model Evaluation & Selection</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Interpretability in Machine Learning</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Multistage Bias Detection and Treatment</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  ML Engineering: Designing ML Systems</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  ML Engineering: Deploying ML Systems</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  ML Engineering: Model Serving Patterns</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  ML Engineering: Reproducibility & MLOps</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  ML Engineering: Observability</li>
+                </ul>
+
+                <a href="" class="btn btn-primary mt-5" data-toggle="modal" data-target="#popup_apply_now" data-dismiss="modal" aria-label="Close">Get started now</a>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="modal fade popup" id="track_3" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+            <div class="modal-body space-y-20" style="padding: 25px;">
+                <!-- <h3 style="font-size: 32px; line-height: 1.3;">Topics in Track I</h3> -->
+                <h3 style="font-size: 30px; line-height: 1.3;">At a Glance</h3>
+                <p class="text-center" style="font-size: 18px"><b>Topics in Track III</b></p>
+
+                <ul style="font-size: 15px; max-height: 60vh; overflow: auto;">
+                    <li><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Getting Started with Large Language Models</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Build Your First LLM App - Raw and Stupid</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Techniques for Making LLMs Useful</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Model &amp; Infrastructure Ecosystem for AI</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Statistical &amp; Mathematical Methods in ML</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Neural Nets, Deep Learning &amp; LLM Architectures</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Understanding Tokenization &amp; Self Attention</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Implementing Transformers from Scratch</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  AI Engineering: Designing LLM Pipelines</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  AI Engineering: High-Performance Training</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  AI Engineering: Supervised Finetuning</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  AI Engineering: Serving &amp; Inference Optimization </li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  LLM Alignment with Reinforcement Learning</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  LLM Evaluation and Interpretability</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Introduction to LLM Operations (LLMOps)</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  <b>Capstone: Build, Align and Evaluate an LLM</b></li>
+                </ul>
+                <a href="https://aisummerofcode.org/" class="btn btn-primary mt-5" data-toggle="modal" data-target="#popup_apply_now" data-dismiss="modal" aria-label="Close">Get started now</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade popup" id="track_4" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+            <div class="modal-body space-y-20" style="padding: 25px;">
+                <h3 style="font-size: 30px; line-height: 1.3;">At a Glance</h3>
+                <p class="text-center" style="font-size: 18px"><b>Topics in Track IV</b></p>
+
+                <ul style="font-size: 15px; max-height: 60vh; overflow: auto;">
+                    <li><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Getting Started with Production AI</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Techniques for Making LLMs Useful</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Model &amp; Infrastructure Ecosystem for AI</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Understanding AI Models and Architectures</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  AI Engineering: Designing Production AI Systems</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  AI Engineering: High-Performance AI Systems</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Evaluation Techniques for AI Systems</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  AIOps: Principles &amp; Practices (MLOps, LLMOps)</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  AIOps: Orchestration and Deployment</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  AIOps: Managing AI Failures &amp; Incidents</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  AIOps: Online Evaluation &amp; A/B Testing</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  AI Governance: Model Interpretability</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  AI Governance: Data &amp; Model Observability </li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  AI Governance: Ethics, Privacy &amp; Legal Aspects</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  AI Governance: Security for AI Systems</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  AI Governance: Debugging Prod AI Systems</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Technical Debt Management for AI Systems</li>
+                </ul>
+
+                <a href="https://aisummerofcode.org/" class="btn btn-primary mt-5" data-toggle="modal" data-target="#popup_apply_now" data-dismiss="modal" aria-label="Close">Get started now</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade popup" id="perks" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+            <div class="modal-body space-y-20 pd-40">
+                <h3 style="font-size: 32px;">Dedicated Plan</h3><br><br>
+                <!-- <p class="text-center mt-4" style="font-size: 18px">Modules in<span class="price color-popup"> PART I: DATA SCIENCE FOUNDATIONS</span></p> -->
+
+                <ul style="font-size: 16px; line-height: 1.2;">
+                    <li><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Enroll in up to 2 tracks at a discounted price</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Full access to live sessions + dedicated learning support</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Lifetime access to program codebase &amp; session recordings</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Full access to curated complementary learning resources, such as e-books, tutorial notebooks, etc</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Full access to cloud and compute resources for learning and projects</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  2 months of dedicated post-learning and project support</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Participation in Demo Day to pitch your project</li>
+                    <li><br><i class="fa fa-check-circle" style="color: #5142FC; padding-right: 3px;" aria-hidden="true"></i>  Certificate of completion at the end of the program</li>
+                </ul>
+
+                <a href="https://aisummerofcode.org/" class="btn btn-primary mt-5" data-toggle="modal" data-target="#popup_apply_now" data-dismiss="modal" aria-label="Close">Sign up now</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade popup" id="readmore-item-1" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+            <div class="modal-body space-y-20 pd-40">
+                <h3 style="font-size: 28px;">Akolade Hamzat</h3>
+                <p class="mt-3 text-center">AI/ML ENGINEER</p>
+                <p style="text-align: left; font-size: 15px; line-height: 1.5;"><i class="fad fa-quote-left" style="color: var(--color-1); font-size: 25px;"></i>
+                    <span class="short-text">
+                        The experience from AISOC directly contributed to landing my first full-time international role as a Senior ML/AI Engineer. 
+                        I joined AISOC at a time when I was seriously considering leaving Data Science for Mobile Development, but everything changed during the program. 
+                        The depth of expertise from the speakers and clarity with which they taught reignited my passion for Al and helped me rediscover my path.
+                        <br><br>
+                        I connected deeply with a few members of the faculty and maintained those relationships beyond the program. With the guidance of David Okpare, I 
+                        built my first Agentic Al system, and ever since I have grown more confident in managing end-to-end AI projects. I also aced several interviews and 
+                        landed my current role shortly after. AISOC didn't just sharpen my skills. It clarified my direction and unlocked real opportunities. 
+                        I'm grateful to the AISOC team for creating a program that truly delivers.
+                    </span>
+                </p>
+
+                <a href="https://aisummerofcode.org/" class="btn btn-primary mt-5" data-toggle="modal" data-target="#popup_apply_now" data-dismiss="modal" aria-label="Close">Sign up now</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div style="display: none; position: fixed; right: 10px; bottom: 48px; z-index: 214891234123"><template shadowrootmode="open"><style>
+            * {
+                margin: 0;
+                font-family: Helvetica, sans-serif;
+                color: #000;
+            }
+            
+            .saved {
+                display: none;
+                width: 259px;
+                height: 24px;
+                justify-content: center;
+                align-items: center;
+                font-size: 16px;
+                font-weight: 700;
+            }
+            
+            .showPalette {
+                display: flex !important;
+            }
+            
+            .widget {
+                border: 2px solid #F9AAF1;
+                border-radius: 8px;
+                padding: 10px 16px;
+                background-color: #fff;
+            }
+            
+            .showSaved {
+                .main {
+                    display: none !important;
+                }
+                
+                .saved {
+                    display: flex !important;
+                }
+            }
+            
+            .main {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border-radius: 8px;
+                width: 280px;
+            }
+            
+            header {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 280px;
+                position: relative;
+                
+                h2 {
+                    font-size: 16px;
+                }
+                
+                svg {
+                    cursor: pointer;
+                    position: fixed;
+                    right: 48px;
+                }
+            }
+            
+            .trending {
+                display: flex;
+                align-items: center;
+                margin-top: 8px;
+                width: 100%;
+                
+                .colorCode {
+                    font-weight: bold;
+                    margin-right: 5px;
+                    text-transform: uppercase;
+                }
+                
+                p {
+                    font-size: 14px;
+                    line-height: 150%;
+                }
+            }
+            
+            .shownTooltip {
+                display: block !important;
+            }
+            
+            .tooltip {
+                display: none;
+                position: absolute;
+                border: 1px solid #F9AAF1;
+                background-color: #fff;
+                border-radius: 4px;
+                top: 27px;
+                left: 102px;
+                
+                p {
+                    white-space: nowrap;
+                    padding: 4px;
+                    font-family: Helvetica, sans-serif;
+                    font-size: 12px;
+                }
+            }
+            
+            .paletteContainer {
+                align-self: start;
+            }
+            
+            .palette {
+                display: none;
+                gap: 8px;
+                margin: 8px 0;
+                position: relative;
+                
+                .paletteColor {
+                    width: 22px;
+                    height: 22px;
+                    border: 1px solid #5B5E64;
+                    border-radius: 3px;
+                }
+            }
+            
+            .buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+                margin-top: 6px;
+                
+                button {
+                    padding: 8px 16px;
+                    border-radius: 4px;
+                    font-size: 14px;
+                    width: 124px;
+                    user-select: none;
+                    cursor: pointer;
+                }
+                
+                .skip {
+                    border: 1px solid #686868;
+                    color: #686868;
+                    background-color: #fff;
+                }
+                
+                .skip:hover {
+                    background: #F3EFFE;
+                }
+                
+                .save:hover {
+                    background: #C0ABFC;
+                }
+                
+                .save {
+                    border: 1px solid #000;
+                    background: #9A79F9;
+                    font-weight: 700;
+                    color: #fff;
+                    margin-left: 10px;
+                }
+            }
+            
+            .dontShow {
+                user-select: none;
+                cursor: pointer;
+                
+                .custom-checkbox {
+                    display: flex;
+                    align-items: center;
+                    font-family: Helvetica, sans-serif;
+                    font-size: 13px;
+                    color: #686868;
+                }
+                
+                .custom-checkbox input[type="checkbox"]:hover {
+                    background: #E2E2E2;
+                    cursor: pointer;
+                }
+                
+                .custom-checkbox input[type="checkbox"] {
+                    appearance: none;
+                    -webkit-appearance: none;
+                    width: 18px;
+                    height: 18px;
+                    border: 2px solid #888;
+                    border-radius: 3px;
+                    display: inline-block;
+                    position: relative;
+                    cursor: pointer;
+                    margin-right: 8px;
+                }
+                
+                .custom-checkbox input[type="checkbox"]:checked::after {
+                    content: '';
+                    position: absolute;
+                    left: 4px;
+                    top: 0px;
+                    width: 5px;
+                    height: 10px;
+                    border: solid #888;
+                    border-width: 0 2px 2px 0;
+                    transform: rotate(45deg);
+                }
+            }
+        </style><div class="widget">
+            <main class="main">
+                <header>
+                    <h2>This color is on trend!</h2>
+                    <svg class="close" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                      <path d="M8.99998 10.05L5.32498 13.725C5.18748 13.8625 5.01248 13.9312 4.79998 13.9312C4.58748 13.9312 4.41248 13.8625 4.27498 13.725C4.13748 13.5875 4.06873 13.4125 4.06873 13.2C4.06873 12.9875 4.13748 12.8125 4.27498 12.675L7.94998 8.99997L4.27498 5.32497C4.13748 5.18747 4.06873 5.01247 4.06873 4.79997C4.06873 4.58747 4.13748 4.41247 4.27498 4.27497C4.41248 4.13747 4.58748 4.06872 4.79998 4.06872C5.01248 4.06872 5.18748 4.13747 5.32498 4.27497L8.99998 7.94997L12.675 4.27497C12.8125 4.13747 12.9875 4.06872 13.2 4.06872C13.4125 4.06872 13.5875 4.13747 13.725 4.27497C13.8625 4.41247 13.9312 4.58747 13.9312 4.79997C13.9312 5.01247 13.8625 5.18747 13.725 5.32497L10.05 8.99997L13.725 12.675C13.8625 12.8125 13.9312 12.9875 13.9312 13.2C13.9312 13.4125 13.8625 13.5875 13.725 13.725C13.5875 13.8625 13.4125 13.9312 13.2 13.9312C12.9875 13.9312 12.8125 13.8625 12.675 13.725L8.99998 10.05Z" fill="#A4A5A6"></path>
+                    </svg>
+                </header>
+                <div class="trending">
+                    <p class="colorCode" id="pickedColor">#CE2121</p><p>is part of the trending palette</p>
+                </div>
+                <div class="paletteContainer" id="paletteContainer">
+
+                <div class="palette"><div custom-data-color="fa0000">
+                <div class="paletteColor" style="background-color: #fa0000"></div>
+                <div class="toolTip" style="display: none"><p>Red</p></div>
+            </div><div custom-data-color="e67373">
+                <div class="paletteColor" style="background-color: #e67373"></div>
+                <div class="toolTip" style="display: none"><p>Sunglo</p></div>
+            </div><div custom-data-color="804040">
+                <div class="paletteColor" style="background-color: #804040"></div>
+                <div class="toolTip" style="display: none"><p>Lotus</p></div>
+            </div><div custom-data-color="e6cfcf">
+                <div class="paletteColor" style="background-color: #e6cfcf"></div>
+                <div class="toolTip" style="display: none"><p>Dust Storm</p></div>
+            </div><div custom-data-color="bf3030">
+                <div class="paletteColor" style="background-color: #bf3030"></div>
+                <div class="toolTip" style="display: none"><p>Flush Mahogany</p></div>
+            </div><div custom-data-color="5cb85c">
+                <div class="paletteColor" style="background-color: #5cb85c"></div>
+                <div class="toolTip" style="display: none"><p>Fern</p></div>
+            </div><div custom-data-color="408040">
+                <div class="paletteColor" style="background-color: #408040"></div>
+                <div class="toolTip" style="display: none"><p>Fern Green</p></div>
+            </div><div custom-data-color="cfe6cf">
+                <div class="paletteColor" style="background-color: #cfe6cf"></div>
+                <div class="toolTip" style="display: none"><p>Surf Crest</p></div>
+            </div><div custom-data-color="30bf30">
+                <div class="paletteColor" style="background-color: #30bf30"></div>
+                <div class="toolTip" style="display: none"><p>Apple</p></div>
+            </div></div><div class="palette"><div custom-data-color="d000fa">
+                <div class="paletteColor" style="background-color: #d000fa"></div>
+                <div class="toolTip" style="display: none"><p>Electric Violet</p></div>
+            </div><div custom-data-color="68458a">
+                <div class="paletteColor" style="background-color: #68458a"></div>
+                <div class="toolTip" style="display: none"><p>Affair</p></div>
+            </div><div custom-data-color="604080">
+                <div class="paletteColor" style="background-color: #604080"></div>
+                <div class="toolTip" style="display: none"><p>Affair</p></div>
+            </div><div custom-data-color="dacfe6">
+                <div class="paletteColor" style="background-color: #dacfe6"></div>
+                <div class="toolTip" style="display: none"><p>Snuff</p></div>
+            </div><div custom-data-color="7830bf">
+                <div class="paletteColor" style="background-color: #7830bf"></div>
+                <div class="toolTip" style="display: none"><p>Purple Heart</p></div>
+            </div><div custom-data-color="e6de73">
+                <div class="paletteColor" style="background-color: #e6de73"></div>
+                <div class="toolTip" style="display: none"><p>Chenin</p></div>
+            </div><div custom-data-color="807b40">
+                <div class="paletteColor" style="background-color: #807b40"></div>
+                <div class="toolTip" style="display: none"><p>Yellow Metal</p></div>
+            </div><div custom-data-color="e6e4cf">
+                <div class="paletteColor" style="background-color: #e6e4cf"></div>
+                <div class="toolTip" style="display: none"><p>White Rock</p></div>
+            </div><div custom-data-color="bfb630">
+                <div class="paletteColor" style="background-color: #bfb630"></div>
+                <div class="toolTip" style="display: none"><p>Earls Green</p></div>
+            </div></div><div class="palette"><div custom-data-color="3600fa">
+                <div class="paletteColor" style="background-color: #3600fa"></div>
+                <div class="toolTip" style="display: none"><p>Blue</p></div>
+            </div><div custom-data-color="5b5ea3">
+                <div class="paletteColor" style="background-color: #5b5ea3"></div>
+                <div class="toolTip" style="display: none"><p>Scampi</p></div>
+            </div><div custom-data-color="474a80">
+                <div class="paletteColor" style="background-color: #474a80"></div>
+                <div class="toolTip" style="display: none"><p>East Bay</p></div>
+            </div><div custom-data-color="d1d2e6">
+                <div class="paletteColor" style="background-color: #d1d2e6"></div>
+                <div class="toolTip" style="display: none"><p>Blue Haze</p></div>
+            </div><div custom-data-color="4146bf">
+                <div class="paletteColor" style="background-color: #4146bf"></div>
+                <div class="toolTip" style="display: none"><p>Indigo</p></div>
+            </div><div custom-data-color="e6c273">
+                <div class="paletteColor" style="background-color: #e6c273"></div>
+                <div class="toolTip" style="display: none"><p>Rob Roy</p></div>
+            </div><div custom-data-color="806c40">
+                <div class="paletteColor" style="background-color: #806c40"></div>
+                <div class="toolTip" style="display: none"><p>Yellow Metal</p></div>
+            </div><div custom-data-color="e6decf">
+                <div class="paletteColor" style="background-color: #e6decf"></div>
+                <div class="toolTip" style="display: none"><p>Pearl Bush</p></div>
+            </div><div custom-data-color="bf9230">
+                <div class="paletteColor" style="background-color: #bf9230"></div>
+                <div class="toolTip" style="display: none"><p>Alpine</p></div>
+            </div></div></div>
+                <p class="saveTip">Save this Palette?</p>
+                <div class="buttons">
+                    <div>
+                        <button class="skip">Skip it</button>
+                        <button class="save">Save palette</button>
+                    </div>
+                    <div class="dontShow">
+                         <label class="custom-checkbox">
+                            <span class="checkbox-wrapper">
+                                <input type="checkbox" id="dont-show-again">
+                            </span>
+                            Don’t show it again
+                          </label>
+                    </div>
+                </div>
+
+            </main>
+            <div class="saved">
+                <p>Palette saved!</p>
+            </div>
+        </div></template></div><script src="./index_files/jquery(1).min.js"></script><div id="color-tool-widget" style="position: fixed; top: 0px; left: 0px; z-index: 999999;"><template shadowrootmode="open"><div id="widget">
+          <style>
+#widget {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 999999;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  box-sizing: border-box;
+}
+#widget * {
+  box-sizing: border-box;
+}
+#widget .color-picker {
+  position: relative;
+  height: 30px;
+}
+#widget .color-picker img {
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  margin-left: 10px;
+}
+#widget .color-picker #close {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  transition: right 0.3s ease;
+  z-index: 1;
+  border-radius: 1000px;
+  border: 1px solid #989798;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+}
+#widget .color-picker:hover #close {
+  right: 36px;
+}
+#widget #prompt {
+  position: absolute;
+  right: 34px;
+  bottom: 0;
+  width: 247px;
+  border-radius: 8px;
+  border: 2px solid #F9AAF1;
+  background: #FFF;
+  padding: 10px 16px;
+  z-index: 3;
+}
+#widget #prompt.hidden {
+  display: none;
+}
+#widget #prompt h5 {
+  color: #111;
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0;
+}
+#widget #prompt p {
+  margin-top: 8px;
+  color: #111;
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+}
+#widget #prompt .btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -moz-column-gap: 56px;
+       column-gap: 56px;
+  width: 100%;
+  margin-top: 12px;
+}
+#widget #prompt .btns button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: unset;
+  color: #111;
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+#widget #badge {
+  position: absolute;
+  bottom: 36px;
+  background: linear-gradient(90deg, #F9AAF1 0%, #8BBFFC 100%);
+  right: 0;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transform: translateX(110%);
+}
+#widget #badge .badge-content {
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  background: #fff;
+  -moz-column-gap: 4px;
+       column-gap: 4px;
+  border-radius: 6px;
+}
+#widget #badge .badge-content #preview {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
+  border: 1px solid #5B5E64;
+  flex-shrink: 0;
+}
+#widget #badge .badge-content #color {
+  display: inline-block;
+  display: block;
+  color: #111;
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+  flex-shrink: 0;
+  margin-right: 12px;
+  white-space: nowrap;
+}
+#widget #badge .badge-content #close-badge {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+#widget #badge .badge-content #close-badge svg {
+  width: 12px;
+  height: 12px;
+}
+#widget #hint {
+  position: fixed;
+  top: 25px;
+  right: 10px;
+  padding: 10px 8px 10px 16px;
+  border-radius: 8px;
+  border: 2px solid #F9AAF1;
+  background: #FFF;
+  width: 318px;
+}
+#widget #hint:after {
+  content: "";
+  position: absolute;
+  top: -12px;
+  right: 87px;
+  width: 20px;
+  height: 20px;
+  border-top: 2px solid #F9AAF1;
+  border-left: 2px solid #F9AAF1;
+  transform: rotate(45deg);
+  background-color: #fff;
+}
+#widget #hint h5 {
+  color: #111;
+  font-family: Helvetica, sans-serif;
+  font-size: 16px !important;
+  font-weight: 700;
+  line-height: 21px;
+  margin: 0;
+}
+#widget #hint p {
+  margin-top: 8px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  color: #111;
+  font-family: Helvetica, sans-serif;
+  font-size: 16px !important;
+  font-weight: 400;
+  line-height: 21px;
+}
+#widget #hint p span {
+  margin: 0 4px;
+}
+#widget #hint p .icon {
+  width: 19px;
+  height: 19px;
+  display: inline-block;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#widget #hint p .ext {
+  height: 18px;
+  width: 18px;
+}
+#widget #hint label {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+  width: -moz-max-content;
+  width: max-content;
+}
+#widget #hint label input {
+  display: none;
+}
+#widget #hint label input:checked + span .empty {
+  display: none;
+}
+#widget #hint label input:checked + span .checked {
+  display: flex;
+}
+#widget #hint label input + span .empty {
+  display: flex;
+}
+#widget #hint label input + span .checked {
+  display: none;
+}
+#widget #hint label span {
+  margin-right: 8px;
+}
+#widget #hint label > span:last-child {
+  font-size: 14px !important;
+  color: #111 !important;
+}
+#widget #hint label span i {
+  height: 20px;
+  width: 20px;
+}
+#widget #hint #close-hint {
+  position: absolute;
+  top: 10px;
+  right: 8px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+  box-sizing: border-box;
+}
+
+
+            #widget #badge.show {
+              animation: showLeftToRight 0.3s ease forwards;
+            }
+            #widget #badge.hide {
+              animation: hideRightToLeft 0.3s ease forwards;
+            }
+            @keyframes showLeftToRight {
+              0% {
+                transform: translateX(110%);
+              }
+              100% {
+                transform: translateX(0);
+              }
+            }
+            @keyframes hideRightToLeft {
+              0% {
+                transform: translateX(0);
+              }
+              100% {
+                transform: translateX(110%);
+              }
+            }
+        
+        </style>
+    <div class="color-picker" style="display: none;">
+      <img src="chrome-extension://acbcnnccgmpbkoeblinmoadogmmgodoo/assets/icons/icon_48.png" alt="clickpick-widget" width="30" height="30">
+      <div id="close">
+        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+          <path d="M1.26671 9.66668L0.333374 8.73334L4.06671 5.00001L0.333374 1.26668L1.26671 0.333344L5.00004 4.06668L8.73337 0.333344L9.66671 1.26668L5.93337 5.00001L9.66671 8.73334L8.73337 9.66668L5.00004 5.93334L1.26671 9.66668Z" fill="#979798"></path>
+        </svg>
+      </div>
+    </div>
+    <div id="prompt" class="hidden">
+        <h5>Hide widget? </h5>
+        <p>You can easily re-add the widget via extension menu whenever needed</p>
+        <div class="btns">
+          <button>Cancel</button>
+          <button>Hide</button>
+        </div>
+    </div>
+    <div id="badge">
+      <div class="badge-content">
+        <div id="preview"></div>
+        <div id="color"><span>#123456</span> copied to clipboard!</div>
+        <div id="close-badge">
+          <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+            <path d="M1.26671 9.66668L0.333374 8.73334L4.06671 5.00001L0.333374 1.26668L1.26671 0.333344L5.00004 4.06668L8.73337 0.333344L9.66671 1.26668L5.93337 5.00001L9.66671 8.73334L8.73337 9.66668L5.00004 5.93334L1.26671 9.66668Z" fill="#979798"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div id="hint" style="display: none;">
+      <h5>Edit your colors here</h5>
+      <p>Click on <span class="icon" style="background-image: url(&quot;chrome-extension://acbcnnccgmpbkoeblinmoadogmmgodoo/assets/icons/icon_48.png&quot;);"></span> in <span class="ext"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.50018 16.6249H6.35018H8.37518H10.4002H13.2502C13.6632 16.6254 14.0164 16.4786 14.3099 16.1846C14.6034 15.8906 14.7502 15.5374 14.7502 15.1249V12.1249C15.2752 12.1249 15.7189 11.9436 16.0814 11.5811C16.4439 11.2186 16.6252 10.7749 16.6252 10.2499C16.6252 9.72488 16.4439 9.28113 16.0814 8.91863C15.7189 8.55613 15.2752 8.37488 14.7502 8.37488V5.37488C14.7507 4.96288 14.6039 4.60988 14.3099 4.31588C14.0159 4.02188 13.6627 3.87488 13.2502 3.87488H10.2502C10.2502 3.34988 10.0689 2.90613 9.70643 2.54363C9.34393 2.18113 8.90018 1.99988 8.37518 1.99988C7.85018 1.99988 7.40643 2.18113 7.04393 2.54363C6.68143 2.90613 6.50018 3.34988 6.50018 3.87488H3.50018C3.08818 3.87538 2.73518 4.02238 2.44118 4.31588C2.14718 4.60938 2.00018 4.96238 2.00018 5.37488V8.22488C2.60018 8.22588 3.12518 8.41663 3.57518 8.79713C4.02518 9.17763 4.25018 9.66188 4.25018 10.2499C4.25018 10.8379 4.02518 11.3224 3.57518 11.7034C3.12518 12.0844 2.60018 12.2749 2.00018 12.2749V15.1249C2.00068 15.5379 2.14768 15.8911 2.44118 16.1846C2.73468 16.4781 3.08768 16.6249 3.50018 16.6249ZM13.2502 15.1249H3.50018V13.4749C4.17518 13.2124 4.71893 12.7874 5.13143 12.1999C5.54393 11.6124 5.75018 10.9624 5.75018 10.2499C5.75018 9.52488 5.54393 8.86863 5.13143 8.28113C4.71893 7.69363 4.17518 7.27488 3.50018 7.02488V5.37488H8.00018V3.87488C8.00018 3.77488 8.03768 3.68738 8.11268 3.61238C8.18768 3.53738 8.27518 3.49988 8.37518 3.49988C8.47518 3.49988 8.56268 3.53738 8.63768 3.61238C8.71268 3.68738 8.75018 3.77488 8.75018 3.87488V5.37488H13.2502V15.1249Z" fill="#111111"></path>
+        <path d="M8.75018 5.37488V3.87488C8.75018 3.77488 8.71268 3.68738 8.63768 3.61238C8.56268 3.53738 8.47518 3.49988 8.37518 3.49988C8.27518 3.49988 8.18768 3.53738 8.11268 3.61238C8.03768 3.68738 8.00018 3.77488 8.00018 3.87488V5.37488H8.75018Z" fill="#111111"></path>
+        </svg>
+        </span> Extension Toolbar
+      </p>
+      <label>
+        <input type="checkbox" id="show-hint">
+        <span class="checkmark">
+          <i class="empty">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#899288"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Interface / Checkbox_Unchecked"> <path id="Vector" d="M4 7.2002V16.8002C4 17.9203 4 18.4801 4.21799 18.9079C4.40973 19.2842 4.71547 19.5905 5.0918 19.7822C5.5192 20 6.07899 20 7.19691 20H16.8031C17.921 20 18.48 20 18.9074 19.7822C19.2837 19.5905 19.5905 19.2842 19.7822 18.9079C20 18.4805 20 17.9215 20 16.8036V7.19691C20 6.07899 20 5.5192 19.7822 5.0918C19.5905 4.71547 19.2837 4.40973 18.9074 4.21799C18.4796 4 17.9203 4 16.8002 4H7.2002C6.08009 4 5.51962 4 5.0918 4.21799C4.71547 4.40973 4.40973 4.71547 4.21799 5.0918C4 5.51962 4 6.08009 4 7.2002Z" stroke="" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g> </g></svg>
+          </i>
+          <i class="checked">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#899288"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Interface / Checkbox_Check"> <path id="Vector" d="M8 12L11 15L16 9M4 16.8002V7.2002C4 6.08009 4 5.51962 4.21799 5.0918C4.40973 4.71547 4.71547 4.40973 5.0918 4.21799C5.51962 4 6.08009 4 7.2002 4H16.8002C17.9203 4 18.4796 4 18.9074 4.21799C19.2837 4.40973 19.5905 4.71547 19.7822 5.0918C20 5.5192 20 6.07899 20 7.19691V16.8036C20 17.9215 20 18.4805 19.7822 18.9079C19.5905 19.2842 19.2837 19.5905 18.9074 19.7822C18.48 20 17.921 20 16.8031 20H7.19691C6.07899 20 5.5192 20 5.0918 19.7822C4.71547 19.5905 4.40973 19.2842 4.21799 18.9079C4 18.4801 4 17.9203 4 16.8002Z" stroke="#899288" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g> </g></svg>
+          </i>
+        </span>
+        <span>Don’t show it again</span>
+      </label>
+      <div id="close-hint">
+        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+          <path d="M1.26671 9.66668L0.333374 8.73334L4.06671 5.00001L0.333374 1.26668L1.26671 0.333344L5.00004 4.06668L8.73337 0.333344L9.66671 1.26668L5.93337 5.00001L9.66671 8.73334L8.73337 9.66668L5.00004 5.93334L1.26671 9.66668Z" fill="#979798"></path>
+        </svg>
+      </div>
+    </div>
+        </div></template></div>
+<script src="./index_files/jquery.easing.js"></script>
+<script src="./index_files/bootstrap.min.js"></script>
+<script src="./index_files/swiper-bundle.min.js"></script>
+<script src="./index_files/swiper.js"></script>
+<script src="./index_files/plugin.js"></script>
+<script src="./index_files/count-down.js"></script>
+<script src="./index_files/shortcodes.js"></script>
+<script src="./index_files/main.js"></script>
+<script src="./index_files/saved_resource"></script>
+
+<!-- Linkedin -->
+<!-- <script type="text/javascript">
+    _linkedin_partner_id = "8543945";
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+</script>
+<script type="text/javascript">
+    (function (l) {
+        if (!l) {
+            window.lintrk = function (a, b) { window.lintrk.q.push([a, b]) };
+            window.lintrk.q = []
+        }
+        var s = document.getElementsByTagName("script")[0];
+        var b = document.createElement("script");
+        b.type = "text/javascript"; b.async = true;
+        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+        s.parentNode.insertBefore(b, s);
+    })(window.lintrk);
+</script>
+<noscript>
+    <img height="1" width="1" style="display:none;" alt=""
+        src="https://px.ads.linkedin.com/collect/?pid=8543945&fmt=gif" />
+</noscript> -->
+
+<!-- Meta -->
+<!-- <script>
+    !function (f, b, e, v, n, t, s) {
+        if (f.fbq) return; n = f.fbq = function () {
+            n.callMethod ?
+            n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+        };
+        if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+        n.queue = []; t = b.createElement(e); t.async = !0;
+        t.src = v; s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '364873392161277');
+    fbq('track', 'PageView');
+</script>
+<noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=364873392161277&ev=PageView&noscript=1"/>
+</noscript> -->
+
+<script defer="" src="./index_files/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;c9ed3d3749804cd6b243799b8ae094fe&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+
+<div class="mindstudio-context-menu" style="display: none;"><div class="mindstudio-context-menu-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+          <path d="M6 8.5H10M2 8.5C2 9.28793 2.15519 10.0681 2.45672 10.7961C2.75825 11.5241 3.20021 12.1855 3.75736 12.7426C4.31451 13.2998 4.97595 13.7417 5.7039 14.0433C6.43185 14.3448 7.21207 14.5 8 14.5C8.78793 14.5 9.56815 14.3448 10.2961 14.0433C11.0241 13.7417 11.6855 13.2998 12.2426 12.7426C12.7998 12.1855 13.2417 11.5241 13.5433 10.7961C13.8448 10.0681 14 9.28793 14 8.5C14 7.71207 13.8448 6.93185 13.5433 6.2039C13.2417 5.47595 12.7998 4.81451 12.2426 4.25736C11.6855 3.70021 11.0241 3.25825 10.2961 2.95672C9.56815 2.65519 8.78793 2.5 8 2.5C7.21207 2.5 6.43185 2.65519 5.7039 2.95672C4.97595 3.25825 4.31451 3.70021 3.75736 4.25736C3.20021 4.81451 2.75825 5.47595 2.45672 6.2039C2.15519 6.93185 2 7.71207 2 8.5Z" stroke="#F6F6F7" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        <span>Hide dock</span>
+      </div></div><div id="__MindStudioExtension_Launcher" style="position: fixed; bottom: 128px; right: 0px; background: transparent; pointer-events: none; user-select: none; width: 340px; z-index: 999999; visibility: visible; top: auto; transition: none;"><div id="__MindStudioExtension_LauncherInner" style="margin-left: auto; width: 40px; display: flex; flex-direction: column; align-items: center; position: relative; background: rgba(18, 18, 19, 0.85); padding: 4px 0px; border-radius: 8px 0px 0px 8px; box-shadow: rgba(0, 0, 0, 0.04) 0px 0px 4px 0px, rgba(0, 0, 0, 0.15) 0px 8px 16px 0px; overflow: hidden; pointer-events: all; box-sizing: border-box; cursor: pointer; user-select: none; transition: width 0.2s ease-out;"><div id="__MindStudioExtension_LauncherCaret" style="padding: 0px; display: none; align-items: center; justify-content: center; color: rgb(153, 153, 154); pointer-events: auto; cursor: pointer; border-radius: 6px; width: 100%; height: 0px; overflow: hidden; visibility: hidden; transition: height 0.2s; transform: rotate(180deg);">
+      <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 3L8 7L12 3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </div><div id="__MindStudioExtension_LauncherAppsWrapper" style="position: relative; width: 100%; display: flex; flex-direction: column; max-height: 420px; overflow: hidden; user-select: none; height: 0px; opacity: 0; transition: height 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);"><div id="__MindStudioExtension_LauncherAppsContainer" style="display: flex; flex-direction: column; align-items: center; padding: 0px; width: 100%; overflow-y: auto; scrollbar-width: none; user-select: none;"></div><div id="__MindStudioExtension_LauncherAppsScrollTopFade" style="position: absolute; left: 0px; right: 0px; height: 32px; pointer-events: none; z-index: 1; opacity: 0; transition: opacity 0.2s ease-in-out; top: 0px; background: linear-gradient(rgba(18, 18, 19, 0.85) 0%, rgba(54, 54, 54, 0) 100%);"></div><div id="__MindStudioExtension_LauncherAppsScrollBottomFade" style="position: absolute; left: 0px; right: 0px; height: 32px; pointer-events: none; z-index: 1; opacity: 0; transition: opacity 0.2s ease-in-out; bottom: 0px; background: linear-gradient(0deg, rgba(18, 18, 19, 0.85) 0%, rgba(54, 54, 54, 0) 100%);"></div></div><div id="__MindStudioExtension_LauncherLogo" style="padding: 8px 4px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: rgb(254, 254, 254); pointer-events: auto; cursor: pointer; border-radius: 6px; width: 32px; height: 32px; box-sizing: border-box; transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);">
+      <svg width="28" height="16" viewBox="0 0 28 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.9957 3.75733C11.8085 4.32707 11.694 4.93386 11.422 5.46033C9.97282 8.26551 8.49953 11.0587 7.00408 13.8399C5.93552 15.8271 3.73318 16.5345 1.87822 15.5336C0.0734324 14.5597 -0.52834 12.3779 0.502818 10.404C1.99299 7.55167 3.48286 4.69841 5.02979 1.87636C5.87947 0.326252 7.58533 -0.304487 9.2649 0.17678C10.8346 0.62658 11.9069 2.07437 11.9957 3.75733Z" fill="currentColor"></path>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M22.0606 3.73975C21.8734 4.30949 21.7589 4.91628 21.4869 5.44275C20.0378 8.24793 18.5645 11.0411 17.069 13.8223C16.0005 15.8096 13.7981 16.5169 11.9432 15.516C10.1384 14.5421 9.53658 12.3603 10.5678 10.3865C12.0579 7.53409 13.5478 4.68084 15.0947 1.85878C15.9444 0.308675 17.6503 -0.322065 19.3298 0.159202C20.8995 0.609001 21.9719 2.0568 22.0606 3.73975Z" fill="currentColor"></path>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M23.6046 4.7959C24.6423 6.61697 25.6657 8.37485 26.6522 10.1555C27.609 11.8824 27.302 13.878 25.9349 15.0884C24.5834 16.285 22.5927 16.2838 21.2605 15.0855C19.9032 13.8645 19.6076 11.8589 20.5637 10.144C21.5543 8.36745 22.5726 6.60805 23.6046 4.7959Z" fill="currentColor"></path>
+      </svg>
+    </div><div id="__MindStudioExtension_LauncherCaret" style="padding: 0px; display: flex; align-items: center; justify-content: center; color: rgb(153, 153, 154); pointer-events: auto; cursor: pointer; border-radius: 6px; width: 100%; height: 0px; overflow: hidden; visibility: visible; transition: height 0.2s cubic-bezier(0.4, 0, 0.2, 1);"><div style="display: flex; align-items: center; justify-content: center; padding: 3px 0px; height: 100%;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="12" height="12" stroke-width="2">
+        <path d="M5 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M5 15m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 15m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M19 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M19 15m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+      </svg>
+      </div></div></div></div><div id="quick-start-container"></div></body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+      div.grammarly-desktop-integration {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      div.grammarly-desktop-integration:before {
+        content: attr(data-content);
+      }
+    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>
