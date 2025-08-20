@@ -20,7 +20,7 @@ async def health_check():
     """Simple liveness and version check for the API."""
     return JSONResponse(
         content={
-            "application": "AISOC Chat Engine v1",
+            "application": "DSIMON Chat Engine v1",
             "version": "1.0.0",
             "message": "API endpoint working!"
         }
@@ -115,5 +115,5 @@ async def generate(
 
 if __name__=="__main__":
     import uvicorn
-    logger.info("Starting AISOC Chat Engine...")
+    logger.info("Starting DSIMON Chat Engine...")
     uvicorn.run(app, host="0.0.0.0", port=5000, reload=True)

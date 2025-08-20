@@ -169,7 +169,7 @@ class EmbeddingUtils:
             ChromaCollectionError: If upsert succeeds but collection remains empty.
         """
 
-        collection_name = f"aisoc-{chat_uid}-embeddings"
+        collection_name = f"dsimon-{chat_uid}-embeddings"
         chroma_collection = init_chroma(collection_name, task="create")
 
         try:
@@ -234,7 +234,7 @@ class EmbeddingUtils:
             Tuple[VectorStoreIndex, int]: The vector store index and the number of items in the collection.
         """
 
-        collection_name = f"aisoc-{chat_uid}-embeddings"
+        collection_name = f"dsimon-{chat_uid}-embeddings"
         chroma_collection = init_chroma(collection_name)
 
         collection_count = chroma_collection.count()

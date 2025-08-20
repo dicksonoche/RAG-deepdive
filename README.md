@@ -8,7 +8,7 @@ A simple yet complete Retrieval-Augmented Generation (RAG) system with:
 
 ## Architecture Overview
 - **Embeddings**: `HuggingFaceEmbedding` (default model `BAAI/bge-small-en`) is used to embed chunked text.
-- **Vector store**: ChromaDB HTTP server holds per-conversation collections named `aisoc-{chat_uid}-embeddings`.
+- **Vector store**: ChromaDB HTTP server holds per-conversation collections named `dsimon-{chat_uid}-embeddings`.
 - **RAG engine**: LlamaIndex builds a `VectorStoreIndex` on top of Chroma and exposes a chat engine.
 - **LLM**: Groq models via either the raw Groq SDK (base) or the LlamaIndex Groq wrapper (rag); see `src/models.py`.
 - **Memory (prototype)**: A `ChatMemoryBuffer` is stored in FastAPI `app.state` (single-process only; not production-safe).
@@ -69,7 +69,7 @@ curl -X POST http://localhost:5000/index \
   -F "files=@./docs/sample.pdf" \
   -F "files=@./docs/notes.txt"
 ```
-On success, embeddings are stored in a Chroma collection `aisoc-my-session-1-embeddings`.
+On success, embeddings are stored in a Chroma collection `dsimon-my-session-1-embeddings`.
 
 ### Chat with context
 Use the same `chat_uid` to query.
@@ -80,7 +80,7 @@ curl -N -X POST http://localhost:5000/chat \
     "query": "What is AI Summer of Code?",
     "model": "llama-3.3-70b-versatile",
     "chat_uid": "my-session-1",
-    "chatbot_name": "AISOCAssistant"
+    "chatbot_name": "DSIMONAssistant"
   }'
 ```
 The endpoint streams tokens; `curl -N` keeps output unbuffered.
@@ -94,14 +94,35 @@ python main.py
 - The script builds embeddings (if missing) and answers a hardcoded query using Groq via LlamaIndex.
 
 ## Streamlit Frontend (optional)
-Start a simple UI to upload files and chat:
+Start an interactive UI to upload files, build embeddings, and chat with conversation history:
 ```bash
 streamlit run streamlit_app.py
 ```
+
+What you can do in the UI:
+- **Sidebar**:
+  - **Backend URL**: point to your FastAPI server (default `http://localhost:5000`).
+  - **Check backend health**: pings `/health` to verify connectivity.
+  - **Model**: choose a Groq model.
+  - **Chatbot name**: optional persona injected into the system prompt.
+  - **Clear chat history**: clears only the frontend conversation display.
+- **1) Session and Documents**:
+  - **Chat UID**: auto-generated per session; used to namespace embeddings and memory. Use the same value when chatting.
+  - **New Chat UID**: create a fresh server-side memory namespace; use when you want a clean context.
+  - **Upload files** (same accepted types as backend) and click **Index files** to generate embeddings for the current `Chat UID`.
+- **2) Chat**:
+  - Type your message in the chat input at the bottom. Messages and responses appear top-to-bottom and persist during your session.
+  - The backend streams tokens; the assistant bubble updates in real time.
+
 Notes:
 - Set `RAG_BACKEND_URL` if your FastAPI server is not at `http://localhost:5000`.
 - The UI enforces the same accepted file types as the backend.
 - Ensure ChromaDB is running and the backend env vars are configured.
+- "Clear chat history" resets only the UI; it does not clear the backend memory. Use **New Chat UID** to start a fresh context on the backend.
+- If you see a Hugging Face tokenizers warning about parallelism, you can silence it by setting:
+  ```bash
+  export TOKENIZERS_PARALLELISM=false
+  ```
 
 ## Logging
 - Console logs are colorized and human-friendly.

@@ -61,16 +61,26 @@ def stream_chat(backend_url: str, query_payload: dict):
             text = resp.text
             raise RuntimeError(f"Chat request failed ({resp.status_code}): {text}")
 
-        # Stream token chunks from the backend
-        for chunk in resp.iter_content(chunk_size=1, decode_unicode=True):
+        # Stream token chunks from the backend; ensure text
+        for chunk in resp.iter_content(chunk_size=1, decode_unicode=False):
             if not chunk:
                 continue
-            yield chunk
+            if isinstance(chunk, bytes):
+                try:
+                    yield chunk.decode("utf-8")
+                except UnicodeDecodeError:
+                    yield chunk.decode("latin-1", errors="ignore")
+            else:
+                yield chunk
 
 
 # --------------------------- UI ---------------------------
 st.set_page_config(page_title="RAG Deepdive - Chat", page_icon="💬", layout="centered")
 st.title("RAG Deepdive - Chat UI")
+
+# Conversation state
+if "messages" not in st.session_state:
+    st.session_state.messages = []
 
 with st.sidebar:
     st.header("Configuration")
@@ -84,7 +94,10 @@ with st.sidebar:
             st.error("Backend not reachable")
             st.code(details)
     model = st.selectbox("Model", GROQ_MODELS, index=3)
-    chatbot_name = st.text_input("Chatbot name (optional)", value="AISOCAssistant")
+    chatbot_name = st.text_input("Chatbot name (optional)", value="DSIMONAssistant")
+    if st.button("Clear chat history"):
+        st.session_state.messages = []
+        st.experimental_rerun()
     st.caption("Ensure the backend is running and ChromaDB is reachable.")
 
 st.subheader("1) Session and Documents")
@@ -111,27 +124,39 @@ with col2:
         st.experimental_rerun()
 
 st.markdown("---")
-st.subheader("2) Ask a Question")
-query_text = st.text_area("Your question", placeholder="Ask something grounded in your uploaded documents...")
+st.subheader("2) Chat")
 
-if st.button("Ask", type="primary", disabled=not query_text.strip()):
-    payload = {
-        "query": query_text.strip(),
-        "model": model,
-        "chat_uid": chat_uid,
-        "chatbot_name": chatbot_name.strip(),
-    }
+# Render history
+for msg in st.session_state.messages:
+    with st.chat_message(msg["role"]):
+        st.markdown(msg["content"])
 
-    try:
-        with st.spinner("Generating answer..."):
-            placeholder = st.empty()
-            accumulated = ""
-            for token in stream_chat(backend_url, payload):
-                accumulated += token
-                placeholder.markdown(accumulated)
-        st.success("Done.")
-    except Exception as exc:
-        st.error(f"Chat error: {exc}")
+# Chat input at bottom
+user_prompt = st.chat_input("Your message")
+if user_prompt:
+    # add user message
+    st.session_state.messages.append({"role": "user", "content": user_prompt})
+    with st.chat_message("user"):
+        st.markdown(user_prompt)
+
+    # stream assistant response
+    with st.chat_message("assistant"):
+        placeholder = st.empty()
+        accumulated = ""
+        payload = {
+            "query": user_prompt.strip(),
+            "model": model,
+            "chat_uid": chat_uid,
+            "chatbot_name": chatbot_name.strip(),
+        }
+        try:
+            with st.spinner("Generating answer..."):
+                for token in stream_chat(backend_url, payload):
+                    accumulated += token
+                    placeholder.markdown(accumulated)
+            st.session_state.messages.append({"role": "assistant", "content": accumulated})
+        except Exception as exc:
+            st.error(f"Chat error: {exc}")
 
 st.markdown("---")
 st.caption("Tip: If you see connection errors, confirm the FastAPI server is running and that CHROMADB_HOST/PORT are set.") 
