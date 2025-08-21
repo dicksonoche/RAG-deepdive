@@ -8,6 +8,7 @@ Key responsibilities:
 - Very simple in-memory chat history per-process (`TempAppState`, `init_chat_memory`, `retrieve_chat_memory`)
 """
 import tempfile, groq, time, traceback
+import json
 from src.models import *
 from src.prompts import *
 from src.config import *
@@ -40,6 +41,25 @@ DEFAULT_TEMPERATURE = 0.1
 logger = set_logger(
     to_file=True, log_file_name=LOG_FILENAME, to_console=True, custom_formatter=ColorFormmater
 )
+
+def normalize_metadata(metadata: dict) -> dict:
+    """Normalize metadata values to primitives supported by Chroma (str/int/float/bool/None).
+
+    Any non-primitive values (e.g., list/dict/tuple) are JSON-serialized; if serialization fails,
+    they are coerced to string to avoid Chroma type validation errors during upsert.
+    """
+    if not metadata:
+        return {}
+    normalized = {}
+    for key, value in metadata.items():
+        if isinstance(value, (str, int, float, bool)) or value is None:
+            normalized[key] = value
+        else:
+            try:
+                normalized[key] = json.dumps(value, ensure_ascii=False)
+            except Exception:
+                normalized[key] = str(value)
+    return normalized
 
 class FileUtils:
     """Utilities for validating and writing uploaded files to disk."""
@@ -190,7 +210,7 @@ class EmbeddingUtils:
 
             doc_chunks = sum(doc_split_by_chunk_size, []) # flatten nested list
             content_list = [doc["content"] for doc in doc_chunks]
-            metadata_list = [doc["metadata"] for doc in doc_chunks]
+            metadata_list = [normalize_metadata(doc["metadata"]) for doc in doc_chunks]
 
             id_list = [f"embedding-{i+1}" for i in range(len(content_list))]
 

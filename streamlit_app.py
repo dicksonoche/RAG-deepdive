@@ -75,8 +75,8 @@ def stream_chat(backend_url: str, query_payload: dict):
 
 
 # --------------------------- UI ---------------------------
-st.set_page_config(page_title="RAG Deepdive - Chat", page_icon="💬", layout="centered")
-st.title("RAG Deepdive - Chat UI")
+st.set_page_config(page_title="DSIMON Chat", page_icon="💬", layout="centered")
+st.title("DSIMON Chat UI")
 
 # Conversation state
 if "messages" not in st.session_state:

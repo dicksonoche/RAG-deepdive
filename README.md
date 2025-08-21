@@ -77,7 +77,7 @@ Use the same `chat_uid` to query.
 curl -N -X POST http://localhost:5000/chat \
   -H "Content-Type: application/json" \
   -d '{
-    "query": "What is AI Summer of Code?",
+    "query": "What is your name?",
     "model": "llama-3.3-70b-versatile",
     "chat_uid": "my-session-1",
     "chatbot_name": "DSIMONAssistant"
@@ -139,6 +139,7 @@ RAG-deepdive/
 ├── app.py
 ├── main.py
 ├── requirements.txt
+├── .env.example
 ├── README.md
 ├── logs/
 ├── chroma/

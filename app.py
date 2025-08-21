@@ -68,7 +68,7 @@ async def process(
             logger.error(exception)
             return JSONResponse(
                 content={
-                    "status": f"An error occured during indexing: {str(e)}.                         Check the system logs for more information.",
+                    "status": f"An error occured during indexing: {str(e)}. Check the system logs for more information.",
                 },
                 status_code=400
             )
