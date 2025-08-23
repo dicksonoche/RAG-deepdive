@@ -1,4 +1,4 @@
-# RAG-deepdive
+# DSimon RAG Engine
 
 A simple yet complete Retrieval-Augmented Generation (RAG) system with:
 - **Upload endpoint**: accepts multiple file formats and extracts text
