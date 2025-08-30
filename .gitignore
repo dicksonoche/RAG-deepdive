@@ -4,3 +4,5 @@ rag.venv
 logs
 __pycache__
 chroma
+Nematodes.pdf
+embeddings

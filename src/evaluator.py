@@ -145,28 +145,41 @@ class RAGEvaluator:
                 "chatbot_name": self.config.chatbot_name
             }
             
-            # Query the chat endpoint
+            # Query the chat endpoint with streaming
             response = requests.post(
                 f"{self.config.backend_url}/chat",
                 json=payload,
-                timeout=self.config.timeout
+                timeout=self.config.timeout,
+                stream=True  # Enable streaming
             )
             
             if response.status_code != 200:
                 self.logger.error(f"Chat request failed with status {response.status_code}: {response.text}")
                 return None, None
             
-            # For evaluation, we need both the response and context
-            # Since the current backend doesn't return context separately,
-            # we'll need to implement a separate context retrieval endpoint
-            # For now, we'll return the response and a placeholder for context
-            
-            generated_response = response.text
-            # TODO: Implement context retrieval endpoint for evaluation
-            retrieved_context = "Context retrieval not yet implemented"
-            
-            self.logger.info(f"Successfully generated response for question (length: {len(generated_response)})")
-            return generated_response, retrieved_context
+            # Handle streaming response
+            try:
+                accumulated_response = ""
+                for chunk in response.iter_content(chunk_size=1, decode_unicode=False):
+                    if chunk:
+                        if isinstance(chunk, bytes):
+                            try:
+                                accumulated_response += chunk.decode("utf-8")
+                            except UnicodeDecodeError:
+                                accumulated_response += chunk.decode("latin-1", errors="ignore")
+                        else:
+                            accumulated_response += chunk
+                
+                if not accumulated_response.strip():
+                    self.logger.warning("Received empty response from RAG system")
+                    return None, None
+                
+                self.logger.info(f"Successfully generated response for question (length: {len(accumulated_response)})")
+                return accumulated_response, "Context retrieval not yet implemented"
+                
+            except Exception as stream_error:
+                self.logger.error(f"Error processing streaming response: {stream_error}")
+                return None, None
             
         except Exception as e:
             self.logger.error(f"Error querying RAG system: {e}")
