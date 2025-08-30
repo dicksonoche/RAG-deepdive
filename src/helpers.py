@@ -36,7 +36,7 @@ import chromadb
 
 API_DIR = Path(__file__).resolve().parent / "../"
 LOG_FILENAME = str(API_DIR / "./logs/status_logs.log")
-DEFAULT_TEMPERATURE = 0.1
+DEFAULT_TEMPERATURE = 7.0
 
 logger = set_logger(
     to_file=True, log_file_name=LOG_FILENAME, to_console=True, custom_formatter=ColorFormmater

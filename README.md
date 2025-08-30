@@ -55,6 +55,7 @@ Start the FastAPI server:
 python app.py
 ```
 This runs Uvicorn on `uvicorn app:app --port 5000 --reload`.
+Run chroma `chroma run --port 8000`
 
 Health check:
 ```bash
@@ -92,6 +93,60 @@ python main.py
 ```
 - Place documents in `./docs` and ensure `./embeddings` exists.
 - The script builds embeddings (if missing) and answers a hardcoded query using Groq via LlamaIndex.
+
+## Evaluation with Evidently AI Cloud
+Evaluate your RAG system performance using comprehensive metrics and monitoring:
+
+### Setup
+1. Install evaluation dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+2. Set environment variables:
+```bash
+export EVIDENTLY_API_KEY="your-evidently-api-key"
+export EVIDENTLY_CLOUD_URL="https://app.evidently.cloud/"
+export EVIDENTLY_PROJECT_ID="your-project-id"  # Optional
+export RAG_BACKEND_URL="http://localhost:5000"  # If different from default
+```
+
+### Run Evaluation
+```bash
+python run_evaluation.py
+```
+
+### What Gets Evaluated
+- **Response Generation**: Success rate, response quality
+- **Contradiction Detection**: LLM-based factual consistency checking
+- **Text Analysis**: Sentiment, length, and other text metrics
+- **Performance Metrics**: Response times, error rates
+
+**Note**: Evidently AI's LLM-based contradiction detection requires an OpenAI API key. If you don't have one, the evaluation will still work with basic metrics (sentiment, text length, etc.) and you can implement custom contradiction detection using your Groq setup.
+
+**Alternative**: For contradiction detection without OpenAI, you can modify the evaluator to use Groq directly, but this requires custom implementation as Evidently AI doesn't natively support Groq for LLM-based evaluation.
+
+### Custom Evaluation
+```python
+from src.evaluator import RAGEvaluator, EvaluationConfig
+
+config = EvaluationConfig(
+    backend_url="http://localhost:5000",
+    evidently_cloud_url="https://app.evidently.cloud/",
+    project_id="your-project-id"
+)
+
+evaluator = RAGEvaluator(config)
+results = evaluator.evaluate_rag_pipeline(
+    questions=["Your question here"],
+    reference_answers=["Expected answer"],
+    chat_uid="custom-eval-1"
+)
+```
+
+### Evaluation Logs
+- Console: Real-time evaluation progress
+- File: `logs/evaluation_logs.log` for detailed analysis
 
 ## Streamlit Frontend (optional)
 Start an interactive UI to upload files, build embeddings, and chat with conversation history:
@@ -139,17 +194,18 @@ RAG-deepdive/
 ├── app.py
 ├── main.py
 ├── requirements.txt
-├── .env.example
 ├── README.md
 ├── logs/
 ├── chroma/
 ├── docs/
 ├── streamlit_app.py
+├── run_evaluation.py
 └── src/
     ├── config.py
     ├── models.py
     ├── helpers.py
     ├── prompts.py
     ├── exceptions.py
-    └── loghandler.py
+    ├── loghandler.py
+    └── evaluator.py
 ```
