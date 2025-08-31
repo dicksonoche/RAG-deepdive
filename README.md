@@ -26,6 +26,61 @@ A simple yet complete Retrieval-Augmented Generation (RAG) system with:
 - `src/loghandler.py`: colorized logging and file/console handlers
 - `main.py`: local CLI demo to generate and query embeddings from `./docs`
 
+## 🚀 **Quick Start**
+
+### **Prerequisites**
+- Python 3.11.9 (recommended)
+- Virtual environment activated
+- ChromaDB server running
+- GROQ API key
+
+### **1. Setup Environment**
+```bash
+# Activate virtual environment
+source rag.venv/bin/activate
+
+# Install dependencies (using uv pip install)
+uv pip install -r requirements.txt
+
+# Set environment variables
+source .env
+```
+
+### **2. Start ChromaDB Server**
+```bash
+# Option 1: Using Docker
+docker run -p 8000:8000 chromadb/chroma
+
+# Option 2: Using ChromaDB CLI (if installed)
+chroma run --port 8000
+```
+
+### **3. Start RAG Backend**
+```bash
+# In one terminal
+source rag.venv/bin/activate
+source .env
+uvicorn app:app --port 5000 --reload
+```
+
+### **4. Add Your Documents**
+```bash
+# Using the helper script
+python3.11 add_documents.py /path/to/your/document.pdf
+
+# Or using Streamlit frontend
+streamlit run streamlit_app.py
+```
+
+### **5. Run Evaluation**
+```bash
+# Set the chat_uid from your indexed documents
+export EVAL_CHAT_UID='your-documents-chat-uid'
+
+# Run evaluation
+python3.11 run_evaluation.py
+```
+
 ## Requirements
 - Python 3.10+
 - A running ChromaDB HTTP server (or set environment to your instance)

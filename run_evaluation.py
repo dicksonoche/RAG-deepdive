@@ -1,11 +1,11 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.11
 """Simple script to run RAG system evaluation using Evidently AI cloud.
 
 This script demonstrates how to use the RAGEvaluator class to evaluate
 your RAG system performance against reference data.
 
 Usage:
-    python run_evaluation.py
+    python3.11 run_evaluation.py
 """
 
 import os
@@ -39,6 +39,15 @@ def main():
     print(f"Model: {config.model}")
     print()
     
+    # Allow user to specify a chat_uid for existing documents
+    custom_chat_uid = os.environ.get("EVAL_CHAT_UID")
+    if custom_chat_uid:
+        print(f"📚 Using existing documents with chat_uid: {custom_chat_uid}")
+        chat_uid = custom_chat_uid
+    else:
+        print("📚 No existing documents specified. Creating new evaluation session.")
+        chat_uid = f"demo-eval-{int(time.time())}"
+    
     try:
         # Initialize evaluator
         print("Initializing evaluator...")
@@ -51,11 +60,11 @@ def main():
         print(f"✓ Created {len(questions)} sample questions")
         
         # Run evaluation
-        print(f"\nRunning evaluation with chat_uid: demo-eval-{int(time.time())}")
+        print(f"\nRunning evaluation with chat_uid: {chat_uid}")
         results = evaluator.evaluate_rag_pipeline(
             questions=questions,
             reference_answers=answers,
-            chat_uid=f"demo-eval-{int(time.time())}"
+            chat_uid=chat_uid
         )
         
         # Display results
@@ -79,6 +88,7 @@ def main():
         print("2. Check your Evidently AI cloud credentials")
         print("3. Verify GROQ_API_KEY is set")
         print("4. Check the logs in logs/evaluation_logs.log")
+        print("5. Make sure you have documents indexed with the specified chat_uid")
         sys.exit(1)
 
 
