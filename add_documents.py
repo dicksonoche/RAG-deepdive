@@ -1,19 +1,33 @@
 #!/usr/bin/env python3.11
-"""Simple script to add documents to the RAG system.
+"""
+Simple script to add documents to the RAG system.
+
+This script allows users to upload documents to the RAG system via the FastAPI backend
+and test the indexing with a sample query. It supports multiple file types and generates
+a unique `chat_uid` for indexing.
 
 Usage:
-    python3.11 add_documents.py /path/to/your/document.pdf
-    python3.11 add_documents.py /path/to/your/document.docx
+    python3.11 add_documents.py /path/to/document1.pdf /path/to/document2.docx
 """
-
 import os
 import sys
 import requests
 from pathlib import Path
 
 def add_documents(file_paths, chat_uid="test-docs"):
-    """Add documents to the RAG system."""
-    
+    """
+    Add documents to the RAG system via the FastAPI backend.
+
+    Uploads specified files to the `/index` endpoint, checking the backend's health first.
+    Returns success or failure based on the indexing outcome.
+
+    Args:
+        file_paths (list): List of file paths to upload and index.
+        chat_uid (str, optional): Unique identifier for the chat session. Defaults to "test-docs".
+
+    Returns:
+        bool: True if indexing succeeds, False otherwise.
+    """
     # Check if backend is running
     try:
         health_response = requests.get("http://localhost:5000/health")
@@ -52,11 +66,11 @@ def add_documents(file_paths, chat_uid="test-docs"):
         
         if response.status_code == 200:
             print(f"✅ Documents indexed successfully!")
-            print(f"📊 Response: {response.json()}")
+            print(f"Response: {response.json()}")
             return True
         else:
             print(f"❌ Indexing failed: {response.status_code}")
-            print(f"📄 Response: {response.text}")
+            print(f"Response: {response.text}")
             return False
             
     except Exception as e:
@@ -64,8 +78,20 @@ def add_documents(file_paths, chat_uid="test-docs"):
         return False
 
 def test_query(chat_uid, question="What is this document about?"):
-    """Test a simple query to verify the system works."""
-    print(f"\n🧪 Testing query: {question}")
+    """
+    Test the RAG system with a sample query.
+
+    Sends a sample query to the `/chat` endpoint to verify that the indexed documents
+    can be queried successfully.
+
+    Args:
+        chat_uid (str): The unique identifier for the chat session.
+        question (str, optional): The test query to send. Defaults to "What is this document about?".
+
+    Returns:
+        bool: True if the query succeeds, False otherwise.
+    """
+    print(f"\n Testing query: {question}")
     
     try:
         response = requests.post(
@@ -84,7 +110,7 @@ def test_query(chat_uid, question="What is this document about?"):
             return True
         else:
             print(f"❌ Query failed: {response.status_code}")
-            print(f"📄 Response: {response.text}")
+            print(f"Response: {response.text}")
             return False
             
     except Exception as e:
@@ -92,8 +118,14 @@ def test_query(chat_uid, question="What is this document about?"):
         return False
 
 if __name__ == "__main__":
+    """
+    Entry point for the document indexing script.
+
+    Parses command-line arguments, generates a `chat_uid`, uploads documents, and tests
+    the system with a sample query. Provides usage instructions if arguments are missing or invalid.
+    """
     if len(sys.argv) < 2 or "--help" in sys.argv or "-h" in sys.argv:
-        print("🚀 RAG Document Indexer")
+        print("RAG Document Indexer")
         print("=" * 40)
         print("Usage: python add_documents.py /path/to/document1.pdf /path/to/document2.docx")
         print("Example: python add_documents.py ./my_document.pdf")
@@ -113,7 +145,7 @@ if __name__ == "__main__":
     
     # Add documents
     if add_documents(file_paths, chat_uid):
-        print(f"\n📚 Documents indexed with chat_uid: {chat_uid}")
+        print(f"\n Documents indexed with chat_uid: {chat_uid}")
         
         # Test a query
         test_query(chat_uid)
@@ -124,3 +156,4 @@ if __name__ == "__main__":
     else:
         print("\n❌ Failed to index documents")
         sys.exit(1)
+        

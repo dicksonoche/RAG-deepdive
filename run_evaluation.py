@@ -1,13 +1,14 @@
 #!/usr/bin/env python3.11
-"""Simple script to run RAG system evaluation using Evidently AI cloud.
+"""
+Simple script to evaluate a RAG system using Evidently AI cloud.
 
-This script demonstrates how to use the RAGEvaluator class to evaluate
-your RAG system performance against reference data.
+This script demonstrates how to use the `RAGEvaluator` class to assess the performance
+of a Retrieval-Augmented Generation (RAG) system against reference data. It supports
+uploading documents, querying the system, and generating evaluation metrics.
 
 Usage:
     python3.11 run_evaluation.py
 """
-
 import os
 import sys
 from pathlib import Path
@@ -18,10 +19,13 @@ sys.path.insert(0, str(Path(__file__).parent / "src"))
 
 from evaluator import RAGEvaluator, EvaluationConfig, create_sample_evaluation_data
 
-
 def main():
-    """Run RAG system evaluation with sample data."""
-    
+    """
+    Run the RAG system evaluation with sample data.
+
+    Configures the evaluation, initializes the evaluator, generates sample questions and answers,
+    runs the evaluation, and displays the results, including contradiction analysis.
+    """
     # Configuration
     config = EvaluationConfig(
         backend_url=os.environ.get("RAG_BACKEND_URL", "http://localhost:5000"),
@@ -91,6 +95,10 @@ def main():
         print("5. Make sure you have documents indexed with the specified chat_uid")
         sys.exit(1)
 
-
 if __name__ == "__main__":
+    """
+    Entry point for the evaluation script.
+
+    Executes the `main` function to run the RAG system evaluation.
+    """
     main()

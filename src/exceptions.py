@@ -1,24 +1,54 @@
-"""Custom exception types for clearer error handling across the app."""
+"""
+Custom exception types for the RAG system.
+
+This module defines specific exception classes for handling errors in file uploads, embedding
+generation, file validation, chat engine operations, and ChromaDB interactions. These provide
+clearer error handling across the application.
+"""
 class UploadError(Exception):
-    """Raised when a file upload fails due to IO or storage errors."""
+    """
+    Exception raised when a file upload fails due to IO or storage issues.
+
+    Used in file upload operations to indicate failures during file writing or processing.
+    """
     pass
 
 class EmbeddingError(Exception):
-    """Raised when embedding generation fails for any reason."""
+    """
+    Exception raised when embedding generation fails.
+
+    Used in embedding generation to indicate issues with computing or processing embeddings.
+    """
     pass
 
 class FileCheckError(Exception):
-    """Raised when incoming files fail validation checks."""
+    """
+    Exception raised when incoming files fail validation checks.
+
+    Used in file validation to indicate issues with file presence, names, or formats.
+    """
     pass
 
 class ChatEngineError(Exception):
-    """Raised when the LlamaIndex chat engine encounters a runtime error."""
+    """
+    Exception raised when the LlamaIndex chat engine encounters a runtime error.
+
+    Used in chat response generation to indicate failures in the chat engine.
+    """
     pass
 
 class ChromaConnectionError(Exception):
-    """Raised when the client cannot connect to the Chroma server."""
+    """
+    Exception raised when the client cannot connect to the ChromaDB server.
+
+    Used in ChromaDB operations to indicate connection failures.
+    """
     pass
 
 class ChromaCollectionError(Exception):
-    """Raised when a Chroma collection is missing, empty, or invalid for the request."""
+    """
+    Exception raised when a ChromaDB collection is missing, empty, or invalid.
+
+    Used in ChromaDB operations to indicate issues with collection retrieval or storage.
+    """
     pass
