@@ -19,18 +19,6 @@ import traceback
 from typing import List, Optional, Tuple, Any
 from pathlib import Path
 from retry import retry
-
-# Initialize logger first to ensure availability for imports
-API_DIR = Path(__file__).resolve().parent.parent
-LOG_FILENAME = str(API_DIR / "logs" / "status_logs.log")
-logger = set_logger(
-    to_file=True,
-    log_file_name=LOG_FILENAME,
-    to_console=True,
-    custom_formatter=ColorFormatter
-)
-
-# Now import dependencies
 import chromadb
 import redis
 from pinecone import Pinecone, ServerlessSpec
@@ -46,8 +34,19 @@ from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from src.models import *
 from src.prompts import *
 from src.config import *
-from src.loghandler import *
+from src.loghandler import set_logger, ColorFormatter
 from src.exceptions import *
+
+# Initialize logger after imports
+API_DIR = Path(__file__).resolve().parent.parent
+LOG_FILENAME = str(API_DIR / "logs" / "status_logs.log")
+logger = set_logger(
+    to_file=True,
+    log_file_name=LOG_FILENAME,
+    to_console=True,
+    custom_formatter=ColorFormatter
+)
+logger.info(f"PyTorch version: {torch.__version__}, Platform: {torch.__version__.__platform__ or 'unknown'}")
 
 # Try importing PineconeVectorStore with fallback
 try:
@@ -57,7 +56,7 @@ except ImportError:
         from llama_index.vector_stores import PineconeVectorStore
         logger.warning("Using fallback import 'llama_index.vector_stores.PineconeVectorStore'.")
     except ImportError:
-        logger.error("PineconeVectorStore import failed. Run 'pip install llama-index-vector-stores-pinecone'.")
+        logger.error("PineconeVectorStore import failed. Run 'uv pip install llama-index-vector-stores-pinecone'.")
         raise ImportError("Failed to import PineconeVectorStore.")
 
 DEFAULT_TEMPERATURE = 0.1

@@ -1,0 +1,33 @@
+services:
+  - type: web
+    name: rag-api
+    env: python
+    runtime: python3.10
+    plan: free
+    buildCommand: bash build.sh
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10
+      - key: GROQ_API_KEY
+        sync: false
+      - key: PINECONE_API_KEY
+        sync: false
+      - key: PINECONE_INDEX_NAME
+        value: dsimon-rag
+      - key: REDIS_URL
+        sync: false
+      - key: USE_PINECONE
+        value: true
+      - key: USE_REDIS_MEMORY
+        value: true
+      - key: CHROMADB_HOST
+        value: localhost
+      - key: CHROMADB_PORT
+        value: 8000
+      - key: CHROMADB_SSL
+        value: false
+      - key: EVIDENTLY_API_KEY
+        sync: false
+      - key: EVIDENTLY_CLOUD_URL
+        value: https://app.evidently.cloud/

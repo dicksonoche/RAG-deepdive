@@ -11,6 +11,7 @@ import time
 import json
 import random
 import requests
+import torch
 import pandas as pd
 from typing import List, Dict, Optional, Tuple, Any
 from dataclasses import dataclass
@@ -20,6 +21,16 @@ from src.loghandler import set_logger, ColorFormatter
 from src.config import GROQ_API_KEY, EVIDENTLY_CLOUD_URL, EVIDENTLY_API_KEY
 from src.models import LLMClient
 from src.exceptions import *
+
+# Initialize logger first to ensure availability for imports
+API_DIR = Path(__file__).resolve().parent.parent
+LOG_FILENAME = str(API_DIR / "logs" / "status_logs.log")
+logger = set_logger(
+    to_file=True,
+    log_file_name=LOG_FILENAME,
+    to_console=True,
+    custom_formatter=ColorFormatter
+)
 
 # Evidently AI imports with fallback
 try:
@@ -96,6 +107,7 @@ class RAGEvaluator:
         """
         self.config = config
         self.logger = self._setup_logger()
+        self.logger.info(f"PyTorch version: {torch.__version__}, Platform: {torch.__version__.__platform__ or 'unknown'}")
         self.llm_client = LLMClient()
         self.evidently_client = None
         self._validate_config()
@@ -547,7 +559,7 @@ Contradiction Rate: {(contra_analysis.get('contradictory_count', 0) / max(contra
                 return f"Contradiction analysis failed: {contra_analysis.get('message', 'Unknown error')}"
             details = f"""
 Detailed Contradiction Analysis
-==============================
+--------- -------------
 Summary:
 - Total Questions Analyzed: {contra_analysis.get('total_analyzed', 0)}
 - Contradictory Responses: {contra_analysis.get('contradictory_count', 0)}
