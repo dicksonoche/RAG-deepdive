@@ -13,6 +13,7 @@ production with retry logic, connection pooling, and comprehensive logging.
 """
 import json
 import os
+import platform
 import tempfile
 import time
 import traceback
@@ -47,7 +48,7 @@ logger = set_logger(
     to_console=True,
     custom_formatter=ColorFormatter
 )
-logger.info(f"PyTorch version: {torch.__version__}, Platform: {torch.__version__.__platform__ or 'unknown'}")
+logger.info(f"PyTorch version: {torch.__version__}, Platform: {platform.platform() or 'unknown'}")
 
 # Try importing PineconeVectorStore with fallback
 try:
