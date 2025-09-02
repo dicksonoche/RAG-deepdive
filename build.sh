@@ -15,7 +15,7 @@ export RUSTUP_HOME=/app/.rustup
 mkdir -p $CARGO_HOME $RUSTUP_HOME
 
 # Pre-install transformers and tokenizers
-pip install --no-cache-dir transformers==4.44.2 tokenizers>=0.19,<0.20
+pip install --no-cache-dir transformers==4.37.2 tokenizers>=0.15.2,<0.16.0
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   # macOS: Use CPU wheels for torch==2.2.2
