@@ -1,0 +1,970 @@
+2025-08-18 17:04:15 - src.loghandler - INFO - Chat engine started for conversation my-session-1
+2025-08-18 17:04:15 - src.loghandler - INFO - The user's query is: What is AI Summer of Code?
+2025-08-18 17:04:15 - src.loghandler - INFO - System prompt::Your name is AISOCAssistant. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-18 17:04:15 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-18 17:04:15 - src.loghandler - ERROR - Error connecting to Chroma database for collection `aisoc-my-session-1-embeddings`: Could not connect to a Chroma server. Are you sure it is running?
+2025-08-20 09:58:07 - src.loghandler - INFO - Files uploaded successfully.
+2025-08-20 09:58:12 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-20 09:58:12 - src.loghandler - INFO - Collection created: dsimon-f5ea9a39-dba0-430a-985b-4c84a536247f-embeddings
+2025-08-20 09:58:12 - src.loghandler - INFO - Generating vector embeddings for collection: dsimon-f5ea9a39-dba0-430a-985b-4c84a536247f-embeddings...
+2025-08-20 09:58:21 - src.loghandler - ERROR - Error generating embeddings for collection: dsimon-f5ea9a39-dba0-430a-985b-4c84a536247f-embeddings. Error: Numpy is not available
+2025-08-20 09:58:21 - src.loghandler - ERROR - Traceback (most recent call last):
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/src/helpers.py", line 197, in generate_and_store_embeddings
+    embeddings = [self.embed_func.get_text_embedding(item) for item in content_list]
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/src/helpers.py", line 197, in <listcomp>
+    embeddings = [self.embed_func.get_text_embedding(item) for item in content_list]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index_instrumentation/dispatcher.py", line 317, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/core/base/embeddings/base.py", line 368, in get_text_embedding
+    text_embedding = self._get_text_embedding(text)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index_instrumentation/dispatcher.py", line 317, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/embeddings/huggingface/base.py", line 320, in _get_text_embedding
+    return self._embed([text], prompt_name="text")[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/embeddings/huggingface/base.py", line 268, in _embed
+    return self._embed_with_retry(inputs, prompt_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/tenacity/__init__.py", line 336, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/tenacity/__init__.py", line 475, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/tenacity/__init__.py", line 376, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/tenacity/__init__.py", line 418, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/tenacity/__init__.py", line 185, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/.local/share/uv/python/cpython-3.11.9-macos-x86_64-none/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/.local/share/uv/python/cpython-3.11.9-macos-x86_64-none/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/tenacity/__init__.py", line 478, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/embeddings/huggingface/base.py", line 236, in _embed_with_retry
+    emb = self._model.encode(
+          ^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/sentence_transformers/SentenceTransformer.py", line 1109, in encode
+    all_embeddings = np.asarray([emb.numpy() for emb in all_embeddings])
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/sentence_transformers/SentenceTransformer.py", line 1109, in <listcomp>
+    all_embeddings = np.asarray([emb.numpy() for emb in all_embeddings])
+                                 ^^^^^^^^^^^
+RuntimeError: Numpy is not available
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/app.py", line 59, in process
+    await EmbeddingUtils().generate_and_store_embeddings(chat_uid, documents)
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/src/helpers.py", line 204, in generate_and_store_embeddings
+    raise EmbeddingError(message)
+src.exceptions.EmbeddingError: Error generating embeddings for collection: dsimon-f5ea9a39-dba0-430a-985b-4c84a536247f-embeddings. Error: Numpy is not available
+
+2025-08-20 10:48:27 - src.loghandler - INFO - Files uploaded successfully.
+2025-08-20 10:48:33 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-20 10:48:34 - src.loghandler - INFO - Collection created: dsimon-f5ea9a39-dba0-430a-985b-4c84a536247f-embeddings
+2025-08-20 10:48:34 - src.loghandler - INFO - Generating vector embeddings for collection: dsimon-f5ea9a39-dba0-430a-985b-4c84a536247f-embeddings...
+2025-08-20 10:48:43 - src.loghandler - ERROR - Error generating embeddings for collection: dsimon-f5ea9a39-dba0-430a-985b-4c84a536247f-embeddings. Error: Numpy is not available
+2025-08-20 10:48:43 - src.loghandler - ERROR - Traceback (most recent call last):
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/src/helpers.py", line 197, in generate_and_store_embeddings
+    embeddings = [self.embed_func.get_text_embedding(item) for item in content_list]
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/src/helpers.py", line 197, in <listcomp>
+    embeddings = [self.embed_func.get_text_embedding(item) for item in content_list]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index_instrumentation/dispatcher.py", line 317, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/core/base/embeddings/base.py", line 368, in get_text_embedding
+    text_embedding = self._get_text_embedding(text)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index_instrumentation/dispatcher.py", line 317, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/embeddings/huggingface/base.py", line 320, in _get_text_embedding
+    return self._embed([text], prompt_name="text")[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/embeddings/huggingface/base.py", line 268, in _embed
+    return self._embed_with_retry(inputs, prompt_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/tenacity/__init__.py", line 336, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/tenacity/__init__.py", line 475, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/tenacity/__init__.py", line 376, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/tenacity/__init__.py", line 418, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/tenacity/__init__.py", line 185, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/.local/share/uv/python/cpython-3.11.9-macos-x86_64-none/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/.local/share/uv/python/cpython-3.11.9-macos-x86_64-none/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/tenacity/__init__.py", line 478, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/embeddings/huggingface/base.py", line 236, in _embed_with_retry
+    emb = self._model.encode(
+          ^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/sentence_transformers/SentenceTransformer.py", line 1109, in encode
+    all_embeddings = np.asarray([emb.numpy() for emb in all_embeddings])
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/sentence_transformers/SentenceTransformer.py", line 1109, in <listcomp>
+    all_embeddings = np.asarray([emb.numpy() for emb in all_embeddings])
+                                 ^^^^^^^^^^^
+RuntimeError: Numpy is not available
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/app.py", line 59, in process
+    await EmbeddingUtils().generate_and_store_embeddings(chat_uid, documents)
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/src/helpers.py", line 204, in generate_and_store_embeddings
+    raise EmbeddingError(message)
+src.exceptions.EmbeddingError: Error generating embeddings for collection: dsimon-f5ea9a39-dba0-430a-985b-4c84a536247f-embeddings. Error: Numpy is not available
+
+2025-08-20 11:20:21 - src.loghandler - INFO - Files uploaded successfully.
+2025-08-20 11:20:22 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-20 11:20:23 - src.loghandler - INFO - Collection created: dsimon-a539ece5-67e6-4747-858e-4d8a03eccf1b-embeddings
+2025-08-20 11:20:23 - src.loghandler - INFO - Generating vector embeddings for collection: dsimon-a539ece5-67e6-4747-858e-4d8a03eccf1b-embeddings...
+2025-08-20 11:20:33 - src.loghandler - INFO - Embeddings generated for collection: dsimon-a539ece5-67e6-4747-858e-4d8a03eccf1b-embeddings in 10.559639930725098 seconds.
+2025-08-20 11:20:33 - src.loghandler - INFO - Populating collection dsimon-a539ece5-67e6-4747-858e-4d8a03eccf1b-embeddings with computed embeddings...
+2025-08-20 11:20:34 - src.loghandler - INFO - Collection size::8
+2025-08-20 11:23:04 - src.loghandler - INFO - Chat engine started for conversation a539ece5-67e6-4747-858e-4d8a03eccf1b
+2025-08-20 11:23:04 - src.loghandler - INFO - The user's query is: Give me a two-sentence summary of AISOC curriculum
+2025-08-20 11:23:06 - src.loghandler - INFO - System prompt::Your name is DSIMONAssistant. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-20 11:23:06 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-20 11:23:06 - src.loghandler - INFO - Collection retrieved: dsimon-a539ece5-67e6-4747-858e-4d8a03eccf1b-embeddings
+2025-08-20 11:23:06 - src.loghandler - INFO - Embeddings retrieved from ChromaDB for collection dsimon-a539ece5-67e6-4747-858e-4d8a03eccf1b-embeddings
+2025-08-20 11:23:06 - src.loghandler - INFO - Retrieving chat memory...
+2025-08-20 11:23:07 - src.loghandler - INFO - Starting response stream...
+
+2025-08-20 11:26:27 - src.loghandler - INFO - Chat engine started for conversation a539ece5-67e6-4747-858e-4d8a03eccf1b
+2025-08-20 11:26:27 - src.loghandler - INFO - The user's query is: Give me a two-sentence summary of AISOC curriculum
+2025-08-20 11:26:27 - src.loghandler - INFO - System prompt::Your name is DSIMONAssistant. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-20 11:26:27 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-20 11:26:27 - src.loghandler - INFO - Collection retrieved: dsimon-a539ece5-67e6-4747-858e-4d8a03eccf1b-embeddings
+2025-08-20 11:26:27 - src.loghandler - INFO - Embeddings retrieved from ChromaDB for collection dsimon-a539ece5-67e6-4747-858e-4d8a03eccf1b-embeddings
+2025-08-20 11:26:27 - src.loghandler - INFO - Retrieving chat memory...
+2025-08-20 11:26:29 - src.loghandler - INFO - Starting response stream...
+
+2025-08-20 11:27:08 - src.loghandler - INFO - Chat engine started for conversation a539ece5-67e6-4747-858e-4d8a03eccf1b
+2025-08-20 11:27:08 - src.loghandler - INFO - The user's query is: Give me a two-sentence summary of AISOC curriculum
+2025-08-20 11:27:08 - src.loghandler - INFO - System prompt::Your name is DSIMONAssistant. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-20 11:27:08 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-20 11:27:09 - src.loghandler - INFO - Collection retrieved: dsimon-a539ece5-67e6-4747-858e-4d8a03eccf1b-embeddings
+2025-08-20 11:27:09 - src.loghandler - INFO - Embeddings retrieved from ChromaDB for collection dsimon-a539ece5-67e6-4747-858e-4d8a03eccf1b-embeddings
+2025-08-20 11:27:09 - src.loghandler - INFO - Retrieving chat memory...
+2025-08-20 11:27:09 - src.loghandler - INFO - Starting response stream...
+
+2025-08-20 11:27:25 - src.loghandler - INFO - Chat engine started for conversation a539ece5-67e6-4747-858e-4d8a03eccf1b
+2025-08-20 11:27:25 - src.loghandler - INFO - The user's query is: Give me a two-sentence summary of AISOC curriculum
+2025-08-20 11:27:25 - src.loghandler - INFO - System prompt::Your name is DSIMONAssistant. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-20 11:27:25 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-20 11:27:26 - src.loghandler - INFO - Collection retrieved: dsimon-a539ece5-67e6-4747-858e-4d8a03eccf1b-embeddings
+2025-08-20 11:27:26 - src.loghandler - INFO - Embeddings retrieved from ChromaDB for collection dsimon-a539ece5-67e6-4747-858e-4d8a03eccf1b-embeddings
+2025-08-20 11:27:26 - src.loghandler - INFO - Retrieving chat memory...
+2025-08-20 11:27:26 - src.loghandler - INFO - Starting response stream...
+
+2025-08-20 11:28:31 - src.loghandler - INFO - Chat engine started for conversation a539ece5-67e6-4747-858e-4d8a03eccf1b
+2025-08-20 11:28:31 - src.loghandler - INFO - The user's query is: What is the breakdown of AgenticAI Syllabus?
+2025-08-20 11:28:31 - src.loghandler - INFO - System prompt::Your name is DSIMONAssistant. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-20 11:28:31 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-20 11:28:33 - src.loghandler - INFO - Collection retrieved: dsimon-a539ece5-67e6-4747-858e-4d8a03eccf1b-embeddings
+2025-08-20 11:28:33 - src.loghandler - INFO - Embeddings retrieved from ChromaDB for collection dsimon-a539ece5-67e6-4747-858e-4d8a03eccf1b-embeddings
+2025-08-20 11:28:33 - src.loghandler - INFO - Retrieving chat memory...
+2025-08-20 11:28:33 - src.loghandler - INFO - Starting response stream...
+
+2025-08-20 11:29:02 - src.loghandler - INFO - Files uploaded successfully.
+2025-08-20 11:29:04 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-20 11:29:04 - src.loghandler - INFO - Collection created: dsimon-a539ece5-67e6-4747-858e-4d8a03eccf1b-embeddings
+2025-08-20 11:29:04 - src.loghandler - INFO - Generating vector embeddings for collection: dsimon-a539ece5-67e6-4747-858e-4d8a03eccf1b-embeddings...
+2025-08-20 11:29:07 - src.loghandler - INFO - Embeddings generated for collection: dsimon-a539ece5-67e6-4747-858e-4d8a03eccf1b-embeddings in 3.179438829421997 seconds.
+2025-08-20 11:29:07 - src.loghandler - INFO - Populating collection dsimon-a539ece5-67e6-4747-858e-4d8a03eccf1b-embeddings with computed embeddings...
+2025-08-20 11:29:07 - src.loghandler - INFO - Collection size::11
+2025-08-20 11:29:10 - src.loghandler - INFO - Chat engine started for conversation a539ece5-67e6-4747-858e-4d8a03eccf1b
+2025-08-20 11:29:10 - src.loghandler - INFO - The user's query is: What is the breakdown of AgenticAI Syllabus?
+2025-08-20 11:29:10 - src.loghandler - INFO - System prompt::Your name is DSIMONAssistant. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-20 11:29:10 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-20 11:29:11 - src.loghandler - INFO - Collection retrieved: dsimon-a539ece5-67e6-4747-858e-4d8a03eccf1b-embeddings
+2025-08-20 11:29:11 - src.loghandler - INFO - Embeddings retrieved from ChromaDB for collection dsimon-a539ece5-67e6-4747-858e-4d8a03eccf1b-embeddings
+2025-08-20 11:29:11 - src.loghandler - INFO - Retrieving chat memory...
+2025-08-20 11:29:11 - src.loghandler - INFO - Starting response stream...
+
+2025-08-20 11:47:31 - src.loghandler - INFO - Files uploaded successfully.
+2025-08-20 11:47:33 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-20 11:47:33 - src.loghandler - INFO - Collection created: dsimon-e7356ae2-646b-4b10-979e-6c21473b60f5-embeddings
+2025-08-20 11:47:33 - src.loghandler - INFO - Generating vector embeddings for collection: dsimon-e7356ae2-646b-4b10-979e-6c21473b60f5-embeddings...
+2025-08-20 11:47:37 - src.loghandler - INFO - Embeddings generated for collection: dsimon-e7356ae2-646b-4b10-979e-6c21473b60f5-embeddings in 4.028660774230957 seconds.
+2025-08-20 11:47:37 - src.loghandler - INFO - Populating collection dsimon-e7356ae2-646b-4b10-979e-6c21473b60f5-embeddings with computed embeddings...
+2025-08-20 11:47:37 - src.loghandler - INFO - Collection size::5
+2025-08-20 11:47:58 - src.loghandler - INFO - Chat engine started for conversation e7356ae2-646b-4b10-979e-6c21473b60f5
+2025-08-20 11:47:58 - src.loghandler - INFO - The user's query is: What are the concepts contained in this course?
+2025-08-20 11:47:58 - src.loghandler - INFO - System prompt::Your name is DSIMONAssistant. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-20 11:47:58 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-20 11:47:59 - src.loghandler - INFO - Collection retrieved: dsimon-e7356ae2-646b-4b10-979e-6c21473b60f5-embeddings
+2025-08-20 11:47:59 - src.loghandler - INFO - Embeddings retrieved from ChromaDB for collection dsimon-e7356ae2-646b-4b10-979e-6c21473b60f5-embeddings
+2025-08-20 11:47:59 - src.loghandler - INFO - Retrieving chat memory...
+2025-08-20 11:48:00 - src.loghandler - INFO - Starting response stream...
+
+2025-08-20 11:49:14 - src.loghandler - INFO - Chat engine started for conversation e7356ae2-646b-4b10-979e-6c21473b60f5
+2025-08-20 11:49:14 - src.loghandler - INFO - The user's query is: Can you walk me through the Biofilm Formation, and explain it more?
+2025-08-20 11:49:14 - src.loghandler - INFO - System prompt::Your name is DSIMONAssistant. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-20 11:49:14 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-20 11:49:15 - src.loghandler - INFO - Collection retrieved: dsimon-e7356ae2-646b-4b10-979e-6c21473b60f5-embeddings
+2025-08-20 11:49:15 - src.loghandler - INFO - Embeddings retrieved from ChromaDB for collection dsimon-e7356ae2-646b-4b10-979e-6c21473b60f5-embeddings
+2025-08-20 11:49:15 - src.loghandler - INFO - Retrieving chat memory...
+2025-08-20 11:49:16 - src.loghandler - INFO - Starting response stream...
+
+2025-08-20 11:49:45 - src.loghandler - INFO - Chat engine started for conversation e7356ae2-646b-4b10-979e-6c21473b60f5
+2025-08-20 11:49:45 - src.loghandler - INFO - The user's query is: Which other can you explain?
+2025-08-20 11:49:45 - src.loghandler - INFO - System prompt::Your name is DSIMONAssistant. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-20 11:49:45 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-20 11:49:45 - src.loghandler - INFO - Collection retrieved: dsimon-e7356ae2-646b-4b10-979e-6c21473b60f5-embeddings
+2025-08-20 11:49:45 - src.loghandler - INFO - Embeddings retrieved from ChromaDB for collection dsimon-e7356ae2-646b-4b10-979e-6c21473b60f5-embeddings
+2025-08-20 11:49:45 - src.loghandler - INFO - Retrieving chat memory...
+2025-08-20 11:49:45 - src.loghandler - INFO - Starting response stream...
+
+2025-08-21 08:38:36 - src.loghandler - INFO - Files uploaded successfully.
+2025-08-21 08:38:36 - src.loghandler - ERROR - Traceback (most recent call last):
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/core/readers/file/base.py", line 581, in load_file
+    docs = reader.load_data(input_file, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/readers/file/slides/base.py", line 101, in load_data
+    result = self.extract_with_validation(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/readers/file/slides/base.py", line 170, in extract_with_validation
+    validation = self._validate_file(file_path, fs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/readers/file/slides/base.py", line 342, in _validate_file
+    from pptx import Presentation
+ModuleNotFoundError: No module named 'pptx'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/app.py", line 58, in process
+    documents = SimpleDirectoryReader(temp_dir).load_data()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/core/readers/file/base.py", line 746, in load_data
+    SimpleDirectoryReader.load_file(
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/core/readers/file/base.py", line 585, in load_file
+    raise ImportError(str(e))
+ImportError: No module named 'pptx'
+
+2025-08-21 08:42:01 - src.loghandler - INFO - Files uploaded successfully.
+2025-08-21 08:42:01 - src.loghandler - ERROR - Traceback (most recent call last):
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/core/readers/file/base.py", line 581, in load_file
+    docs = reader.load_data(input_file, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/readers/file/slides/base.py", line 101, in load_data
+    result = self.extract_with_validation(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/readers/file/slides/base.py", line 170, in extract_with_validation
+    validation = self._validate_file(file_path, fs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/readers/file/slides/base.py", line 342, in _validate_file
+    from pptx import Presentation
+ModuleNotFoundError: No module named 'pptx'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/app.py", line 58, in process
+    documents = SimpleDirectoryReader(temp_dir).load_data()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/core/readers/file/base.py", line 746, in load_data
+    SimpleDirectoryReader.load_file(
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/core/readers/file/base.py", line 585, in load_file
+    raise ImportError(str(e))
+ImportError: No module named 'pptx'
+
+2025-08-21 08:42:04 - src.loghandler - INFO - Files uploaded successfully.
+2025-08-21 08:42:04 - src.loghandler - ERROR - Traceback (most recent call last):
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/core/readers/file/base.py", line 581, in load_file
+    docs = reader.load_data(input_file, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/readers/file/slides/base.py", line 101, in load_data
+    result = self.extract_with_validation(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/readers/file/slides/base.py", line 170, in extract_with_validation
+    validation = self._validate_file(file_path, fs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/readers/file/slides/base.py", line 342, in _validate_file
+    from pptx import Presentation
+ModuleNotFoundError: No module named 'pptx'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/app.py", line 58, in process
+    documents = SimpleDirectoryReader(temp_dir).load_data()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/core/readers/file/base.py", line 746, in load_data
+    SimpleDirectoryReader.load_file(
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/core/readers/file/base.py", line 585, in load_file
+    raise ImportError(str(e))
+ImportError: No module named 'pptx'
+
+2025-08-21 08:42:06 - src.loghandler - INFO - Files uploaded successfully.
+2025-08-21 08:42:06 - src.loghandler - ERROR - Traceback (most recent call last):
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/core/readers/file/base.py", line 581, in load_file
+    docs = reader.load_data(input_file, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/readers/file/slides/base.py", line 101, in load_data
+    result = self.extract_with_validation(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/readers/file/slides/base.py", line 170, in extract_with_validation
+    validation = self._validate_file(file_path, fs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/readers/file/slides/base.py", line 342, in _validate_file
+    from pptx import Presentation
+ModuleNotFoundError: No module named 'pptx'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/app.py", line 58, in process
+    documents = SimpleDirectoryReader(temp_dir).load_data()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/core/readers/file/base.py", line 746, in load_data
+    SimpleDirectoryReader.load_file(
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/core/readers/file/base.py", line 585, in load_file
+    raise ImportError(str(e))
+ImportError: No module named 'pptx'
+
+2025-08-21 08:44:59 - src.loghandler - INFO - Files uploaded successfully.
+2025-08-21 08:45:00 - src.loghandler - ERROR - Traceback (most recent call last):
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/core/readers/file/base.py", line 581, in load_file
+    docs = reader.load_data(input_file, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/readers/file/slides/base.py", line 101, in load_data
+    result = self.extract_with_validation(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/readers/file/slides/base.py", line 170, in extract_with_validation
+    validation = self._validate_file(file_path, fs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/readers/file/slides/base.py", line 342, in _validate_file
+    from pptx import Presentation
+ModuleNotFoundError: No module named 'pptx'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/app.py", line 58, in process
+    documents = SimpleDirectoryReader(temp_dir).load_data()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/core/readers/file/base.py", line 746, in load_data
+    SimpleDirectoryReader.load_file(
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/core/readers/file/base.py", line 585, in load_file
+    raise ImportError(str(e))
+ImportError: No module named 'pptx'
+
+2025-08-21 08:53:42 - src.loghandler - INFO - Files uploaded successfully.
+2025-08-21 08:54:05 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-21 08:54:05 - src.loghandler - INFO - Collection created: dsimon-dcaf3878-94c2-4f25-aca5-eab9bed05f6a-embeddings
+2025-08-21 08:54:05 - src.loghandler - INFO - Generating vector embeddings for collection: dsimon-dcaf3878-94c2-4f25-aca5-eab9bed05f6a-embeddings...
+2025-08-21 08:54:19 - src.loghandler - INFO - Embeddings generated for collection: dsimon-dcaf3878-94c2-4f25-aca5-eab9bed05f6a-embeddings in 13.877361059188843 seconds.
+2025-08-21 08:54:19 - src.loghandler - INFO - Populating collection dsimon-dcaf3878-94c2-4f25-aca5-eab9bed05f6a-embeddings with computed embeddings...
+2025-08-21 08:54:19 - src.loghandler - ERROR - Traceback (most recent call last):
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/app.py", line 59, in process
+    await EmbeddingUtils().generate_and_store_embeddings(chat_uid, documents)
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/src/helpers.py", line 208, in generate_and_store_embeddings
+    chroma_collection.upsert(
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/chromadb/api/models/Collection.py", line 365, in upsert
+    upsert_request = self._validate_and_prepare_upsert_request(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/chromadb/api/models/CollectionCommon.py", line 95, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/chromadb/api/models/CollectionCommon.py", line 415, in _validate_and_prepare_upsert_request
+    validate_insert_record_set(record_set=upsert_records)
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/chromadb/api/types.py", line 314, in validate_insert_record_set
+    validate_metadatas(record_set["metadatas"])
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/chromadb/api/types.py", line 791, in validate_metadatas
+    validate_metadata(metadata)
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/chromadb/api/types.py", line 757, in validate_metadata
+    raise ValueError(
+ValueError: Expected metadata value to be a str, int, float, bool, or None, got [] which is a list in upsert.
+
+2025-08-21 08:57:34 - src.loghandler - INFO - Files uploaded successfully.
+2025-08-21 08:57:36 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-21 08:57:37 - src.loghandler - INFO - Collection created: dsimon-dcaf3878-94c2-4f25-aca5-eab9bed05f6a-embeddings
+2025-08-21 08:57:37 - src.loghandler - INFO - Generating vector embeddings for collection: dsimon-dcaf3878-94c2-4f25-aca5-eab9bed05f6a-embeddings...
+2025-08-21 08:57:41 - src.loghandler - INFO - Embeddings generated for collection: dsimon-dcaf3878-94c2-4f25-aca5-eab9bed05f6a-embeddings in 4.808241844177246 seconds.
+2025-08-21 08:57:41 - src.loghandler - INFO - Populating collection dsimon-dcaf3878-94c2-4f25-aca5-eab9bed05f6a-embeddings with computed embeddings...
+2025-08-21 08:57:42 - src.loghandler - INFO - Collection size::12
+2025-08-21 09:00:09 - src.loghandler - INFO - Chat engine started for conversation dcaf3878-94c2-4f25-aca5-eab9bed05f6a
+2025-08-21 09:00:09 - src.loghandler - INFO - The user's query is: Compare the mechanism of action of Cephalosporins with the resistance mechanisms against these drugs
+2025-08-21 09:00:09 - src.loghandler - INFO - System prompt::Your name is DSIMONAssistant. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-21 09:00:09 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-21 09:00:09 - src.loghandler - INFO - Collection retrieved: dsimon-dcaf3878-94c2-4f25-aca5-eab9bed05f6a-embeddings
+2025-08-21 09:00:10 - src.loghandler - INFO - Embeddings retrieved from ChromaDB for collection dsimon-dcaf3878-94c2-4f25-aca5-eab9bed05f6a-embeddings
+2025-08-21 09:00:10 - src.loghandler - INFO - Retrieving chat memory...
+2025-08-21 09:03:36 - src.loghandler - INFO - Chat engine started for conversation dcaf3878-94c2-4f25-aca5-eab9bed05f6a
+2025-08-21 09:03:36 - src.loghandler - INFO - The user's query is: Compare the mechanism of action of Cephalosporins with the resistance mechanisms against these drugs
+2025-08-21 09:03:36 - src.loghandler - INFO - System prompt::Your name is DSIMONAssistant. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-21 09:03:36 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-21 09:03:36 - src.loghandler - INFO - Collection retrieved: dsimon-dcaf3878-94c2-4f25-aca5-eab9bed05f6a-embeddings
+2025-08-21 09:03:37 - src.loghandler - INFO - Embeddings retrieved from ChromaDB for collection dsimon-dcaf3878-94c2-4f25-aca5-eab9bed05f6a-embeddings
+2025-08-21 09:03:37 - src.loghandler - INFO - Retrieving chat memory...
+2025-08-21 09:03:49 - src.loghandler - INFO - Chat engine started for conversation dcaf3878-94c2-4f25-aca5-eab9bed05f6a
+2025-08-21 09:03:49 - src.loghandler - INFO - The user's query is: Compare the mechanism of action of Cephalosporins with the resistance mechanisms against these drugs
+2025-08-21 09:03:49 - src.loghandler - INFO - System prompt::Your name is DSIMONAssistant. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-21 09:03:49 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-21 09:03:50 - src.loghandler - INFO - Collection retrieved: dsimon-dcaf3878-94c2-4f25-aca5-eab9bed05f6a-embeddings
+2025-08-21 09:03:50 - src.loghandler - INFO - Embeddings retrieved from ChromaDB for collection dsimon-dcaf3878-94c2-4f25-aca5-eab9bed05f6a-embeddings
+2025-08-21 09:03:50 - src.loghandler - INFO - Retrieving chat memory...
+2025-08-21 09:04:03 - src.loghandler - INFO - Chat engine started for conversation dcaf3878-94c2-4f25-aca5-eab9bed05f6a
+2025-08-21 09:04:03 - src.loghandler - INFO - The user's query is: Compare the mechanism of action of Cephalosporins with the resistance mechanisms against these drugs
+2025-08-21 09:04:03 - src.loghandler - INFO - System prompt::Your name is DSIMONAssistant. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-21 09:04:03 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-21 09:04:03 - src.loghandler - INFO - Collection retrieved: dsimon-dcaf3878-94c2-4f25-aca5-eab9bed05f6a-embeddings
+2025-08-21 09:04:03 - src.loghandler - INFO - Embeddings retrieved from ChromaDB for collection dsimon-dcaf3878-94c2-4f25-aca5-eab9bed05f6a-embeddings
+2025-08-21 09:04:03 - src.loghandler - INFO - Retrieving chat memory...
+2025-08-21 09:11:37 - src.loghandler - INFO - Chat engine started for conversation dcaf3878-94c2-4f25-aca5-eab9bed05f6a
+2025-08-21 09:11:37 - src.loghandler - INFO - The user's query is: Compare the mechanism of action of Cephalosporins with the resistance mechanisms against these drugs
+2025-08-21 09:11:37 - src.loghandler - INFO - System prompt::Your name is DSIMONAssistant. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-21 09:11:37 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-21 09:11:38 - src.loghandler - INFO - Collection retrieved: dsimon-dcaf3878-94c2-4f25-aca5-eab9bed05f6a-embeddings
+2025-08-21 09:11:38 - src.loghandler - INFO - Embeddings retrieved from ChromaDB for collection dsimon-dcaf3878-94c2-4f25-aca5-eab9bed05f6a-embeddings
+2025-08-21 09:11:38 - src.loghandler - INFO - Retrieving chat memory...
+2025-08-21 09:12:06 - src.loghandler - INFO - Chat engine started for conversation dcaf3878-94c2-4f25-aca5-eab9bed05f6a
+2025-08-21 09:12:06 - src.loghandler - INFO - The user's query is: Compare the mechanism of action of Cephalosporins with the resistance mechanisms against these drugs
+2025-08-21 09:12:06 - src.loghandler - INFO - System prompt::Your name is DSIMONAssistant. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-21 09:12:06 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-21 09:12:07 - src.loghandler - INFO - Collection retrieved: dsimon-dcaf3878-94c2-4f25-aca5-eab9bed05f6a-embeddings
+2025-08-21 09:12:07 - src.loghandler - INFO - Embeddings retrieved from ChromaDB for collection dsimon-dcaf3878-94c2-4f25-aca5-eab9bed05f6a-embeddings
+2025-08-21 09:12:07 - src.loghandler - INFO - Retrieving chat memory...
+2025-08-21 09:12:52 - src.loghandler - INFO - Files uploaded successfully.
+2025-08-21 09:12:59 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-21 09:12:59 - src.loghandler - INFO - Collection created: dsimon-af87416e-ddc7-45fa-bf55-99492db33d3d-embeddings
+2025-08-21 09:12:59 - src.loghandler - INFO - Generating vector embeddings for collection: dsimon-af87416e-ddc7-45fa-bf55-99492db33d3d-embeddings...
+2025-08-21 09:13:03 - src.loghandler - INFO - Embeddings generated for collection: dsimon-af87416e-ddc7-45fa-bf55-99492db33d3d-embeddings in 3.5548057556152344 seconds.
+2025-08-21 09:13:03 - src.loghandler - INFO - Populating collection dsimon-af87416e-ddc7-45fa-bf55-99492db33d3d-embeddings with computed embeddings...
+2025-08-21 09:13:03 - src.loghandler - INFO - Collection size::12
+2025-08-21 09:13:09 - src.loghandler - INFO - Chat engine started for conversation af87416e-ddc7-45fa-bf55-99492db33d3d
+2025-08-21 09:13:09 - src.loghandler - INFO - The user's query is: Compare the mechanism of action of Cephalosporins with the resistance mechanisms against these drugs
+2025-08-21 09:13:09 - src.loghandler - INFO - System prompt::Your name is DSIMONAssistant. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-21 09:13:09 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-21 09:13:10 - src.loghandler - INFO - Collection retrieved: dsimon-af87416e-ddc7-45fa-bf55-99492db33d3d-embeddings
+2025-08-21 09:13:10 - src.loghandler - INFO - Embeddings retrieved from ChromaDB for collection dsimon-af87416e-ddc7-45fa-bf55-99492db33d3d-embeddings
+2025-08-21 09:13:10 - src.loghandler - INFO - Retrieving chat memory...
+2025-08-21 09:13:15 - src.loghandler - INFO - Starting response stream...
+
+2025-08-21 09:17:20 - src.loghandler - INFO - Chat engine started for conversation af87416e-ddc7-45fa-bf55-99492db33d3d
+2025-08-21 09:17:20 - src.loghandler - INFO - The user's query is: Which of the mechanisms may lead to a loss of the ability to maintain shape and resist osmotic pressure?
+2025-08-21 09:17:20 - src.loghandler - INFO - System prompt::Your name is DSIMONAssistant. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-21 09:17:20 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-21 09:17:22 - src.loghandler - INFO - Collection retrieved: dsimon-af87416e-ddc7-45fa-bf55-99492db33d3d-embeddings
+2025-08-21 09:17:22 - src.loghandler - INFO - Embeddings retrieved from ChromaDB for collection dsimon-af87416e-ddc7-45fa-bf55-99492db33d3d-embeddings
+2025-08-21 09:17:22 - src.loghandler - INFO - Retrieving chat memory...
+2025-08-21 09:17:25 - src.loghandler - INFO - Starting response stream...
+
+2025-08-21 09:18:17 - src.loghandler - INFO - Chat engine started for conversation af87416e-ddc7-45fa-bf55-99492db33d3d
+2025-08-21 09:18:17 - src.loghandler - INFO - The user's query is: How about the side effects or Cephalosporins?
+2025-08-21 09:18:17 - src.loghandler - INFO - System prompt::Your name is DSIMONAssistant. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-21 09:18:17 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-21 09:18:18 - src.loghandler - INFO - Collection retrieved: dsimon-af87416e-ddc7-45fa-bf55-99492db33d3d-embeddings
+2025-08-21 09:18:18 - src.loghandler - INFO - Embeddings retrieved from ChromaDB for collection dsimon-af87416e-ddc7-45fa-bf55-99492db33d3d-embeddings
+2025-08-21 09:18:18 - src.loghandler - INFO - Retrieving chat memory...
+2025-08-21 09:18:23 - src.loghandler - INFO - Starting response stream...
+
+2025-08-21 09:19:28 - src.loghandler - INFO - Chat engine started for conversation af87416e-ddc7-45fa-bf55-99492db33d3d
+2025-08-21 09:19:28 - src.loghandler - INFO - The user's query is: Are any of the side effects due to any of the mechanism of reaction? If yes, which and how?
+2025-08-21 09:19:28 - src.loghandler - INFO - System prompt::Your name is DSIMONAssistant. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-21 09:19:28 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-21 09:19:29 - src.loghandler - INFO - Collection retrieved: dsimon-af87416e-ddc7-45fa-bf55-99492db33d3d-embeddings
+2025-08-21 09:19:29 - src.loghandler - INFO - Embeddings retrieved from ChromaDB for collection dsimon-af87416e-ddc7-45fa-bf55-99492db33d3d-embeddings
+2025-08-21 09:19:29 - src.loghandler - INFO - Retrieving chat memory...
+2025-08-21 09:19:35 - src.loghandler - INFO - Starting response stream...
+
+2025-08-22 10:59:26 - src.loghandler - INFO - Files uploaded successfully.
+2025-08-22 10:59:41 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-22 10:59:43 - src.loghandler - INFO - Collection created: dsimon-53a4cba3-44f7-442d-938e-28e494b2d95c-embeddings
+2025-08-22 10:59:43 - src.loghandler - INFO - Generating vector embeddings for collection: dsimon-53a4cba3-44f7-442d-938e-28e494b2d95c-embeddings...
+2025-08-22 11:00:23 - src.loghandler - INFO - Embeddings generated for collection: dsimon-53a4cba3-44f7-442d-938e-28e494b2d95c-embeddings in 40.09986996650696 seconds.
+2025-08-22 11:00:23 - src.loghandler - INFO - Populating collection dsimon-53a4cba3-44f7-442d-938e-28e494b2d95c-embeddings with computed embeddings...
+2025-08-22 11:00:24 - src.loghandler - INFO - Collection size::26
+2025-08-22 11:01:01 - src.loghandler - INFO - Chat engine started for conversation 53a4cba3-44f7-442d-938e-28e494b2d95c
+2025-08-22 11:01:01 - src.loghandler - INFO - The user's query is: What does the paper mean by this:
+
+Table 2 reports the mean and standard deviation of pairwise inter-annotator agreement
+scores on subsets of 20 repeated annotations.
+We perform a 4 × 20 pairwise agreement study
+across distinct subsets to maximize the representativeness of our survey corpus and ensure
+robust assessment of annotation consistency.
+2025-08-22 11:01:01 - src.loghandler - INFO - System prompt::Your name is DSIMONAssistant. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-22 11:01:01 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-22 11:01:02 - src.loghandler - INFO - Collection retrieved: dsimon-53a4cba3-44f7-442d-938e-28e494b2d95c-embeddings
+2025-08-22 11:01:03 - src.loghandler - INFO - Embeddings retrieved from ChromaDB for collection dsimon-53a4cba3-44f7-442d-938e-28e494b2d95c-embeddings
+2025-08-22 11:01:03 - src.loghandler - INFO - Retrieving chat memory...
+2025-08-22 11:24:22 - src.loghandler - INFO - Files uploaded successfully.
+2025-08-22 11:24:25 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-22 11:24:26 - src.loghandler - INFO - Collection created: dsimon-520697f4-a986-44f6-8b5a-0943431e84f8-embeddings
+2025-08-22 11:24:26 - src.loghandler - INFO - Generating vector embeddings for collection: dsimon-520697f4-a986-44f6-8b5a-0943431e84f8-embeddings...
+2025-08-22 11:24:51 - src.loghandler - INFO - Embeddings generated for collection: dsimon-520697f4-a986-44f6-8b5a-0943431e84f8-embeddings in 24.766655206680298 seconds.
+2025-08-22 11:24:51 - src.loghandler - INFO - Populating collection dsimon-520697f4-a986-44f6-8b5a-0943431e84f8-embeddings with computed embeddings...
+2025-08-22 11:24:51 - src.loghandler - INFO - Collection size::26
+2025-08-22 11:25:15 - src.loghandler - INFO - Chat engine started for conversation 520697f4-a986-44f6-8b5a-0943431e84f8
+2025-08-22 11:25:15 - src.loghandler - INFO - The user's query is: What does this text in the paper mean:
+
+Table 2 reports the mean and standard deviation of pairwise inter-annotator agreement
+scores on subsets of 20 repeated annotations.
+We perform a 4 × 20 pairwise agreement study
+across distinct subsets to maximize the representativeness of our survey corpus and ensure
+robust assessment of annotation consistency.
+We find that inter-annotator agreement is consistently high, between 0.80 and 0.96 on average
+per category, but we note that the annotations may still contain imperfections.
+2025-08-22 11:25:15 - src.loghandler - INFO - System prompt::Your name is DSIMONAssistant. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-22 11:25:15 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-22 11:25:18 - src.loghandler - INFO - Collection retrieved: dsimon-520697f4-a986-44f6-8b5a-0943431e84f8-embeddings
+2025-08-22 11:25:18 - src.loghandler - INFO - Embeddings retrieved from ChromaDB for collection dsimon-520697f4-a986-44f6-8b5a-0943431e84f8-embeddings
+2025-08-22 11:25:18 - src.loghandler - INFO - Retrieving chat memory...
+2025-08-22 11:25:46 - src.loghandler - INFO - Chat engine started for conversation 520697f4-a986-44f6-8b5a-0943431e84f8
+2025-08-22 11:25:46 - src.loghandler - INFO - The user's query is: What's the summary of LLM Safety?
+2025-08-22 11:25:46 - src.loghandler - INFO - System prompt::Your name is DSIMONAssistant. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-22 11:25:46 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-22 11:25:47 - src.loghandler - INFO - Collection retrieved: dsimon-520697f4-a986-44f6-8b5a-0943431e84f8-embeddings
+2025-08-22 11:25:47 - src.loghandler - INFO - Embeddings retrieved from ChromaDB for collection dsimon-520697f4-a986-44f6-8b5a-0943431e84f8-embeddings
+2025-08-22 11:25:47 - src.loghandler - INFO - Retrieving chat memory...
+2025-08-22 11:26:11 - src.loghandler - INFO - Chat engine started for conversation 520697f4-a986-44f6-8b5a-0943431e84f8
+2025-08-22 11:26:11 - src.loghandler - INFO - The user's query is: What's the summary of LLM Safety?
+2025-08-22 11:26:11 - src.loghandler - INFO - System prompt::Your name is DSIMONAssistant. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-22 11:26:11 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-22 11:26:12 - src.loghandler - INFO - Collection retrieved: dsimon-520697f4-a986-44f6-8b5a-0943431e84f8-embeddings
+2025-08-22 11:26:12 - src.loghandler - INFO - Embeddings retrieved from ChromaDB for collection dsimon-520697f4-a986-44f6-8b5a-0943431e84f8-embeddings
+2025-08-22 11:26:12 - src.loghandler - INFO - Retrieving chat memory...
+2025-08-22 11:29:52 - src.loghandler - INFO - Chat engine started for conversation 520697f4-a986-44f6-8b5a-0943431e84f8
+2025-08-22 11:29:52 - src.loghandler - INFO - The user's query is: What's the summary of LLM Safety?
+2025-08-22 11:29:52 - src.loghandler - INFO - System prompt::Your name is DSIMONAssistant. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-22 11:29:52 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-22 11:29:54 - src.loghandler - INFO - Collection retrieved: dsimon-520697f4-a986-44f6-8b5a-0943431e84f8-embeddings
+2025-08-22 11:29:54 - src.loghandler - INFO - Embeddings retrieved from ChromaDB for collection dsimon-520697f4-a986-44f6-8b5a-0943431e84f8-embeddings
+2025-08-22 11:29:54 - src.loghandler - INFO - Retrieving chat memory...
+2025-08-22 11:36:58 - src.loghandler - INFO - Files uploaded successfully.
+2025-08-22 11:37:03 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-22 11:37:03 - src.loghandler - INFO - Collection created: dsimon-5c0f7076-ecb7-4689-b36e-2dc0533cd165-embeddings
+2025-08-22 11:37:03 - src.loghandler - INFO - Generating vector embeddings for collection: dsimon-5c0f7076-ecb7-4689-b36e-2dc0533cd165-embeddings...
+2025-08-22 11:37:15 - src.loghandler - INFO - Embeddings generated for collection: dsimon-5c0f7076-ecb7-4689-b36e-2dc0533cd165-embeddings in 11.672032833099365 seconds.
+2025-08-22 11:37:15 - src.loghandler - INFO - Populating collection dsimon-5c0f7076-ecb7-4689-b36e-2dc0533cd165-embeddings with computed embeddings...
+2025-08-22 11:37:16 - src.loghandler - INFO - Collection size::26
+2025-08-22 11:37:39 - src.loghandler - INFO - Chat engine started for conversation 5c0f7076-ecb7-4689-b36e-2dc0533cd165
+2025-08-22 11:37:39 - src.loghandler - INFO - The user's query is: What is your summary of llm safety?
+2025-08-22 11:37:39 - src.loghandler - INFO - System prompt::Your name is DSIMONAssistant. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-22 11:37:39 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-22 11:37:40 - src.loghandler - INFO - Collection retrieved: dsimon-5c0f7076-ecb7-4689-b36e-2dc0533cd165-embeddings
+2025-08-22 11:37:40 - src.loghandler - INFO - Embeddings retrieved from ChromaDB for collection dsimon-5c0f7076-ecb7-4689-b36e-2dc0533cd165-embeddings
+2025-08-22 11:37:40 - src.loghandler - INFO - Retrieving chat memory...
+2025-08-22 11:37:43 - src.loghandler - INFO - Starting response stream...
+
+2025-08-22 11:38:18 - src.loghandler - INFO - Chat engine started for conversation 5c0f7076-ecb7-4689-b36e-2dc0533cd165
+2025-08-22 11:38:18 - src.loghandler - INFO - The user's query is: What does the text mean by this:
+
+Table 2 reports the mean and standard deviation of pairwise inter-annotator agreement
+scores on subsets of 20 repeated annotations.
+We perform a 4 × 20 pairwise agreement study
+across distinct subsets to maximize the representativeness of our survey corpus and ensure
+robust assessment of annotation consistency.
+We find that inter-annotator agreement is consistently high, between 0.80 and 0.96 on average
+per category, but we note that the annotations may still contain imperfections.
+2025-08-22 11:38:18 - src.loghandler - INFO - System prompt::Your name is DSIMONAssistant. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-22 11:38:18 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-22 11:38:19 - src.loghandler - INFO - Collection retrieved: dsimon-5c0f7076-ecb7-4689-b36e-2dc0533cd165-embeddings
+2025-08-22 11:38:19 - src.loghandler - INFO - Embeddings retrieved from ChromaDB for collection dsimon-5c0f7076-ecb7-4689-b36e-2dc0533cd165-embeddings
+2025-08-22 11:38:19 - src.loghandler - INFO - Retrieving chat memory...
+2025-08-22 11:38:24 - src.loghandler - INFO - Starting response stream...
+
+2025-08-29 21:41:55 - src.loghandler - INFO - Files uploaded successfully.
+2025-08-29 21:41:58 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-29 21:41:59 - src.loghandler - INFO - Collection created: dsimon-8de3ce40-64a2-4c28-952e-e0990ee6209e-embeddings
+2025-08-29 21:41:59 - src.loghandler - INFO - Generating vector embeddings for collection: dsimon-8de3ce40-64a2-4c28-952e-e0990ee6209e-embeddings...
+2025-08-29 21:42:04 - src.loghandler - INFO - Embeddings generated for collection: dsimon-8de3ce40-64a2-4c28-952e-e0990ee6209e-embeddings in 4.925143003463745 seconds.
+2025-08-29 21:42:04 - src.loghandler - INFO - Populating collection dsimon-8de3ce40-64a2-4c28-952e-e0990ee6209e-embeddings with computed embeddings...
+2025-08-29 21:42:04 - src.loghandler - INFO - Collection size::60
+2025-08-29 21:42:24 - src.loghandler - INFO - Chat engine started for conversation 8de3ce40-64a2-4c28-952e-e0990ee6209e
+2025-08-29 21:42:24 - src.loghandler - INFO - The user's query is: Give me a brief run down of nematodes
+2025-08-29 21:42:24 - src.loghandler - INFO - System prompt::Your name is DSIMONAssistant. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-29 21:42:24 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-29 21:42:24 - src.loghandler - INFO - Collection retrieved: dsimon-8de3ce40-64a2-4c28-952e-e0990ee6209e-embeddings
+2025-08-29 21:42:24 - src.loghandler - INFO - Embeddings retrieved from ChromaDB for collection dsimon-8de3ce40-64a2-4c28-952e-e0990ee6209e-embeddings
+2025-08-29 21:42:24 - src.loghandler - INFO - Retrieving chat memory...
+2025-08-29 21:42:24 - src.loghandler - INFO - Starting response stream...
+
+2025-08-29 21:42:31 - src.loghandler - ERROR - An error occured while generating chat response.: Traceback (most recent call last):
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 101, in handle_request
+    raise exc
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/httpcore/_backends/sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/Users/user/.local/share/uv/python/cpython-3.11.9-macos-x86_64-none/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/openai/_base_client.py", line 982, in request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "/Users/user/.local/share/uv/python/cpython-3.11.9-macos-x86_64-none/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/src/helpers.py", line 387, in generate_response
+    for token in response.response_gen:
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/core/chat_engine/types.py", line 300, in response_gen
+    for chat_response in self.chat_stream:
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/core/chat_engine/context.py", line 265, in wrapped_gen
+    for token in response.response_gen:
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/core/llms/llm.py", line 117, in gen
+    for response in chat_response_gen:
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/core/llms/callbacks.py", line 188, in wrapped_gen
+    for x in f_return_val:
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/llms/openai/base.py", line 527, in gen
+    for response in client.chat.completions.create(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/openai/_utils/_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 1150, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/openai/_base_client.py", line 1014, in request
+    raise APIConnectionError(request=request) from err
+openai.APIConnectionError: Connection error.
+
+2025-08-29 21:42:43 - src.loghandler - INFO - Chat engine started for conversation 8de3ce40-64a2-4c28-952e-e0990ee6209e
+2025-08-29 21:42:43 - src.loghandler - INFO - The user's query is: Give me a brief run down of nematodes
+2025-08-29 21:42:43 - src.loghandler - INFO - System prompt::Your name is DSIMONAssistant. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-29 21:42:43 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-29 21:42:43 - src.loghandler - INFO - Collection retrieved: dsimon-8de3ce40-64a2-4c28-952e-e0990ee6209e-embeddings
+2025-08-29 21:42:43 - src.loghandler - INFO - Embeddings retrieved from ChromaDB for collection dsimon-8de3ce40-64a2-4c28-952e-e0990ee6209e-embeddings
+2025-08-29 21:42:43 - src.loghandler - INFO - Retrieving chat memory...
+2025-08-29 21:42:43 - src.loghandler - INFO - Starting response stream...
+
+2025-08-29 21:42:46 - src.loghandler - ERROR - An error occured while generating chat response.: Traceback (most recent call last):
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 101, in handle_request
+    raise exc
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/httpcore/_backends/sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/Users/user/.local/share/uv/python/cpython-3.11.9-macos-x86_64-none/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/openai/_base_client.py", line 982, in request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "/Users/user/.local/share/uv/python/cpython-3.11.9-macos-x86_64-none/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/src/helpers.py", line 387, in generate_response
+    for token in response.response_gen:
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/core/chat_engine/types.py", line 300, in response_gen
+    for chat_response in self.chat_stream:
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/core/chat_engine/context.py", line 265, in wrapped_gen
+    for token in response.response_gen:
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/core/llms/llm.py", line 117, in gen
+    for response in chat_response_gen:
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/core/llms/callbacks.py", line 188, in wrapped_gen
+    for x in f_return_val:
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/llama_index/llms/openai/base.py", line 527, in gen
+    for response in client.chat.completions.create(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/openai/_utils/_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 1150, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/AIML/RAG-1/RAG-deepdive/rag.venv/lib/python3.11/site-packages/openai/_base_client.py", line 1014, in request
+    raise APIConnectionError(request=request) from err
+openai.APIConnectionError: Connection error.
+
+2025-08-29 21:43:21 - src.loghandler - INFO - Chat engine started for conversation 8de3ce40-64a2-4c28-952e-e0990ee6209e
+2025-08-29 21:43:22 - src.loghandler - INFO - The user's query is: Give me a brief run down of nematodes
+2025-08-29 21:43:22 - src.loghandler - INFO - System prompt::Your name is DSIMONAssistant. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-29 21:43:22 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-29 21:43:23 - src.loghandler - INFO - Collection retrieved: dsimon-8de3ce40-64a2-4c28-952e-e0990ee6209e-embeddings
+2025-08-29 21:43:23 - src.loghandler - INFO - Embeddings retrieved from ChromaDB for collection dsimon-8de3ce40-64a2-4c28-952e-e0990ee6209e-embeddings
+2025-08-29 21:43:23 - src.loghandler - INFO - Retrieving chat memory...
+2025-08-29 21:43:23 - src.loghandler - INFO - Starting response stream...
+
+2025-08-29 21:58:38 - src.loghandler - INFO - Chat engine started for conversation demo-eval-1756501118
+2025-08-29 21:58:38 - src.loghandler - INFO - The user's query is: What is the primary method of diagnosis for Trichuris infections?
+2025-08-29 21:58:38 - src.loghandler - INFO - System prompt::Your name is RAGEvaluator. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-29 21:58:38 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-29 21:58:39 - src.loghandler - INFO - Collection retrieved: dsimon-demo-eval-1756501118-embeddings
+2025-08-29 21:58:39 - src.loghandler - ERROR - Could not find embeddings in ChromaDB for conversation demo-eval-1756501118. Please pass the correct chat_uid.
+2025-08-29 21:58:39 - src.loghandler - INFO - Chat engine started for conversation demo-eval-1756501118
+2025-08-29 21:58:39 - src.loghandler - INFO - The user's query is: What are the common symptoms of light infections caused by Strongyloides stercoralis?
+2025-08-29 21:58:39 - src.loghandler - INFO - System prompt::Your name is RAGEvaluator. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-29 21:58:39 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-29 21:58:39 - src.loghandler - INFO - Collection retrieved: dsimon-demo-eval-1756501118-embeddings
+2025-08-29 21:58:39 - src.loghandler - ERROR - Could not find embeddings in ChromaDB for conversation demo-eval-1756501118. Please pass the correct chat_uid.
+2025-08-29 21:58:40 - src.loghandler - INFO - Chat engine started for conversation demo-eval-1756501118
+2025-08-29 21:58:40 - src.loghandler - INFO - The user's query is: What is the name of the disease caused by the parasites Wuchereria bancrofti and Brugia malayi?
+2025-08-29 21:58:40 - src.loghandler - INFO - System prompt::Your name is RAGEvaluator. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-29 21:58:40 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-29 21:58:40 - src.loghandler - INFO - Collection retrieved: dsimon-demo-eval-1756501118-embeddings
+2025-08-29 21:58:40 - src.loghandler - ERROR - Could not find embeddings in ChromaDB for conversation demo-eval-1756501118. Please pass the correct chat_uid.
+2025-08-29 21:58:41 - src.loghandler - INFO - Chat engine started for conversation demo-eval-1756501118
+2025-08-29 21:58:41 - src.loghandler - INFO - The user's query is: What is the typical shape and size of eggs laid by Enterobius vermicularis?
+2025-08-29 21:58:41 - src.loghandler - INFO - System prompt::Your name is RAGEvaluator. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-29 21:58:41 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-29 21:58:41 - src.loghandler - INFO - Collection retrieved: dsimon-demo-eval-1756501118-embeddings
+2025-08-29 21:58:41 - src.loghandler - ERROR - Could not find embeddings in ChromaDB for conversation demo-eval-1756501118. Please pass the correct chat_uid.
+2025-08-29 21:58:42 - src.loghandler - INFO - Chat engine started for conversation demo-eval-1756501118
+2025-08-29 21:58:42 - src.loghandler - INFO - The user's query is: What are the potential complications of heavy, chronic infections caused by Strongyloides stercoralis?
+2025-08-29 21:58:42 - src.loghandler - INFO - System prompt::Your name is RAGEvaluator. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-29 21:58:42 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-29 21:58:42 - src.loghandler - INFO - Collection retrieved: dsimon-demo-eval-1756501118-embeddings
+2025-08-29 21:58:42 - src.loghandler - ERROR - Could not find embeddings in ChromaDB for conversation demo-eval-1756501118. Please pass the correct chat_uid.
+2025-08-30 21:09:31 - src.loghandler - INFO - Chat engine started for conversation demo-eval-1756584349
+2025-08-30 21:09:31 - src.loghandler - INFO - The user's query is: What is the primary method of diagnosis for Trichuris infections?
+2025-08-30 21:09:31 - src.loghandler - INFO - System prompt::Your name is RAGEvaluator. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-30 21:09:31 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-30 21:09:32 - src.loghandler - INFO - Collection retrieved: dsimon-demo-eval-1756584349-embeddings
+2025-08-30 21:09:32 - src.loghandler - ERROR - Could not find embeddings in ChromaDB for conversation demo-eval-1756584349. Please pass the correct chat_uid.
+2025-08-30 21:09:32 - src.loghandler - INFO - Chat engine started for conversation demo-eval-1756584349
+2025-08-30 21:09:32 - src.loghandler - INFO - The user's query is: What are the common symptoms of light infections caused by Strongyloides stercoralis?
+2025-08-30 21:09:32 - src.loghandler - INFO - System prompt::Your name is RAGEvaluator. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-30 21:09:32 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-30 21:09:33 - src.loghandler - INFO - Collection retrieved: dsimon-demo-eval-1756584349-embeddings
+2025-08-30 21:09:33 - src.loghandler - ERROR - Could not find embeddings in ChromaDB for conversation demo-eval-1756584349. Please pass the correct chat_uid.
+2025-08-30 21:09:33 - src.loghandler - INFO - Chat engine started for conversation demo-eval-1756584349
+2025-08-30 21:09:33 - src.loghandler - INFO - The user's query is: What is the name of the disease caused by the parasites Wuchereria bancrofti and Brugia malayi?
+2025-08-30 21:09:33 - src.loghandler - INFO - System prompt::Your name is RAGEvaluator. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-30 21:09:33 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-30 21:09:33 - src.loghandler - INFO - Collection retrieved: dsimon-demo-eval-1756584349-embeddings
+2025-08-30 21:09:33 - src.loghandler - ERROR - Could not find embeddings in ChromaDB for conversation demo-eval-1756584349. Please pass the correct chat_uid.
+2025-08-30 21:09:34 - src.loghandler - INFO - Chat engine started for conversation demo-eval-1756584349
+2025-08-30 21:09:34 - src.loghandler - INFO - The user's query is: What is the typical shape and size of eggs laid by Enterobius vermicularis?
+2025-08-30 21:09:34 - src.loghandler - INFO - System prompt::Your name is RAGEvaluator. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-30 21:09:34 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-30 21:09:34 - src.loghandler - INFO - Collection retrieved: dsimon-demo-eval-1756584349-embeddings
+2025-08-30 21:09:34 - src.loghandler - ERROR - Could not find embeddings in ChromaDB for conversation demo-eval-1756584349. Please pass the correct chat_uid.
+2025-08-30 21:09:34 - src.loghandler - INFO - Chat engine started for conversation demo-eval-1756584349
+2025-08-30 21:09:34 - src.loghandler - INFO - The user's query is: What are the potential complications of heavy, chronic infections caused by Strongyloides stercoralis?
+2025-08-30 21:09:34 - src.loghandler - INFO - System prompt::Your name is RAGEvaluator. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-30 21:09:34 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-30 21:09:34 - src.loghandler - INFO - Collection retrieved: dsimon-demo-eval-1756584349-embeddings
+2025-08-30 21:09:34 - src.loghandler - ERROR - Could not find embeddings in ChromaDB for conversation demo-eval-1756584349. Please pass the correct chat_uid.
+2025-08-30 23:14:33 - src.loghandler - INFO - Chat engine started for conversation test-eval
+2025-08-30 23:14:33 - src.loghandler - INFO - The user's query is: What is this system about?
+2025-08-30 23:14:33 - src.loghandler - INFO - System prompt::Your name is TestBot. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-30 23:14:33 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-30 23:14:33 - src.loghandler - INFO - Collection retrieved: dsimon-test-eval-embeddings
+2025-08-30 23:14:33 - src.loghandler - ERROR - Could not find embeddings in ChromaDB for conversation test-eval. Please pass the correct chat_uid.
+2025-08-30 23:14:46 - src.loghandler - INFO - Chat engine started for conversation test
+2025-08-30 23:14:46 - src.loghandler - INFO - The user's query is: test
+2025-08-30 23:14:46 - src.loghandler - INFO - System prompt::Your name is test. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-30 23:14:46 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-30 23:14:47 - src.loghandler - INFO - Collection retrieved: dsimon-test-embeddings
+2025-08-30 23:14:47 - src.loghandler - ERROR - Could not find embeddings in ChromaDB for conversation test. Please pass the correct chat_uid.
+2025-08-30 23:34:27 - src.loghandler - INFO - Chat engine started for conversation demo-eval-1756593267
+2025-08-30 23:34:27 - src.loghandler - INFO - The user's query is: What is the primary method of diagnosis for Trichuris infections?
+2025-08-30 23:34:27 - src.loghandler - INFO - System prompt::Your name is RAGEvaluator. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-30 23:34:27 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-30 23:34:27 - src.loghandler - INFO - Collection retrieved: dsimon-demo-eval-1756593267-embeddings
+2025-08-30 23:34:27 - src.loghandler - ERROR - Could not find embeddings in ChromaDB for conversation demo-eval-1756593267. Please pass the correct chat_uid.
+2025-08-30 23:34:27 - src.loghandler - INFO - Chat engine started for conversation demo-eval-1756593267
+2025-08-30 23:34:27 - src.loghandler - INFO - The user's query is: What are the common symptoms of light infections caused by Strongyloides stercoralis?
+2025-08-30 23:34:27 - src.loghandler - INFO - System prompt::Your name is RAGEvaluator. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-30 23:34:27 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-30 23:34:28 - src.loghandler - INFO - Collection retrieved: dsimon-demo-eval-1756593267-embeddings
+2025-08-30 23:34:28 - src.loghandler - ERROR - Could not find embeddings in ChromaDB for conversation demo-eval-1756593267. Please pass the correct chat_uid.
+2025-08-30 23:34:28 - src.loghandler - INFO - Chat engine started for conversation demo-eval-1756593267
+2025-08-30 23:34:28 - src.loghandler - INFO - The user's query is: What is the name of the disease caused by the parasites Wuchereria bancrofti and Brugia malayi?
+2025-08-30 23:34:28 - src.loghandler - INFO - System prompt::Your name is RAGEvaluator. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-30 23:34:28 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-30 23:34:28 - src.loghandler - INFO - Collection retrieved: dsimon-demo-eval-1756593267-embeddings
+2025-08-30 23:34:28 - src.loghandler - ERROR - Could not find embeddings in ChromaDB for conversation demo-eval-1756593267. Please pass the correct chat_uid.
+2025-08-30 23:34:29 - src.loghandler - INFO - Chat engine started for conversation demo-eval-1756593267
+2025-08-30 23:34:29 - src.loghandler - INFO - The user's query is: What is the typical shape and size of eggs laid by Enterobius vermicularis?
+2025-08-30 23:34:29 - src.loghandler - INFO - System prompt::Your name is RAGEvaluator. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-30 23:34:29 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-30 23:34:29 - src.loghandler - INFO - Collection retrieved: dsimon-demo-eval-1756593267-embeddings
+2025-08-30 23:34:29 - src.loghandler - ERROR - Could not find embeddings in ChromaDB for conversation demo-eval-1756593267. Please pass the correct chat_uid.
+2025-08-30 23:34:30 - src.loghandler - INFO - Chat engine started for conversation demo-eval-1756593267
+2025-08-30 23:34:30 - src.loghandler - INFO - The user's query is: What are the potential complications of heavy, chronic infections caused by Strongyloides stercoralis?
+2025-08-30 23:34:30 - src.loghandler - INFO - System prompt::Your name is RAGEvaluator. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-30 23:34:30 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-30 23:34:30 - src.loghandler - INFO - Collection retrieved: dsimon-demo-eval-1756593267-embeddings
+2025-08-30 23:34:30 - src.loghandler - ERROR - Could not find embeddings in ChromaDB for conversation demo-eval-1756593267. Please pass the correct chat_uid.
+2025-08-31 18:43:51 - src.loghandler - INFO - Chat engine started for conversation test-connection
+2025-08-31 18:43:51 - src.loghandler - INFO - The user's query is: test
+2025-08-31 18:43:51 - src.loghandler - INFO - System prompt::Your name is test. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-31 18:43:51 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-31 18:43:52 - src.loghandler - INFO - Collection retrieved: dsimon-test-connection-embeddings
+2025-08-31 18:43:52 - src.loghandler - ERROR - Could not find embeddings in ChromaDB for conversation test-connection. Please pass the correct chat_uid.
+2025-08-31 18:46:45 - src.loghandler - INFO - Files uploaded successfully.
+2025-08-31 18:46:45 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-31 18:46:46 - src.loghandler - INFO - Collection created: dsimon-docs-1756662387-embeddings
+2025-08-31 18:46:46 - src.loghandler - INFO - Generating vector embeddings for collection: dsimon-docs-1756662387-embeddings...
+2025-08-31 18:46:49 - src.loghandler - INFO - Embeddings generated for collection: dsimon-docs-1756662387-embeddings in 2.729074239730835 seconds.
+2025-08-31 18:46:49 - src.loghandler - INFO - Populating collection dsimon-docs-1756662387-embeddings with computed embeddings...
+2025-08-31 18:46:49 - src.loghandler - INFO - Collection size::1
+2025-08-31 18:46:49 - src.loghandler - INFO - Chat engine started for conversation docs-1756662387
+2025-08-31 18:46:49 - src.loghandler - INFO - The user's query is: What is this document about?
+2025-08-31 18:46:49 - src.loghandler - INFO - System prompt::Your name is TestBot. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-31 18:46:49 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-31 18:46:49 - src.loghandler - INFO - Collection retrieved: dsimon-docs-1756662387-embeddings
+2025-08-31 18:46:49 - src.loghandler - INFO - Embeddings retrieved from ChromaDB for collection dsimon-docs-1756662387-embeddings
+2025-08-31 18:46:49 - src.loghandler - INFO - Retrieving chat memory...
+2025-08-31 18:46:50 - src.loghandler - INFO - Starting response stream...
+
+2025-08-31 19:18:27 - src.loghandler - INFO - Chat engine started for conversation docs-1756662387
+2025-08-31 19:18:27 - src.loghandler - INFO - The user's query is: What is the primary method of diagnosis for Trichuris infections?
+2025-08-31 19:18:27 - src.loghandler - INFO - System prompt::Your name is RAGEvaluator. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-31 19:18:27 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-31 19:18:27 - src.loghandler - INFO - Collection retrieved: dsimon-docs-1756662387-embeddings
+2025-08-31 19:18:27 - src.loghandler - INFO - Embeddings retrieved from ChromaDB for collection dsimon-docs-1756662387-embeddings
+2025-08-31 19:18:27 - src.loghandler - INFO - Retrieving chat memory...
+2025-08-31 19:18:30 - src.loghandler - INFO - Starting response stream...
+
+2025-08-31 19:18:33 - src.loghandler - INFO - Chat engine started for conversation docs-1756662387
+2025-08-31 19:18:33 - src.loghandler - INFO - The user's query is: What are the common symptoms of light infections caused by Strongyloides stercoralis?
+2025-08-31 19:18:33 - src.loghandler - INFO - System prompt::Your name is RAGEvaluator. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-31 19:18:33 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-31 19:18:33 - src.loghandler - INFO - Collection retrieved: dsimon-docs-1756662387-embeddings
+2025-08-31 19:18:33 - src.loghandler - INFO - Embeddings retrieved from ChromaDB for collection dsimon-docs-1756662387-embeddings
+2025-08-31 19:18:33 - src.loghandler - INFO - Retrieving chat memory...
+2025-08-31 19:18:33 - src.loghandler - INFO - Starting response stream...
+
+2025-08-31 19:19:10 - src.loghandler - INFO - Chat engine started for conversation docs-1756662387
+2025-08-31 19:19:10 - src.loghandler - INFO - The user's query is: What is the name of the disease caused by the parasites Wuchereria bancrofti and Brugia malayi?
+2025-08-31 19:19:10 - src.loghandler - INFO - System prompt::Your name is RAGEvaluator. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-31 19:19:10 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-31 19:19:10 - src.loghandler - INFO - Collection retrieved: dsimon-docs-1756662387-embeddings
+2025-08-31 19:19:10 - src.loghandler - INFO - Embeddings retrieved from ChromaDB for collection dsimon-docs-1756662387-embeddings
+2025-08-31 19:19:10 - src.loghandler - INFO - Retrieving chat memory...
+2025-08-31 19:19:10 - src.loghandler - INFO - Starting response stream...
+
+2025-08-31 19:19:13 - src.loghandler - INFO - Chat engine started for conversation docs-1756662387
+2025-08-31 19:19:13 - src.loghandler - INFO - The user's query is: What is the typical shape and size of eggs laid by Enterobius vermicularis?
+2025-08-31 19:19:13 - src.loghandler - INFO - System prompt::Your name is RAGEvaluator. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-31 19:19:13 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-31 19:19:13 - src.loghandler - INFO - Collection retrieved: dsimon-docs-1756662387-embeddings
+2025-08-31 19:19:13 - src.loghandler - INFO - Embeddings retrieved from ChromaDB for collection dsimon-docs-1756662387-embeddings
+2025-08-31 19:19:13 - src.loghandler - INFO - Retrieving chat memory...
+2025-08-31 19:19:13 - src.loghandler - INFO - Starting response stream...
+
+2025-08-31 19:19:18 - src.loghandler - INFO - Chat engine started for conversation docs-1756662387
+2025-08-31 19:19:18 - src.loghandler - INFO - The user's query is: What are the potential complications of heavy, chronic infections caused by Strongyloides stercoralis?
+2025-08-31 19:19:18 - src.loghandler - INFO - System prompt::Your name is RAGEvaluator. You are a helpful and honest assistant designed for a RAG-powered application. Your goal is to use the provided information below to answer my request. These information has been extracted from a set of documents, which could include unstructure PDFs, webpages, databases, etc.
+2025-08-31 19:19:18 - src.loghandler - INFO - Initializing Chroma database...
+2025-08-31 19:19:18 - src.loghandler - INFO - Collection retrieved: dsimon-docs-1756662387-embeddings
+2025-08-31 19:19:18 - src.loghandler - INFO - Embeddings retrieved from ChromaDB for collection dsimon-docs-1756662387-embeddings
+2025-08-31 19:19:18 - src.loghandler - INFO - Retrieving chat memory...
+2025-08-31 19:19:18 - src.loghandler - INFO - Starting response stream...
+
