@@ -6,6 +6,14 @@ if [[ "$PYTHON_VERSION" != "3.10"* ]]; then
   exit 1
 fi
 
+# Update pip
+pip install --upgrade pip
+
+# Set Rust environment variables
+export CARGO_HOME=/app/.cargo
+export RUSTUP_HOME=/app/.rustup
+mkdir -p $CARGO_HOME $RUSTUP_HOME
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
   # macOS: Use CPU wheels for torch==2.2.2
   pip install --no-cache-dir torch==2.2.2 torchvision==0.17.2 torchaudio==2.2.2
