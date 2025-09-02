@@ -21,6 +21,7 @@ from pathlib import Path
 from retry import retry
 import chromadb
 import redis
+import torch
 from pinecone import Pinecone, ServerlessSpec
 from fastapi import FastAPI, Request, UploadFile, Form
 from fastapi.responses import JSONResponse, PlainTextResponse, StreamingResponse
