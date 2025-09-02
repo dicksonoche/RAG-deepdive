@@ -1,7 +1,8 @@
 .env
 rag.venv
 .DS_Store
-logs
+evaluation_logs.log
+status_logs.log
 __pycache__
 chroma
 Nematodes.pdf
