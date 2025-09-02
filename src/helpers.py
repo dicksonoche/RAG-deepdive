@@ -22,8 +22,8 @@ from retry import retry
 import chromadb
 import redis
 from pinecone import Pinecone, ServerlessSpec
-from fastapi import FastAPI, Request, UploadFile, Form, JSONResponse
-from fastapi.responses import PlainTextResponse, StreamingResponse
+from fastapi import FastAPI, Request, UploadFile, Form
+from fastapi.responses import JSONResponse, PlainTextResponse, StreamingResponse
 from llama_index.llms.groq import Groq
 from llama_index.core.schema import Document
 from llama_index.core.node_parser import SentenceSplitter
