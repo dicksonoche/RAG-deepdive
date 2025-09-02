@@ -19,6 +19,10 @@ app = FastAPI()
 app_state: TempAppState = app.state
 app_state.chat_memory = None  # For prototyping only - not suitable for production
 
+@app.get("/status")
+async def status():
+    return {"status": "ok"}
+
 @app.get('/health')
 async def health_check():
     """
